@@ -1,0 +1,639 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Visa CEMEA Sales Operations</title>
+<meta name="description" content="A vision for best-in-class sales operations and an outside-in view of Visa's commercial engine in CEMEA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F6F7FB; --surface:#FFFFFF; --surface-2:#EEF0F7; --ink:#141A33; --muted:#4B5270; --line:#D9DDE8;
+  --navy:#1E2A5E; --navy-ink:#1E2A5E; --amber:#B07A0A; --amber-strong:#F2C14E; --amber-soft:#FFF4DC; --amber-line:#EBCF8C;
+  --teal:#0B6470; --teal-soft:#E3F3F4; --brown:#7A3F08; --brown-soft:#FBEBDB; --navy-soft:#E6E9F5;
+  --hero:#121838; --hero-ink:#FFFFFF; --hero-muted:#C9CEE3;
+  --radius:14px; --shadow:0 1px 2px rgba(20,26,51,.06),0 4px 16px rgba(20,26,51,.05);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0E1224; --surface:#161B33; --surface-2:#1C2240; --ink:#E8EAF4; --muted:#A9AFC8; --line:#2A3150;
+    --navy:#3C4E9E; --navy-ink:#AFC0FF; --amber:#F2C14E; --amber-soft:#2A2412; --amber-line:#5C4A1C;
+    --teal:#4FC3CC; --teal-soft:#0F2A2E; --brown:#F0A764; --brown-soft:#2C1D10; --navy-soft:#1E2547;
+    --hero:#0A0E1F; --shadow:none;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0E1224; --surface:#161B33; --surface-2:#1C2240; --ink:#E8EAF4; --muted:#A9AFC8; --line:#2A3150;
+  --navy:#3C4E9E; --navy-ink:#AFC0FF; --amber:#F2C14E; --amber-soft:#2A2412; --amber-line:#5C4A1C;
+  --teal:#4FC3CC; --teal-soft:#0F2A2E; --brown:#F0A764; --brown-soft:#2C1D10; --navy-soft:#1E2547;
+  --hero:#0A0E1F; --shadow:none;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'IBM Plex Sans','Helvetica Neue',sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--navy-ink)}
+a:hover{color:var(--amber)}
+h1,h2,h3,h4{line-height:1.2;margin:0}
+p{margin:0 0 12px}
+ul{margin:0;padding-left:20px}
+li{margin-bottom:6px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+@media(min-width:720px){.wrap{padding:0 32px}}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:16px;height:60px}
+.brand{font-weight:700;font-size:15px;white-space:nowrap;color:var(--ink);text-decoration:none}
+.nav-links{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;margin-left:auto}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{white-space:nowrap;text-decoration:none;color:var(--muted);font-size:14px;font-weight:500;padding:8px 12px;border-radius:999px;min-height:40px;display:inline-flex;align-items:center}
+.nav-links a:hover{color:var(--ink);background:var(--surface-2)}
+.nav-links a.active{color:var(--ink);background:var(--surface-2)}
+.theme-btn{flex:none;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;width:40px;height:40px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}
+@media(max-width:640px){.brand span{display:none}}
+
+/* hero */
+.hero{background:var(--hero);color:var(--hero-ink);padding:56px 0 48px}
+@media(min-width:720px){.hero{padding:80px 0 64px}}
+.kicker{font-size:13px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--amber-strong);margin-bottom:12px}
+.hero h1{font-size:clamp(40px,7vw,64px);font-weight:700;letter-spacing:-.01em}
+.hero .lede{font-size:clamp(17px,2.2vw,21px);line-height:1.5;color:var(--hero-muted);max-width:760px;margin:16px 0 28px}
+.hero .lede b{color:#fff;font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:40px}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:10px 18px;border-radius:999px;font-weight:600;font-size:15px;text-decoration:none}
+.btn-primary{background:var(--amber-strong);color:#141A33}
+.btn-primary:hover{background:#FFD36E;color:#141A33}
+.btn-ghost{border:1px solid rgba(255,255,255,.35);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.08);color:#fff}
+.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media(min-width:720px){.stats{grid-template-columns:repeat(5,minmax(0,1fr))}}
+.stat{border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:16px}
+.stat b{display:block;font-size:28px;line-height:1.1;color:var(--amber-strong);font-weight:700}
+.stat span{display:block;font-size:13px;color:var(--hero-muted);margin-top:6px;line-height:1.4}
+
+/* sections */
+section.block{padding:56px 0;border-bottom:1px solid var(--line)}
+@media(min-width:720px){section.block{padding:72px 0}}
+.sec-head{margin-bottom:28px;max-width:820px}
+.sec-num{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--amber);font-weight:500;letter-spacing:.06em;margin-bottom:8px;display:block}
+.sec-head h2{font-size:clamp(28px,4vw,40px);font-weight:700;color:var(--ink)}
+.sec-head p{color:var(--muted);font-size:18px;margin-top:12px}
+h3.sub{font-size:22px;font-weight:700;margin:40px 0 16px;color:var(--ink)}
+h3.sub:first-of-type{margin-top:8px}
+.muted{color:var(--muted)}
+.small{font-size:14px}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+@media(min-width:720px){.card{padding:24px}}
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:1fr}
+.g3{grid-template-columns:1fr}
+@media(min-width:760px){.g2{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.card h4{font-size:18px;font-weight:700;margin-bottom:8px}
+.tag{display:inline-block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;padding:3px 8px;border-radius:999px;margin-bottom:10px}
+.tag.navy{background:var(--navy-soft);color:var(--navy-ink)}
+.tag.teal{background:var(--teal-soft);color:var(--teal)}
+.tag.brown{background:var(--brown-soft);color:var(--brown)}
+.tag.amber{background:var(--amber-soft);color:var(--amber)}
+.inf{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.04em;padding:1px 7px;border-radius:999px;border:1px dashed var(--muted);color:var(--muted);vertical-align:middle;margin-left:4px;white-space:nowrap}
+
+.callout{background:var(--amber-soft);border:1px solid var(--amber-line);border-radius:var(--radius);padding:20px 24px}
+.callout p:last-child{margin:0}
+.callout .big{font-size:clamp(19px,2.4vw,23px);line-height:1.45;font-weight:600;color:var(--ink)}
+
+/* tables */
+.table-box{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:15px;min-width:640px}
+th,td{text-align:left;vertical-align:top;padding:12px 16px;border-bottom:1px solid var(--line)}
+th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700;background:var(--surface-2)}
+tr:last-child td{border-bottom:none}
+td b{color:var(--ink)}
+td.num{font-family:'IBM Plex Mono',monospace;white-space:nowrap}
+tr.total td{font-weight:700;background:var(--surface-2)}
+
+/* process */
+.steps{display:grid;gap:12px;grid-template-columns:1fr;counter-reset:s;list-style:none;padding:0;margin:0}
+@media(min-width:640px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:1000px){.steps{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.steps li{counter-increment:s;margin:0;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px;position:relative}
+.steps li::before{content:counter(s);display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--navy);color:#fff;font-weight:700;font-size:14px;margin-bottom:8px}
+.steps h4{font-size:16px;margin-bottom:4px}
+.steps p{font-size:14px;color:var(--muted);margin:0 0 8px}
+.sys{font-family:'IBM Plex Mono',monospace;font-size:12px;line-height:1.5;color:var(--teal)}
+
+.blocks{display:grid;gap:12px}
+.bb{display:grid;grid-template-columns:1fr;gap:8px 24px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+@media(min-width:860px){.bb{grid-template-columns:220px 1fr 1fr}}
+.bb .k{font-weight:700;font-size:17px}
+.bb .k small{display:block;font-family:'IBM Plex Mono',monospace;color:var(--amber);font-size:12px;font-weight:500;margin-bottom:4px}
+.bb .lab{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:4px}
+
+.qa{counter-reset:q;list-style:none;padding:0}
+.qa li{counter-increment:q;padding:14px 0 14px 44px;border-bottom:1px solid var(--line);position:relative;margin:0}
+.qa li::before{content:counter(q);position:absolute;left:0;top:12px;width:30px;height:30px;border-radius:50%;background:var(--amber-soft);border:1px solid var(--amber-line);color:var(--amber);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
+
+footer{padding:48px 0 64px;color:var(--muted);font-size:14px}
+footer h3{font-size:16px;color:var(--ink);margin-bottom:12px}
+footer ul{columns:1;padding-left:18px}
+@media(min-width:860px){footer ul{columns:2;column-gap:40px}}
+footer li{break-inside:avoid}
+
+/* in-page editor (only active with ?edit in the URL) */
+.ed-toolbar{position:fixed;left:50%;transform:translateX(-50%);bottom:16px;z-index:50;display:flex;flex-wrap:wrap;justify-content:center;gap:6px;align-items:center;width:max-content;max-width:calc(100% - 32px);background:var(--hero);color:#fff;border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:8px;box-shadow:0 8px 30px rgba(0,0,0,.28);font-size:14px}
+.ed-toolbar button{font:inherit;font-size:13px;font-weight:600;min-height:40px;padding:6px 12px;border-radius:10px;border:1px solid rgba(255,255,255,.28);background:transparent;color:#fff;cursor:pointer}
+.ed-toolbar button:hover{background:rgba(255,255,255,.1)}
+.ed-toolbar button[aria-pressed="true"]{background:var(--amber-strong);color:#141A33;border-color:transparent}
+.ed-status{padding:0 8px;color:#C9CEE3;font-size:13px;max-width:320px}
+.ed-on [contenteditable="true"]{outline:2px dashed var(--amber);outline-offset:6px;border-radius:6px}
+.ed-on [contenteditable="true"]:focus{outline-style:solid}
+.ed-on section.block{position:relative}
+.ed-secbar{position:absolute;top:12px;right:16px;left:16px;display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px;z-index:6}
+.ed-secbar button{font:inherit;font-size:13px;font-weight:600;min-height:36px;padding:4px 10px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.ed-secbar button:hover{border-color:var(--amber)}
+.ed-secbar button.danger{color:#B42318}
+body.ed-active{padding-bottom:96px}
+
+@media print{
+  .ed-ui{display:none!important}
+  .nav,.theme-btn{display:none}
+  body{background:#fff;font-size:12pt}
+  .hero{background:#fff;color:#141A33;padding:24px 0}
+  .hero .lede,.stat span{color:#4B5270}
+  .stat{border-color:#D9DDE8}
+  .stat b{color:#B07A0A}
+  .btn{display:none}
+  section.block{padding:28px 0;break-inside:avoid-page}
+  .card,.bb,.steps li,.table-box{box-shadow:none;break-inside:avoid}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Sections">
+  <div class="wrap">
+    <a class="brand" href="#top">Visa CEMEA<span> · sales operations</span></a>
+    <div class="nav-links">
+      <a href="#vision">Vision</a>
+      <a href="#visa">Understanding Visa</a>
+      <a href="#questions">Questions</a>
+    </div>
+    <button class="theme-btn" id="themeBtn" type="button" aria-label="Toggle light or dark theme">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    </button>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <h1>Building Visa CEMEA's commercial engine</h1>
+    <p class="lede">A vision for best-in-class sales operations, and an outside-in view of how Visa sells. The next phase moves <b>from network deals to solution selling, with AI built into how sellers work</b>.</p>
+    <div class="cta">
+      <a class="btn btn-primary" href="#vision">Read the vision</a>
+      <a class="btn btn-ghost" href="#visa">How Visa sells</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>$40.0B</b><span>Visa net revenue, FY2025 (+11%)</span></div>
+      <div class="stat"><b>$15.8B</b><span>client incentives paid back, 28% of gross revenue</span></div>
+      <div class="stat"><b>+34%</b><span>value-added services growth, Q3 FY26: about a third of revenue</span></div>
+      <div class="stat"><b>~4,000</b><span>sellers globally</span></div>
+      <div class="stat"><b>~20%</b><span>of payments volume up for renewal in FY26</span></div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ 1. VISION ============ -->
+<section class="block" id="vision">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">01 · VISION</span>
+      <h2>Best-in-class sales operations for Visa CEMEA</h2>
+      <p>Visa's scarce resource isn't only seller time. It's the incentive budget: $15.8B a year paid back to clients. Sales ops exists to put each of those dollars where it buys the most durable volume.</p>
+    </div>
+
+    <div class="callout">
+      <p class="big">A commercial control tower that <u>maximises net revenue per incentive dollar</u> and <u>shortens the time from signature to revenue</u>, run as one connected system from plan to realised revenue, with AI doing the routine work.</p>
+    </div>
+
+    <h3 class="sub">Five building blocks</h3>
+    <div class="blocks">
+      <div class="bb">
+        <div class="k"><small>01</small>Plan &amp; allocate</div>
+        <div><div class="lab">Best in class</div>Plan gap = target minus revenue already contracted. Coverage set by client value <i>and</i> renewal risk. Capacity shifted toward VAS and commercial payments.</div>
+        <div><div class="lab">Opportunity at Visa</div>Sales 2.0 and the target cascade exist. Plan coverage around the renewal calendar, not only client size.</div>
+      </div>
+      <div class="bb">
+        <div class="k"><small>02</small>Deal economics</div>
+        <div><div class="lab">Best in class</div>One standard deal model; incentive-to-gross benchmarks by market; approval tiers by NPV and risk; a portfolio view of incentive return.</div>
+        <div><div class="lab">Opportunity at Visa</div>Deal data appears to span several systems (iDeal, DPT, Dealight, GIG, GARP, VIK Central, ORMB). A single view of incentive return is a likely win.<span class="inf">outside-in</span></div>
+      </div>
+      <div class="bb">
+        <div class="k"><small>03</small>Time to revenue &amp; realisation</div>
+        <div><div class="lab">Best in class</div>One flow from lead to contract to go-live to activation. A target time to clear Signed-Not-Live. Realisation (actual vs forecast net revenue) reported like consumed ACV in software.</div>
+        <div><div class="lab">Opportunity at Visa</div>DPT already tracks deals. Make realisation a portfolio KPI in every business review.</div>
+      </div>
+      <div class="bb">
+        <div class="k"><small>04</small>Performance &amp; incentives</div>
+        <div><div class="lab">Best in class</div>One scorecard. Pay on net AANR with a go-live gate and a partial true-up. Clear overlay crediting. Retention measured separately from growth.</div>
+        <div><div class="lab">Opportunity at Visa</div>TRUTH dashboards and the SIP exist. Link part of seller pay to realised, not just booked, revenue.</div>
+      </div>
+      <div class="bb">
+        <div class="k"><small>05</small>Productivity, data &amp; AI</div>
+        <div><div class="lab">Best in class</div>Transaction data joined with CRM and deal data. AI agents for account plans, deal-model prefill and contract checks. Freed seller time measured and reinvested.</div>
+        <div><div class="lab">Opportunity at Visa</div>Visa sees every transaction, a data edge software firms don't have. Put it to work for sellers.</div>
+      </div>
+    </div>
+
+    <h3 class="sub">Quota and compensation principles</h3>
+    <div class="grid g3">
+      <div class="card"><span class="tag navy">Pay on what's real</span><h4>Net, realised revenue</h4><p class="muted small" style="margin:0">Keep AANR net of incentives. Pay part at signing and go-live and true up the rest to realised revenue at 12 months. Add a guardrail when a deal exceeds the market's incentive-to-gross ceiling.</p></div>
+      <div class="card"><span class="tag navy">Defend and grow</span><h4>Separate retention from growth</h4><p class="muted small" style="margin:0">Incentives step up at renewal, so net revenue can fall even when a renewal is won. Measure renewals with a retention objective and an incentive ceiling, not incremental AANR.</p></div>
+      <div class="card"><span class="tag navy">Fair quotas</span><h4>Potential, not history</h4><p class="muted small" style="margin:0">Blend top-down plan gap with bottom-up account potential from transaction data. Aim for 60–70% of sellers at or above quota, with plans issued within 30–45 days of the year starting.</p></div>
+    </div>
+    <div class="table-box" style="margin-top:16px">
+      <table>
+        <thead><tr><th>Seller role</th><th>Illustrative plan weights</th><th>Pay mix</th></tr></thead>
+        <tbody>
+          <tr><td><b>Issuer client director</b></td><td>50% net AANR · 20% go-live &amp; realisation · 30% objectives (retention, product take-up)</td><td>~60/40</td></tr>
+          <tr><td><b>Acquirer / acceptance seller</b></td><td>60% AANR above baseline · 20% new acceptance · 20% product take-up</td><td>~60/40</td></tr>
+          <tr><td><b>VAS / CMS specialist</b></td><td>70% product AANR · 30% go-live; shared credit with client teams</td><td>~70/30</td></tr>
+          <tr><td><b>Sales engineers, ops staff</b></td><td>No quota; bonus on company and business-unit results, which keeps ops neutral</td><td>Bonus</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="sub">What changes for CEMEA</h3>
+    <div class="grid g3">
+      <div class="card"><h4>Cluster playbooks</h4><p class="muted small" style="margin:0">The GCC (cross-border, domestic schemes), Africa (cash conversion, fintechs) and Central Europe and Central Asia (mature renewals) are different businesses. Use one global standard with a playbook per cluster.</p></div>
+      <div class="card"><h4>Scaled coverage for the long tail</h4><p class="muted small" style="margin:0">Most of CEMEA's 1,800+ clients need digital and inside-sales coverage. Dedicated teams can't reach them economically.</p></div>
+      <div class="card"><h4>Defend domestic share</h4><p class="muted small" style="margin:0">Measure Visa's share of each client's volume against Jaywan, mada and instant A2A payments. Use incentives and VAS to stay hard to replace.</p></div>
+    </div>
+
+    <h3 class="sub">AI agenda for sales ops</h3>
+    <div class="grid g3">
+      <div class="card"><span class="tag teal">Deal desk</span><h4>Deal-model copilot</h4><p class="muted small" style="margin:0">Prefill forecasts from transaction data, benchmark incentives against similar deals, flag deals outside guardrails before approval.</p></div>
+      <div class="card"><span class="tag teal">Retention</span><h4>Renewal-risk early warning</h4><p class="muted small" style="margin:0">Activation, spend per card and domestic-scheme leakage flag at-risk renewals 18–24 months out, not 6.</p></div>
+      <div class="card"><span class="tag teal">Sellers</span><h4>Agents that remove admin</h4><p class="muted small" style="margin:0">Account plans, CRM updates and QBR packs drafted in Dynamics. Measure seller time freed and where it's reinvested.</p></div>
+    </div>
+
+    <h3 class="sub">First 90 days</h3>
+    <div class="grid g3">
+      <div class="card"><span class="tag amber">Days 1–30</span><h4>Listen &amp; diagnose</h4><ul class="small"><li>Meet market leaders, the deal desk, Finance and GSCO</li><li>Assess CEMEA against the five building blocks</li><li>Map the renewal calendar for the next 24 months</li></ul></div>
+      <div class="card"><span class="tag amber">Days 31–60</span><h4>Baseline &amp; quick wins</h4><ul class="small"><li>Baseline realisation and incentive return by cluster</li><li>Settle the UAE–Kuwait–Qatar operating model and reporting</li><li>Clear the oldest Signed-Not-Live deals</li></ul></div>
+      <div class="card"><span class="tag amber">Days 61–90</span><h4>Commit</h4><ul class="small"><li>Agree three priority initiatives with the Regional President</li><li>Shape next year's plan and quota design</li><li>Launch one AI use case with measured outcomes</li></ul></div>
+    </div>
+
+    <h3 class="sub">KPIs I'd run the region on</h3>
+    <div class="table-box">
+      <table>
+        <thead><tr><th>Outcome</th><th>Speed</th><th>Deal economics</th><th>Productivity</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Net revenue and AANR vs plan<br>Renewals retained<br>VAS products per client</td>
+            <td>Signed-Not-Live ageing<br>Time to revenue<br>Renewal pipeline 18–24 months out</td>
+            <td>Realisation (actual vs deal model)<br>Incentive-to-gross vs benchmark<br>VIK utilisation</td>
+            <td>Quota attainment spread<br>Seller time freed by AI<br>Forecast accuracy</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. UNDERSTANDING VISA ============ -->
+<section class="block" id="visa">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">02 · OUTSIDE-IN VIEW</span>
+      <h2>My understanding of Visa's commercial engine</h2>
+      <p>Built from public filings, Investor Day 2025, earnings calls and job postings. Items marked <span class="inf">inferred</span> are industry practice or my reading, not published by Visa.</p>
+    </div>
+
+    <h3 class="sub">Strategy: a network of networks</h3>
+    <div class="grid g2">
+      <div class="card">
+        <span class="tag navy">Investor Day 2025</span>
+        <h4>Be the best way to pay and be paid, across every flow</h4>
+        <ul class="small">
+          <li><b>Consumer payments:</b> ~$41T of consumer spend, ~$23T still on cash, legacy rails or domestic schemes</li>
+          <li><b>Commercial &amp; money movement:</b> ~$200T of B2B flows and ~$145T of other money movement; ~$115T actively pursued</li>
+          <li><b>Value-added services:</b> a $520B opportunity, ~2% captured</li>
+          <li><b>Foundation:</b> Visa-as-a-Service, an unbundled platform sold capability by capability</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="tag navy">Where it stands (Q3 FY26)</span>
+        <h4>Growth is shifting to services and new flows</h4>
+        <ul class="small">
+          <li>Net revenue $11.6B, +14%; full-year outlook raised</li>
+          <li><b>VAS $3.8B, +34%</b>, about a third of revenue</li>
+          <li>CMS revenue +17%; Visa Direct transactions +21%</li>
+          <li>New bets: agentic commerce, stablecoins, issuer processing (Pismo + DPS)</li>
+          <li>~7% of roles cut in July 2026, with savings reinvested in growth</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="sub">How Visa makes money (FY2025)</h3>
+    <div class="grid g2">
+      <div class="table-box">
+        <table style="min-width:0">
+          <thead><tr><th>Revenue line</th><th>FY25</th><th>Growth</th></tr></thead>
+          <tbody>
+            <tr><td>Service: fees on payments volume</td><td class="num">$17.5B</td><td class="num">+9%</td></tr>
+            <tr><td>Data processing: per-transaction fees</td><td class="num">$20.0B</td><td class="num">+13%</td></tr>
+            <tr><td>International: cross-border and FX</td><td class="num">$14.2B</td><td class="num">+12%</td></tr>
+            <tr><td>Other: incl. value-added services</td><td class="num">$4.1B</td><td class="num">+27%</td></tr>
+            <tr><td>Client incentives (contra-revenue)</td><td class="num">−$15.8B</td><td class="num">+14%</td></tr>
+            <tr class="total"><td>Net revenue</td><td class="num">$40.0B</td><td class="num">+11%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card">
+        <span class="tag amber">Illustrative</span>
+        <h4>One $100 card payment</h4>
+        <p class="small">The merchant pays roughly $2 in fees. The <b>issuing bank</b> takes the largest share as interchange (Visa sets it but doesn't keep it). The <b>acquirer</b> keeps its margin. <b>Visa</b> earns a few cents of network fees, and several times more if the card is used abroad.</p>
+        <p class="small" style="margin:0">Visa takes no credit risk. Incentives are 28% of gross revenue and are growing faster than net revenue, which is why deal governance matters so much.</p>
+      </div>
+    </div>
+
+    <h3 class="sub">Segments, customers and contracts</h3>
+    <div class="table-box">
+      <table>
+        <thead><tr><th>Customer type</th><th>Contract</th><th>Client incentives</th><th>Visa earns</th><th>Main risk</th></tr></thead>
+        <tbody>
+          <tr><td><span class="tag navy">Consumer</span><br><b>Issuing banks &amp; fintechs</b></td><td>Network licence + incentive agreement, typically 5–7 years, step-ups at renewal. ~20% of payments volume renews in FY26.</td><td>Upfront signing payment (amortised), tiered volume rebates, marketing funds, VIK; clawbacks</td><td>Volume, processing and cross-border fees</td><td>Losing the whole portfolio to Mastercard at renewal</td></tr>
+          <tr><td><span class="tag navy">Consumer</span><br><b>Acquirers, payment facilitators, large merchants</b></td><td>Network licence + shorter, smaller deals; no exclusivity <span class="inf">inferred</span></td><td>Rebates on growth above baseline, acceptance funding, token adoption; little upfront</td><td>Acquirer-side fees; inbound cross-border</td><td>Volume routed to domestic schemes and instant A2A</td></tr>
+          <tr><td><span class="tag teal">CMS</span><br><b>Commercial cards &amp; B2B</b></td><td>Issuer-style deals with banks; corporates and governments are end users</td><td>As for issuers, plus programme support</td><td>Fees on commercial volume, high cross-border share</td><td>Slow conversion from bank transfers and cheques</td></tr>
+          <tr><td><span class="tag teal">CMS</span><br><b>Visa Direct clients</b></td><td>Usage-based, per-transaction pricing with volume tiers</td><td>Price tiers</td><td>Per-transaction and cross-border fees</td><td>Competing rails: A2A, stablecoins</td></tr>
+          <tr><td><span class="tag brown">VAS</span><br><b>Product buyers</b></td><td>Subscription or per-use pricing off a governed price list; often bundled into renewals</td><td>VIK can fund adoption</td><td>Product revenue independent of network fees</td><td>Low adoption after signing</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="sub">Sales coverage and organisation</h3>
+    <div class="grid g3">
+      <div class="card"><span class="tag navy">Global</span><h4>GSCO</h4><p class="muted small" style="margin:0">Global Sales &amp; Commercial Operations, under the SVP Sales Transformation, sets the operating model, scorecards, incentive design, tools and deal governance, and runs Sales 2.0.</p></div>
+      <div class="card"><span class="tag navy">Regional</span><h4>BPO / Sales Excellence</h4><p class="muted small" style="margin:0">Each region's sales ops head advises the Regional President and owns business reviews, quota setting, VIK budgets and AI strategy.</p></div>
+      <div class="card"><span class="tag navy">Product</span><h4>BU commercial ops</h4><p class="muted small" style="margin:0">VAS, CMS and Visa Direct each run their own commercial operations for specialist sales motions.</p></div>
+    </div>
+    <div class="card" style="margin-top:16px">
+      <ul class="small" style="margin:0">
+        <li><b>~4,000 sellers globally</b> (Highspot case study). ~450 VAS specialists and ~5,400 resale partners; CMS specialist sellers grew ~3x from FY21 to FY24.</li>
+        <li><b>Coverage tiers:</b> dedicated teams for Tier 1 banks, pooled coverage for Tier 2, digital and inside sales for Tier 3 and fintechs. One client team owns each bank through the full contract term.</li>
+        <li><b>Sales 2.0:</b> the programme to become "a best-in-class B2B sales organization", covering segmentation and coverage, methodology, performance management, incentives and deal economics, and tools and AI.</li>
+        <li><b>IDDEA:</b> Visa's consultative selling methodology (now IDDEA 2.0 in CEMEA), delivered through bootcamps, quarterly accreditation and AI-scored pitch practice in Highspot.</li>
+      </ul>
+    </div>
+
+    <h3 class="sub">From pipeline to commission: eight steps</h3>
+    <ol class="steps">
+      <li><h4>Pipeline</h4><p>Opportunities, account plans, monthly AANR outlook</p><div class="sys">Dynamics 365 · Eloqua · DemandBase · ZoomInfo</div></li>
+      <li><h4>Deal model</h4><p>Volume × fees − incentives → AANR, NPV, payback</p><div class="sys">iDeal · Conga CPQ</div></li>
+      <li><h4>Approval</h4><p>CPQ → deal desk → regional GIG → GPIC for the largest deals</p><div class="sys">GIG · Dealight · GARP</div></li>
+      <li><h4>Contract &amp; booking</h4><p>Under Global Deal Pricing Operating Standards; AANR booked to quota</p><div class="sys">Legal / contract management</div></li>
+      <li><h4>Set-up &amp; go-live</h4><p>Incentive terms set up; migration or integration; Signed-Not-Live tracked</p><div class="sys">Oracle ORMB</div></li>
+      <li><h4>Billing &amp; incentives</h4><p>Fees billed on actual volume; rebates on actuals; VIK drawn down</p><div class="sys">Billing &amp; settlement · ORMB · VIK Central</div></li>
+      <li><h4>Performance tracking</h4><p>Actuals vs deal model; clawbacks; scorecards</p><div class="sys">DPT · Tableau (TRUTH) · Power BI</div></li>
+      <li><h4>Commission payout</h4><p>SIP on AANR + go-live + MBOs; monthly, with quarter-end look-back</p><div class="sys">NICE · Scorecard</div></li>
+    </ol>
+
+    <h3 class="sub">Compensation and quota mechanics</h3>
+    <div class="grid g2">
+      <div class="card">
+        <span class="tag navy">What's documented</span>
+        <ul class="small" style="margin:0">
+          <li>Sellers on a <b>Sales Incentive Plan</b>: ~62/38 base to variable, accelerators above 100%, paid on AANR + go-live + MBOs</li>
+          <li><b>MIP/TIP</b> team and market overlays; VAS-aligned incentives</li>
+          <li>Ops staff on the corporate bonus (VIP, 8–25% of base) + RSUs; sales engineers on a non-quota bonus</li>
+          <li>~60% of sellers reach quota (self-reported)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="tag amber">How multi-year deals count <span class="inf">inferred</span></span>
+        <ul class="small" style="margin:0">
+          <li><b>AANR = one year of the deal model's net revenue</b>, credited once at signing (like ACV, but net of incentives and based on forecast volume)</li>
+          <li>From year 2 the deal is part of the existing base; quota comes from new products, portfolios and conversions on top</li>
+          <li>Renewals usually <i>lower</i> net revenue, so they're best measured by a retention objective</li>
+          <li>Annual quota = plan target minus revenue already contracted, split by account potential</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="sub">CEMEA context</h3>
+    <div class="grid g3">
+      <div class="card"><h4>Competing rails</h4><p class="muted small" style="margin:0">Domestic schemes (Jaywan, mada) and instant A2A payments (Aani, sarie) compete for domestic volume.</p></div>
+      <div class="card"><h4>Cross-border hub</h4><p class="muted small" style="margin:0">Tourism, expatriate spending and remittances make the GCC rich in Visa's most profitable flow.</p></div>
+      <div class="card"><h4>A region in motion</h4><p class="muted small" style="margin:0">A new UAE–Kuwait–Qatar region from January 2026; cash conversion across Africa; a live testbed for agentic payments and dirham stablecoins.</p></div>
+    </div>
+
+    <h3 class="sub">Industry trends to watch</h3>
+    <div class="grid g3">
+      <div class="card"><span class="tag teal">New rails</span><h4>Stablecoins</h4><p class="muted small" style="margin:0">~$300B+ in circulation; the US GENIUS Act is enforceable from January 2027. Visa settles in stablecoins at a ~$20B annualised run rate and is "multi-coin, multi-chain."</p></div>
+      <div class="card"><span class="tag teal">New buyers</span><h4>Agentic commerce</h4><p class="muted small" style="margin:0">AI agents paying within user-set limits, using agent tokens and "know your agent" checks. Early, with standards unsettled; B2B is likely to adopt it first.</p></div>
+      <div class="card"><span class="tag teal">New products</span><h4>Tokens, B2B, fraud</h4><p class="muted small" style="margin:0">Tokenisation and passkeys, digitising B2B payments, and AI-driven scams make value-added services the margin story.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ QUESTIONS ============ -->
+<section class="block" id="questions">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">03 · DIALOGUE</span>
+      <h2>Questions I'd like to explore</h2>
+    </div>
+    <ol class="qa">
+      <li>Which Sales 2.0 pillar is most mature in CEMEA, and which is furthest behind?</li>
+      <li>How is the mandate split between Sales Operations and Sales Excellence in CEMEA?</li>
+      <li>Is AANR credited on the full deal or only the gain over the prior contract, and does realised revenue flow back into seller pay?</li>
+      <li>How does CEMEA protect domestic share against national schemes and instant A2A payments?</li>
+      <li>How will the new UAE–Kuwait–Qatar region change the operating rhythm and reporting?</li>
+    </ol>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <h3>Sources and notes</h3>
+    <ul>
+      <li><a href="https://s1.q4cdn.com/050606653/files/doc_financials/2025/q4/Q4-2025-Earnings-Release_vF.pdf" target="_blank" rel="noopener">Visa Q4 FY2025 earnings release</a></li>
+      <li><a href="https://s1.q4cdn.com/050606653/files/doc_downloads/2025/02/20/Visa-2025-Investor-Day_Segment_1.pdf" target="_blank" rel="noopener">Visa Investor Day 2025, Segment 1</a></li>
+      <li><a href="https://s1.q4cdn.com/050606653/files/doc_downloads/2025/02/20/Visa-2025-Investor-Day_Segment_2.pdf" target="_blank" rel="noopener">Visa Investor Day 2025, Segment 2</a></li>
+      <li><a href="https://www.investing.com/news/transcripts/earnings-call-transcript-visa-tops-q3-2026-estimates-raises-outlook-93CH-4818303" target="_blank" rel="noopener">Visa Q3 FY2026 earnings call transcript</a></li>
+      <li><a href="https://jobs.smartrecruiters.com/Visa/744000068033307" target="_blank" rel="noopener">Visa Director, Global Sales &amp; Commercial Operations posting</a></li>
+      <li><a href="https://www.highspot.com/en-gb/success-stories/visa-2/" target="_blank" rel="noopener">Highspot: How Visa hones sales pitches</a></li>
+      <li><a href="https://finance.yahoo.com/markets/crypto/articles/visa-stablecoin-settlement-just-hit-094445367.html" target="_blank" rel="noopener">Visa stablecoin settlement, Sept 2026</a></li>
+      <li><a href="https://www.forrester.com/blogs/agentic-payments-in-b2c-commerce-where-we-are-now/" target="_blank" rel="noopener">Forrester: agentic payments in B2C commerce</a></li>
+    </ul>
+    <p style="margin-top:20px">Seller-pay data is self-reported (RepVue, Glassdoor, Levels.fyi). Org structure is drawn from public job postings and profiles. Acquirer terms, quota mechanics and approval tiers are industry practice, marked as inferred. This is an independent, personal perspective, not affiliated with or endorsed by Visa.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn');
+  try{var saved=localStorage.getItem('theme'); if(saved){root.setAttribute('data-theme',saved);}}catch(e){}
+  btn.addEventListener('click',function(){
+    var dark=root.getAttribute('data-theme')==='dark' || (!root.getAttribute('data-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    var next=dark?'light':'dark'; root.setAttribute('data-theme',next);
+    try{localStorage.setItem('theme',next);}catch(e){}
+  });
+  var links=[].slice.call(document.querySelectorAll('.nav-links a'));
+  if('IntersectionObserver' in window){
+    var obs=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          links.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+en.target.id);});
+        }
+      });
+    },{rootMargin:'-40% 0px -55% 0px'});
+    document.querySelectorAll('main section.block[id]').forEach(function(el){ obs.observe(el); });
+  }
+})();
+</script>
+<script>
+/* In-page editor. Open the page with ?edit at the end of the URL to use it.
+   Edits autosave in this browser only; "Download HTML" exports a clean index.html to upload to GitHub. */
+(function(){
+  if(!/[?&]edit\b/.test(location.search)) return;
+  var KEY='brief-edits-v1';
+  var body=document.body, main=document.querySelector('main'), hero=document.querySelector('header.hero .wrap'),
+      foot=document.querySelector('footer .wrap'), brand=document.querySelector('.brand'), nav=document.querySelector('.nav-links');
+  var regions=[brand,nav,hero,main,foot], editing=false, timer=null;
+
+  try{
+    var saved=JSON.parse(localStorage.getItem(KEY)||'null');
+    if(saved){ brand.innerHTML=saved.brand; nav.innerHTML=saved.nav; hero.innerHTML=saved.hero; main.innerHTML=saved.main; foot.innerHTML=saved.foot; }
+  }catch(e){}
+
+  body.classList.add('ed-active');
+  var bar=document.createElement('div');
+  bar.className='ed-ui ed-toolbar'; bar.setAttribute('role','toolbar'); bar.setAttribute('aria-label','Page editor');
+  bar.innerHTML='<span class="ed-status" aria-live="polite"></span>'+
+    '<button type="button" data-a="toggle" aria-pressed="false">Edit text</button>'+
+    '<button type="button" data-a="add">Add section</button>'+
+    '<button type="button" data-a="save">Save</button>'+
+    '<button type="button" data-a="download">Download HTML</button>'+
+    '<button type="button" data-a="reset">Reset</button>';
+  body.appendChild(bar);
+  var statusEl=bar.querySelector('.ed-status'), toggleBtn=bar.querySelector('[data-a="toggle"]');
+  function status(t){ statusEl.textContent=t; }
+  status('Editor ready: click Edit text');
+
+  function clean(el){
+    var c=el.cloneNode(true);
+    c.querySelectorAll('.ed-ui').forEach(function(x){x.remove();});
+    c.querySelectorAll('[contenteditable]').forEach(function(x){x.removeAttribute('contenteditable');});
+    c.querySelectorAll('.active').forEach(function(x){x.classList.remove('active');});
+    return c.innerHTML;
+  }
+  function save(){
+    try{
+      localStorage.setItem(KEY, JSON.stringify({brand:clean(brand),nav:clean(nav),hero:clean(hero),main:clean(main),foot:clean(foot)}));
+      status('Saved in this browser. Download HTML to publish.');
+    }catch(e){ status('Could not save in this browser; use Download HTML.'); }
+  }
+  function changed(){ status('Unsaved changes…'); clearTimeout(timer); timer=setTimeout(save,1200); }
+
+  function addBars(){
+    main.querySelectorAll('section.block').forEach(function(sec){
+      if(sec.querySelector(':scope > .ed-secbar')) return;
+      var b=document.createElement('div'); b.className='ed-ui ed-secbar'; b.contentEditable='false';
+      b.innerHTML='<button type="button" data-s="up">Move up</button><button type="button" data-s="down">Move down</button>'+
+        '<button type="button" data-s="block">Add text block</button><button type="button" data-s="del" class="danger">Delete section</button>';
+      sec.insertBefore(b, sec.firstChild);
+    });
+  }
+  function removeBars(){ document.querySelectorAll('.ed-secbar').forEach(function(x){x.remove();}); }
+
+  function syncNav(){
+    var labels={};
+    nav.querySelectorAll('a').forEach(function(a){ labels[a.getAttribute('href')]=a.textContent; });
+    nav.innerHTML='';
+    main.querySelectorAll('section.block[id]').forEach(function(s){
+      var href='#'+s.id, t=labels[href];
+      if(!t){ var h=s.querySelector('h2'); t=h?h.textContent.trim():'Section'; if(t.length>28) t=t.slice(0,26)+'…'; }
+      var a=document.createElement('a'); a.href=href; a.textContent=t; nav.appendChild(a);
+    });
+  }
+
+  function setEditing(on){
+    editing=on; body.classList.toggle('ed-on',on); toggleBtn.setAttribute('aria-pressed',String(on));
+    toggleBtn.textContent=on?'Done editing':'Edit text';
+    regions.forEach(function(r){ if(on){ r.setAttribute('contenteditable','true'); } else { r.removeAttribute('contenteditable'); } });
+    if(on){ addBars(); status('Editing: click any text to change it'); } else { removeBars(); save(); }
+  }
+
+  function addSection(){
+    var title=prompt('Section title','New section'); if(title===null) return;
+    var n=main.querySelectorAll('section.block').length+1;
+    var s=document.createElement('section'); s.className='block'; s.id='sec-'+Date.now().toString(36);
+    s.innerHTML='<div class="wrap"><div class="sec-head"><span class="sec-num"></span><h2></h2><p>Add a short introduction.</p></div>'+
+      '<div class="card"><h4>Key point</h4><p>Write your content here.</p></div></div>';
+    s.querySelector('.sec-num').textContent=(n<10?'0':'')+n+' · SECTION';
+    s.querySelector('h2').textContent=title||'New section';
+    main.appendChild(s); syncNav();
+    if(!editing) setEditing(true); else addBars();
+    s.scrollIntoView({behavior:'smooth',block:'start'}); changed();
+  }
+
+  function download(){
+    var doc=document.documentElement.cloneNode(true);
+    doc.querySelectorAll('.ed-ui').forEach(function(x){x.remove();});
+    doc.querySelectorAll('[contenteditable]').forEach(function(x){x.removeAttribute('contenteditable');});
+    doc.querySelectorAll('.active').forEach(function(x){x.classList.remove('active');});
+    var b=doc.querySelector('body'); b.classList.remove('ed-on','ed-active'); if(!b.className) b.removeAttribute('class');
+    doc.removeAttribute('data-theme');
+    var blob=new Blob(['<!doctype html>\n'+doc.outerHTML],{type:'text/html'});
+    var a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='index.html';
+    body.appendChild(a); a.click(); setTimeout(function(){URL.revokeObjectURL(a.href); a.remove();},1000);
+    status('Downloaded index.html: upload it to GitHub to publish.');
+  }
+
+  bar.addEventListener('click',function(e){
+    var btn=e.target.closest('button'); if(!btn) return;
+    var a=btn.dataset.a;
+    if(a==='toggle') setEditing(!editing);
+    if(a==='add') addSection();
+    if(a==='save') save();
+    if(a==='download'){ save(); download(); }
+    if(a==='reset' && confirm('Discard all edits saved in this browser and reload the published page?')){
+      try{localStorage.removeItem(KEY);}catch(err){} location.href=location.pathname+'?edit';
+    }
+  });
+
+  main.addEventListener('click',function(e){
+    var btn=e.target.closest('.ed-secbar button'); if(!btn) return;
+    e.preventDefault();
+    var sec=btn.closest('section.block'), a=btn.dataset.s, prev=sec.previousElementSibling, next=sec.nextElementSibling;
+    if(a==='up' && prev) sec.parentNode.insertBefore(sec,prev);
+    if(a==='down' && next) sec.parentNode.insertBefore(next,sec);
+    if(a==='block'){
+      var c=document.createElement('div'); c.className='card'; c.style.marginTop='16px';
+      c.innerHTML='<h4>New block</h4><p>Write your content here.</p>';
+      sec.querySelector('.wrap').appendChild(c);
+    }
+    if(a==='del'){ if(!confirm('Delete this section?')) return; sec.remove(); }
+    syncNav(); changed();
+  });
+
+  document.addEventListener('click',function(e){
+    if(editing && e.target.closest('[contenteditable="true"] a')) e.preventDefault();
+  },true);
+  document.addEventListener('paste',function(e){
+    if(!editing || !e.target.closest || !e.target.closest('[contenteditable="true"]')) return;
+    e.preventDefault();
+    var t=(e.clipboardData||window.clipboardData).getData('text/plain');
+    document.execCommand('insertText',false,t);
+  });
+  regions.forEach(function(r){ r.addEventListener('input',function(){ if(editing) changed(); }); });
+})();
+</script>
+</body>
+</html>
