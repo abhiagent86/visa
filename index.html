@@ -144,6 +144,36 @@ footer li{break-inside:avoid}
 .pillar:hover{border-color:var(--amber)}
 .bb{scroll-margin-top:80px}
 .bb ul{margin:0;padding-left:18px}
+/* operating framework engine */
+.engine{display:grid;grid-template-columns:minmax(0,1fr) 32px minmax(0,1fr) 32px minmax(0,1fr) 32px minmax(0,1fr);gap:12px 8px;align-items:stretch}
+.stage{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.stage h4{font-size:20px;margin:10px 0 2px}
+.stage .q{font-size:14px;color:var(--muted);margin:0 0 10px;font-style:italic}
+.stage ul{font-size:14px;padding-left:18px;margin:0 0 12px;flex:1}
+.stage li{margin-bottom:4px}
+.stage .cad{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted)}
+.stage-n{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;color:#fff;font-weight:700;font-size:15px;background:var(--navy)}
+.s1 .stage-n{background:#1E2A5E}.s2 .stage-n{background:#0B6470}.s3 .stage-n{background:#7A3F08}.s4 .stage-n{background:#5B3E96}
+.s1{border-top:4px solid #1E2A5E}.s2{border-top:4px solid #0B6470}.s3{border-top:4px solid #7A3F08}.s4{border-top:4px solid #5B3E96}
+.engine .arrow{display:flex;align-items:center;justify-content:center;color:var(--muted)}
+.engine .loop{grid-column:1/-1;display:flex;align-items:center;justify-content:center;gap:8px;border:1.5px dashed var(--amber-line);background:var(--amber-soft);color:var(--ink);border-radius:12px;padding:10px 16px;font-size:14px;font-weight:600;text-align:center}
+.engine .loop svg{color:var(--amber);flex:none}
+.foundation{grid-column:1/-1;background:var(--hero);color:#fff;border-radius:var(--radius);padding:18px 20px}
+.foundation .stage-n{background:var(--amber-strong);color:#141A33}
+.f-head{display:flex;gap:12px;align-items:center;margin-bottom:12px}
+.f-head h4{font-size:20px;margin:0}
+.f-head p{margin:2px 0 0;color:#C9CEE3;font-size:14px}
+.f-cols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.f-cols div{border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:10px 12px;font-size:13px;color:#D8DCEC;line-height:1.45}
+.f-cols b{display:block;color:var(--amber-strong);font-size:13px;margin-bottom:2px}
+.bb ol{margin:0;padding-left:20px}
+.bb .lab+p{margin-bottom:10px}
+@media(max-width:900px){
+  .engine{grid-template-columns:1fr}
+  .engine .arrow{transform:rotate(90deg);height:24px}
+  .f-cols{grid-template-columns:1fr 1fr}
+}
+@media(max-width:480px){.f-cols{grid-template-columns:1fr}}
 /* in-page editor (only active with ?edit in the URL) */
 .ed-toolbar{position:fixed;left:50%;transform:translateX(-50%);bottom:16px;z-index:50;display:flex;flex-wrap:wrap;justify-content:center;gap:6px;align-items:center;width:max-content;max-width:calc(100% - 32px);background:var(--hero);color:#fff;border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:8px;box-shadow:0 8px 30px rgba(0,0,0,.28);font-size:14px}
 .ed-toolbar button{font:inherit;font-size:13px;font-weight:600;min-height:40px;padding:6px 12px;border-radius:10px;border:1px solid rgba(255,255,255,.28);background:transparent;color:#fff;cursor:pointer}
@@ -179,6 +209,7 @@ body.ed-active{padding-bottom:96px}
   <div class="wrap">
     <a class="brand" href="#top">Visa CEMEA<span> · sales operations</span></a>
     <div class="nav-links">
+      <a href="#framework">Framework</a>
       <a href="#vision">Vision</a>
       <a href="#visa">Understanding Visa</a>
       <a href="#questions">Questions</a>
@@ -194,7 +225,7 @@ body.ed-active{padding-bottom:96px}
     <h1>Building Visa CEMEA's commercial engine</h1>
     <p class="lede">A vision for best-in-class sales operations, and an outside-in view of how Visa sells. The next phase moves <b>from network deals to solution selling, with AI built into how sellers work</b>.</p>
     <div class="cta">
-      <a class="btn btn-primary" href="#vision">Read the vision</a>
+      <a class="btn btn-primary" href="#framework">See the framework</a>
       <a class="btn btn-ghost" href="#visa">How Visa sells</a>
     </div>
     <div class="stats">
@@ -209,11 +240,139 @@ body.ed-active{padding-bottom:96px}
 
 <main>
 
-<!-- ============ 1. VISION ============ -->
+<!-- ============ 1. OPERATING FRAMEWORK ============ -->
+<section class="block" id="framework">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">01 · OPERATING FRAMEWORK</span>
+      <h2>The sales operations engine</h2>
+      <p>Four stages run as a yearly loop: <b>Design</b> where and how we sell, <b>Plan</b> how much and by whom, <b>Govern</b> whether we're on track and making good deals, and <b>Improve</b> so every cycle runs better than the last. <b>Automate</b> runs underneath all four: each step is redesigned around data, tools and AI.</p>
+    </div>
+
+    <div class="engine" role="img" aria-label="Framework: Design, Plan, Govern and Improve in a loop, with Automate as the foundation underneath all four">
+      <div class="stage s1"><span class="stage-n">1</span><h4>Design</h4><p class="q">Where and how do we sell?</p><ul><li>Go-to-market model &amp; segmentation</li><li>Roles, coverage &amp; account density</li><li>Crediting rules &amp; comp plans</li><li>Deal policy &amp; approval tiers</li></ul><span class="cad">Annual</span></div>
+      <div class="arrow" aria-hidden="true"><svg viewBox="0 0 32 16" width="32" height="16"><path d="M0 8h26M20 2l7 6-7 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="stage s2"><span class="stage-n">2</span><h4>Plan</h4><p class="q">How much, by whom, with what?</p><ul><li>Multi-year &amp; annual plan, budget split</li><li>Capacity, territories &amp; quotas (+ buffers)</li><li>Account plans &amp; demand plans</li><li>Sales plays &amp; campaigns</li></ul><span class="cad">Annual + quarterly refresh</span></div>
+      <div class="arrow" aria-hidden="true"><svg viewBox="0 0 32 16" width="32" height="16"><path d="M0 8h26M20 2l7 6-7 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="stage s3"><span class="stage-n">3</span><h4>Govern</h4><p class="q">Are we on track and making good deals?</p><ul><li>Forecast calls, MBRs &amp; QBRs</li><li>Performance management</li><li>Deal desk, contracting &amp; VIK</li><li>Comp administration &amp; disputes</li></ul><span class="cad">Weekly · monthly · quarterly</span></div>
+      <div class="arrow" aria-hidden="true"><svg viewBox="0 0 32 16" width="32" height="16"><path d="M0 8h26M20 2l7 6-7 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="stage s4"><span class="stage-n">4</span><h4>Improve</h4><p class="q">How do we get better every cycle?</p><ul><li>Process design &amp; rollout</li><li>Enablement &amp; training</li><li>Adoption &amp; change management</li><li>Continuous improvement &amp; benchmarks</li></ul><span class="cad">Continuous</span></div>
+      <div class="loop"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7M3 4v5h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Results and lessons from Improve feed the next Design and Plan cycle</div>
+      <div class="foundation">
+        <div class="f-head"><span class="stage-n">A</span><div><h4>Automate: data, tools &amp; AI</h4><p>For every step: eliminate it, automate it, augment it with AI, or keep it human.</p></div></div>
+        <div class="f-cols">
+          <div><b>Design</b>Propensity models · coverage and comp simulations</div>
+          <div><b>Plan</b>Scenario planning · AI-drafted account plans · quota fairness checks</div>
+          <div><b>Govern</b>AI forecasting · auto-built review packs · deal-desk copilot · crediting agents</div>
+          <div><b>Improve</b>AI pitch coaching · knowledge assistant · process mining</div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="sub">Key steps by stage</h3>
+    <div class="blocks">
+      <div class="bb">
+        <div class="k"><small>01</small>Design<span class="muted small" style="display:block;font-weight:400;margin-top:4px">Where and how do we sell?</span></div>
+        <div><div class="lab">Key steps</div><ol class="small">
+          <li>Go-to-market model and sales motions: direct, specialist overlay, partner, digital</li>
+          <li>Segmentation logic: client value × potential × needs</li>
+          <li>Roles and role charters: client directors, specialists, engineers, digital, partners</li>
+          <li>Coverage model and account density per tier</li>
+          <li>Rules of engagement: who sells what to whom; crediting and split rules</li>
+          <li>Comp plan design: measures, pay mix, accelerators, quota policy</li>
+          <li>Deal policy: pricing guardrails, incentive and VIK benchmarks, approval tiers</li>
+        </ol></div>
+        <div><div class="lab">Outputs</div><p class="small">Go-to-market blueprint · segment and coverage map · role charters · crediting rules · comp plans · approval matrix</p>
+          <div class="lab">KPIs</div><p class="small">Coverage cost as % of revenue · accounts per seller · share of whitespace covered</p></div>
+      </div>
+      <div class="bb">
+        <div class="k"><small>02</small>Plan<span class="muted small" style="display:block;font-weight:400;margin-top:4px">How much, by whom, with what?</span></div>
+        <div><div class="lab">Key steps</div><ol class="small">
+          <li>Multi-year plan and annual operating plan</li>
+          <li>Budget split by cluster, market, segment and product</li>
+          <li>Capacity planning: productivity per role, ramp, attrition, hiring plan</li>
+          <li>Territory and account assignment</li>
+          <li>Quota setting and allocation, with buffers (over-assignment, holdbacks)</li>
+          <li>Account planning: whitespace, relationship map, renewal calendar</li>
+          <li>Demand planning: pipeline targets by source, sales plays, marketing campaigns</li>
+        </ol></div>
+        <div><div class="lab">Outputs</div><p class="small">Annual plan · quota letters · territory files · capacity and hiring plan · account plans · play and campaign calendar</p>
+          <div class="lab">KPIs</div><p class="small">Quotas issued within 45 days · pipeline coverage · territory balance · plan accuracy</p></div>
+      </div>
+      <div class="bb">
+        <div class="k"><small>03</small>Govern<span class="muted small" style="display:block;font-weight:400;margin-top:4px">Are we on track and making good deals?</span></div>
+        <div><div class="lab">Key steps</div><ol class="small">
+          <li>Operating rhythm: weekly forecast and pipeline calls, MBRs, QBRs, annual review</li>
+          <li>Forecasting and pipeline governance: categories, hygiene, accuracy</li>
+          <li>Deal governance: deal desk, approvals, contracting</li>
+          <li>VIK management: budgets, drawdown, utilisation</li>
+          <li>Performance management: scorecards, early warnings, interventions</li>
+          <li>Comp administration: crediting, commission runs, disputes, exceptions</li>
+          <li>Post-deal tracking: realisation vs deal model, Signed-Not-Live</li>
+        </ol></div>
+        <div><div class="lab">Outputs</div><p class="small">Forecast · scorecards · review packs · approved deals · commission statements</p>
+          <div class="lab">KPIs</div><p class="small">Forecast accuracy · approval turnaround · VIK utilisation · disputes · realisation · Signed-Not-Live ageing</p></div>
+      </div>
+      <div class="bb">
+        <div class="k"><small>04</small>Improve<span class="muted small" style="display:block;font-weight:400;margin-top:4px">How do we get better every cycle?</span></div>
+        <div><div class="lab">Key steps</div><ol class="small">
+          <li>Process design and documentation: lead-to-cash standards, playbooks</li>
+          <li>Enablement: onboarding, methodology, accreditation, sales-play training</li>
+          <li>Rollout and adoption: change plans, champions, training waves</li>
+          <li>Continuous improvement: win/loss and deal post-mortems, removing admin</li>
+          <li>Plan-effectiveness reviews and external benchmarks (comp, coverage, process)</li>
+          <li>Feed lessons into the next Design and Plan cycle</li>
+        </ol></div>
+        <div><div class="lab">Outputs</div><p class="small">Process library · playbooks · training curricula · improvement backlog</p>
+          <div class="lab">KPIs</div><p class="small">Time to productivity · adoption · selling-time share · cycle time</p></div>
+      </div>
+      <div class="bb">
+        <div class="k"><small>FOUNDATION</small>Automate<span class="muted small" style="display:block;font-weight:400;margin-top:4px">Underneath all four stages</span></div>
+        <div><div class="lab">Key steps</div><ol class="small">
+          <li>Data: one source of truth joining CRM, deal and transaction data; named data owners</li>
+          <li>Platforms: CRM, CPQ, planning, comp administration, enablement, BI, connected end to end</li>
+          <li>AI and agents: copilots for the field, agents for routine ops work, predictive models for decisions</li>
+          <li>Redesign each step: eliminate, automate, augment or keep human</li>
+          <li>Guardrails: people approve commercial decisions; audit trails; client data kept in-house</li>
+          <li>Value ledger: baseline, control groups, hours freed returned to the capacity model</li>
+        </ol></div>
+        <div><div class="lab">Outputs</div><p class="small">Data model · tools roadmap · AI use-case portfolio · value ledger</p>
+          <div class="lab">KPIs</div><p class="small">Adoption · hours freed per role · data completeness · outcome lift vs control</p></div>
+      </div>
+    </div>
+
+    <h3 class="sub">Dashboards that run the engine</h3>
+    <div class="grid g3">
+      <div class="card"><span class="tag navy">Leadership</span><h4>Executive cockpit</h4><p class="muted small" style="margin:0">Plan vs actual, forecast, pipeline coverage, realisation and risks by cluster and market.</p></div>
+      <div class="card"><span class="tag navy">Sellers</span><h4>Seller cockpit</h4><p class="muted small" style="margin:0">Quota attainment, pipeline, next-best actions, renewal alerts and a commission estimator.</p></div>
+      <div class="card"><span class="tag navy">Deal desk</span><h4>Deal economics cockpit</h4><p class="muted small" style="margin:0">Approvals in flight, turnaround, incentive-to-gross vs benchmark, VIK use and realisation.</p></div>
+      <div class="card"><span class="tag navy">Planning</span><h4>Capacity &amp; coverage view</h4><p class="muted small" style="margin:0">Seller capacity, ramp and vacancies against segment demand and account density.</p></div>
+      <div class="card"><span class="tag navy">Improvement</span><h4>Adoption &amp; productivity view</h4><p class="muted small" style="margin:0">Tool and AI adoption, hours freed, enablement completion and selling-time share.</p></div>
+      <div class="card"><span class="tag navy">Comp</span><h4>Compensation statement portal</h4><p class="muted small" style="margin:0">Credits, payouts, dispute status and plan rules, visible to every seller.</p></div>
+    </div>
+
+    <h3 class="sub">How the engine connects to the six pillars</h3>
+    <div class="table-box">
+      <table>
+        <thead><tr><th>Stage</th><th>Pillars it delivers</th></tr></thead>
+        <tbody>
+          <tr><td><b>Design</b></td><td>01 Commercial strategy &amp; planning · 02 Incentive design · 03 Deal policy</td></tr>
+          <tr><td><b>Plan</b></td><td>01 Planning &amp; capacity · 02 Quota setting</td></tr>
+          <tr><td><b>Govern</b></td><td>02 Performance management · 03 Deal governance, contracting &amp; VIK</td></tr>
+          <tr><td><b>Improve</b></td><td>04 Enablement &amp; capability · 03 Process excellence</td></tr>
+          <tr><td><b>Automate</b></td><td>05 Technology, data &amp; AI</td></tr>
+          <tr><td><b>Across all stages</b></td><td>06 Leadership &amp; stakeholder management</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. VISION ============ -->
 <section class="block" id="vision">
   <div class="wrap">
     <div class="sec-head">
-      <span class="sec-num">01 · VISION</span>
+      <span class="sec-num">02 · VISION</span>
       <h2>Best-in-class sales operations for Visa CEMEA</h2>
       <p>Visa's scarce resource isn't only seller time. It's the incentive budget: $15.8B a year paid back to clients. Sales ops exists to put each of those dollars where it buys the most durable volume.</p>
     </div>
@@ -362,11 +521,11 @@ body.ed-active{padding-bottom:96px}
   </div>
 </section>
 
-<!-- ============ 2. UNDERSTANDING VISA ============ -->
+<!-- ============ 3. UNDERSTANDING VISA ============ -->
 <section class="block" id="visa">
   <div class="wrap">
     <div class="sec-head">
-      <span class="sec-num">02 · OUTSIDE-IN VIEW</span>
+      <span class="sec-num">03 · OUTSIDE-IN VIEW</span>
       <h2>My understanding of Visa's commercial engine</h2>
       <p>Built from public filings, Investor Day 2025, earnings calls and job postings. Items marked <span class="inf">inferred</span> are industry practice or my reading, not published by Visa.</p>
     </div>
@@ -502,7 +661,7 @@ body.ed-active{padding-bottom:96px}
 <section class="block" id="questions">
   <div class="wrap">
     <div class="sec-head">
-      <span class="sec-num">03 · DIALOGUE</span>
+      <span class="sec-num">04 · DIALOGUE</span>
       <h2>Questions I'd like to explore</h2>
     </div>
     <ol class="qa">
