@@ -193,6 +193,29 @@ footer li{break-inside:avoid}
   .f-cols.f6{grid-template-columns:1fr 1fr}
 }
 @media(max-width:480px){.f-cols.f6{grid-template-columns:1fr}}
+/* customer value journey */
+.vj{display:grid;gap:12px}
+.vj-label{font-size:12px;letter-spacing:.1em;font-weight:700;padding:2px 0}
+.vj-label.win{color:var(--navy-ink)}
+.vj-label.grow{color:var(--teal)}
+.vj-row{display:grid;gap:12px 4px;align-items:stretch}
+.vj-row.r4{grid-template-columns:minmax(0,1fr) 24px minmax(0,1fr) 24px minmax(0,1fr) 24px minmax(0,1fr)}
+.vj-row.r5{grid-template-columns:minmax(0,1fr) 24px minmax(0,1fr) 24px minmax(0,1fr) 24px minmax(0,1fr) 24px minmax(0,1fr)}
+.vj .arrow{display:flex;align-items:center;justify-content:center;color:var(--muted)}
+.lstage.g{border-top-color:#0B6470}
+.lstage.g .stage-n{background:#0B6470}
+.vj-turn{display:flex;align-items:center;justify-content:center;gap:8px;color:var(--muted);font-family:'IBM Plex Mono',monospace;font-size:12px}
+.vj .loop{display:flex;align-items:center;justify-content:center;gap:8px;border:1.5px dashed var(--amber-line);background:var(--amber-soft);color:var(--ink);border-radius:12px;padding:10px 16px;font-size:14px;font-weight:600;text-align:center}
+.vj .loop svg{color:var(--amber);flex:none}
+.vj .control{background:var(--teal-soft);border:1px solid var(--teal);color:var(--ink);border-radius:12px;padding:10px 16px;font-size:14px;text-align:center}
+.vj .control b{color:var(--teal)}
+.vj .finance{background:var(--surface-2);border:1px solid var(--line);color:var(--ink);border-radius:12px;padding:10px 16px;font-size:14px;text-align:center}
+.f-cols.f2{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:1000px){
+  .vj-row.r4,.vj-row.r5{grid-template-columns:1fr}
+  .vj .arrow{transform:rotate(90deg);height:20px}
+  .f-cols.f2{grid-template-columns:1fr}
+}
 /* in-page editor (only active with ?edit in the URL) */
 .ed-toolbar{position:fixed;left:50%;transform:translateX(-50%);bottom:16px;z-index:50;display:flex;flex-wrap:wrap;justify-content:center;gap:6px;align-items:center;width:max-content;max-width:calc(100% - 32px);background:var(--hero);color:#fff;border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:8px;box-shadow:0 8px 30px rgba(0,0,0,.28);font-size:14px}
 .ed-toolbar button{font:inherit;font-size:13px;font-weight:600;min-height:40px;padding:6px 12px;border-radius:10px;border:1px solid rgba(255,255,255,.28);background:transparent;color:#fff;cursor:pointer}
@@ -229,7 +252,7 @@ body.ed-active{padding-bottom:96px}
     <a class="brand" href="#top">Visa CEMEA<span> · sales operations</span></a>
     <div class="nav-links">
       <a href="#framework">Framework</a>
-      <a href="#lead-to-cash">Lead to cash</a>
+      <a href="#journey">Value journey</a>
       <a href="#ai">AI</a>
       <a href="#vision">Vision</a>
       <a href="#visa">Understanding Visa</a>
@@ -389,38 +412,47 @@ body.ed-active{padding-bottom:96px}
   </div>
 </section>
 
-<!-- ============ 2. LEAD-TO-CASH ============ -->
-<section class="block" id="lead-to-cash">
+<!-- ============ 2. CUSTOMER VALUE JOURNEY ============ -->
+<section class="block" id="journey">
   <div class="wrap">
     <div class="sec-head">
       <span class="sec-num">02 · ENGAGEMENT FRAMEWORK</span>
-      <h2>Lead to cash: the sales engagement flow</h2>
-      <p>The operating framework runs the sales <i>machine</i>. The engagement flow is what happens to every <i>deal</i>: six stages from first signal to cash and realised value. <b>Pipeline governance and forecasting</b> run across all of them as a control layer, and realisation and expansion signals feed the next round of leads.</p>
+      <h2>The customer value journey: from first deal to expansion</h2>
+      <p>Lead to cash stops at the first sale, but most of Visa's value comes after it. Cards have to go live and be used; value-added services have to be adopted and consumed before they earn, renew and expand. The journey has two arcs: <b>Win</b> lands the client, <b>Grow</b> turns the contract into usage, proven value, expansion and renewal. Billing and cash run continuously from go-live.</p>
     </div>
 
-    <div class="l2c" role="img" aria-label="Lead-to-cash flow: lead generation, opportunity management, deal management, contracting, implement and activate, invoicing and cash, with pipeline governance and forecasting as a control layer and AI for the field underneath">
-      <div class="lstage"><span class="stage-n">1</span><h4>Lead generation</h4><p>Targeting, campaigns, partner referrals, renewal calendar</p></div>
-      <div class="arrow" aria-hidden="true"><svg viewBox="0 0 24 16" width="24" height="16"><path d="M0 8h18M13 3l6 5-6 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      <div class="lstage"><span class="stage-n">2</span><h4>Opportunity management</h4><p>Qualify, map stakeholders, design the solution and value case</p></div>
-      <div class="arrow" aria-hidden="true"><svg viewBox="0 0 24 16" width="24" height="16"><path d="M0 8h18M13 3l6 5-6 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      <div class="lstage"><span class="stage-n">3</span><h4>Deal management</h4><p>Quote, deal model, incentives and VIK, approvals</p></div>
-      <div class="arrow" aria-hidden="true"><svg viewBox="0 0 24 16" width="24" height="16"><path d="M0 8h18M13 3l6 5-6 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      <div class="lstage"><span class="stage-n">4</span><h4>Contracting</h4><p>Templates, redlines, legal sign-off, signature, booking</p></div>
-      <div class="arrow" aria-hidden="true"><svg viewBox="0 0 24 16" width="24" height="16"><path d="M0 8h18M13 3l6 5-6 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      <div class="lstage"><span class="stage-n">5</span><h4>Implement &amp; activate</h4><p>Incentive set-up, migration or integration, go-live, activation</p></div>
-      <div class="arrow" aria-hidden="true"><svg viewBox="0 0 24 16" width="24" height="16"><path d="M0 8h18M13 3l6 5-6 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      <div class="lstage"><span class="stage-n">6</span><h4>Invoicing &amp; cash</h4><p>Billing on actuals, incentive payments, VIK drawdown, collections</p></div>
-      <div class="control"><b>Control layer:</b> pipeline governance (hygiene, coverage, ageing, inspection) · forecasting (categories, accuracy, AANR outlook)</div>
-      <div class="loop"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7M3 4v5h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Realisation and expansion signals from live clients feed the next leads</div>
+    <div class="vj" role="img" aria-label="Customer value journey. Win: generate demand, qualify and shape, deal and price, contract. Grow: activate, adopt and consume, realise value, expand, renew. Renewal and expansion loop back. Control, finance and AI layers run underneath.">
+      <div class="vj-label win">WIN · land the client</div>
+      <div class="vj-row r4">
+        <div class="lstage"><span class="stage-n">1</span><h4>Generate demand</h4><p>Targeting, campaigns, partner referrals, propensity from transaction data</p></div>
+        <div class="arrow" aria-hidden="true"><svg viewBox="0 0 24 16" width="24" height="16"><path d="M0 8h18M13 3l6 5-6 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="lstage"><span class="stage-n">2</span><h4>Qualify &amp; shape</h4><p>Qualification, stakeholder map, IDDEA value case, solution design</p></div>
+        <div class="arrow" aria-hidden="true"><svg viewBox="0 0 24 16" width="24" height="16"><path d="M0 8h18M13 3l6 5-6 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="lstage"><span class="stage-n">3</span><h4>Deal &amp; price</h4><p>Quote or deal model, incentives and VIK, approvals</p></div>
+        <div class="arrow" aria-hidden="true"><svg viewBox="0 0 24 16" width="24" height="16"><path d="M0 8h18M13 3l6 5-6 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="lstage"><span class="stage-n">4</span><h4>Contract</h4><p>Templates, redlines, signature, AANR booked</p></div>
+      </div>
+      <div class="vj-turn" aria-hidden="true"><svg viewBox="0 0 16 24" width="16" height="24"><path d="M8 0v18M3 13l5 6 5-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Signed → live</span></div>
+      <div class="vj-label grow">GROW · drive adoption, value and expansion</div>
+      <div class="vj-row r5">
+        <div class="lstage g"><span class="stage-n">5</span><h4>Activate</h4><p>Incentive set-up, card migration or integration, go-live</p></div>
+        <div class="arrow" aria-hidden="true"><svg viewBox="0 0 24 16" width="24" height="16"><path d="M0 8h18M13 3l6 5-6 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="lstage g"><span class="stage-n">6</span><h4>Adopt &amp; consume</h4><p>Active cards, spend per card, tokens; VAS features switched on and used</p></div>
+        <div class="arrow" aria-hidden="true"><svg viewBox="0 0 24 16" width="24" height="16"><path d="M0 8h18M13 3l6 5-6 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="lstage g"><span class="stage-n">7</span><h4>Realise value</h4><p>Actuals vs deal model; client outcomes proven in value reviews</p></div>
+        <div class="arrow" aria-hidden="true"><svg viewBox="0 0 24 16" width="24" height="16"><path d="M0 8h18M13 3l6 5-6 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="lstage g"><span class="stage-n">8</span><h4>Expand</h4><p>Cross-sell VAS, CMS and Visa Direct; upsell tiers and portfolios</p></div>
+        <div class="arrow" aria-hidden="true"><svg viewBox="0 0 24 16" width="24" height="16"><path d="M0 8h18M13 3l6 5-6 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="lstage g"><span class="stage-n">9</span><h4>Renew</h4><p>Health score and renewal plan 18–24 months out; terms within guardrails</p></div>
+      </div>
+      <div class="loop"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7M3 4v5h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Expansion and renewal open the next deals; usage and value data sharpen targeting</div>
+      <div class="control"><b>Control layer:</b> pipeline governance and forecasting (Win) · client health scores and consumption forecasting (Grow)</div>
+      <div class="finance"><b>Invoicing &amp; cash, from go-live onward:</b> billing on actual volume and services · incentive payments · VIK drawdown · collections and disputes</div>
       <div class="foundation">
-        <div class="f-head"><span class="stage-n">AI</span><div><h4>AI for the field: free up selling time</h4><p>Take over the admin around each stage so sellers spend more time with clients.</p></div></div>
-        <div class="f-cols f6">
-          <div><b>1</b>Propensity and whitespace · account briefs · outreach drafts</div>
-          <div><b>2</b>Meeting prep · call notes into CRM · qualification gaps</div>
-          <div><b>3</b>Proposal drafts · deal-model prefill · approval guidance</div>
-          <div><b>4</b>Clause drafting · redline comparison · status tracking</div>
-          <div><b>5</b>Go-live tracking agent · integration Q&amp;A · activation ideas</div>
-          <div><b>6</b>Billing and incentive query assistant · payment explanations</div>
+        <div class="f-head"><span class="stage-n">AI</span><div><h4>AI for the field and client teams</h4><p>Free up selling time in Win; spot and act on usage signals in Grow.</p></div></div>
+        <div class="f-cols f2">
+          <div><b>Win</b>Propensity and account briefs · call notes into CRM · qualification gaps · proposal and deal-model drafts · contract redline checks</div>
+          <div><b>Grow</b>Go-live tracking agent · usage-drop alerts with likely cause · auto-generated client value reports · next-best product · renewal-risk briefs</div>
         </div>
       </div>
     </div>
@@ -428,17 +460,28 @@ body.ed-active{padding-bottom:96px}
     <h3 class="sub">Stage by stage</h3>
     <div class="table-box">
       <table>
-        <thead><tr><th>Stage</th><th>Key steps</th><th>Owner</th><th>Systems</th><th>KPIs</th></tr></thead>
+        <thead><tr><th>Stage</th><th>Key steps</th><th>Owner</th><th>KPIs</th></tr></thead>
         <tbody>
-          <tr><td><b>1. Lead generation</b></td><td>Account-based targeting; campaigns; partner and fintech referrals; VCA diagnostics; renewal calendar 18–24 months out</td><td>Marketing, digital sales, client directors</td><td>Eloqua, DemandBase, ZoomInfo, Dynamics</td><td>Pipeline generated by source; lead-to-qualified conversion; response time</td></tr>
-          <tr><td><b>2. Opportunity management</b></td><td>Qualification (MEDDPICC-style); stakeholder map; IDDEA value case; stage exit criteria</td><td>Client directors, specialists, sales engineers</td><td>Dynamics, Highspot</td><td>Stage conversion; win rate; cycle time</td></tr>
-          <tr><td><b>3. Deal management</b></td><td>Quote or deal model; incentive and VIK structuring; tiered approvals (deal desk, GIG, GPIC)</td><td>Deal desk, finance partner</td><td>Conga CPQ, iDeal, GIG</td><td>Approval turnaround; incentive-to-gross; discount leakage</td></tr>
-          <tr><td><b>4. Contracting</b></td><td>Standard templates; redlines; legal sign-off; signature; AANR booked</td><td>Legal, sales</td><td>Contract management, Dynamics</td><td>Contract cycle time; share of non-standard clauses</td></tr>
-          <tr><td><b>5. Implement &amp; activate</b></td><td>Incentive terms set up; card migration or technical integration; certification; go-live; activation campaigns</td><td>Implementation, client incentive ops, client team</td><td>ORMB, implementation trackers</td><td>Signed-Not-Live ageing; days to go-live</td></tr>
-          <tr><td><b>6. Invoicing &amp; cash</b></td><td>Billing on actual volume and services; rebates and incentive payments; VIK drawdown; collections and disputes</td><td>Finance, client incentive ops</td><td>Billing and settlement, ORMB, VIK Central</td><td>Billing accuracy; payment accuracy; collections; realisation vs deal model</td></tr>
-          <tr><td><b>Control layer</b></td><td>Pipeline hygiene and coverage; ageing rules; deal inspection; forecast categories and accuracy</td><td>Sales leaders, sales ops</td><td>Dynamics, Tableau (TRUTH)</td><td>Pipeline coverage; forecast accuracy</td></tr>
+          <tr><td colspan="4" style="background:var(--navy-soft);font-weight:700;color:var(--navy-ink)">WIN</td></tr>
+          <tr><td><b>1. Generate demand</b></td><td>Account-based targeting; campaigns; partner and fintech referrals; VCA diagnostics; propensity from transaction data</td><td>Marketing, digital sales, client directors</td><td>Pipeline generated by source; lead-to-qualified conversion</td></tr>
+          <tr><td><b>2. Qualify &amp; shape</b></td><td>Qualification check; stakeholder map; IDDEA value case; solution design with specialists and engineers</td><td>Client directors, specialists</td><td>Stage conversion; win rate</td></tr>
+          <tr><td><b>3. Deal &amp; price</b></td><td>Quote (Conga CPQ) or deal model (iDeal); incentive and VIK structuring; approvals through deal desk, GIG, GPIC</td><td>Deal desk, finance partner</td><td>Approval turnaround; incentive-to-gross</td></tr>
+          <tr><td><b>4. Contract</b></td><td>Standard templates; redlines; legal sign-off; signature; AANR booked</td><td>Legal, sales</td><td>Contract cycle time; non-standard clauses</td></tr>
+          <tr><td colspan="4" style="background:var(--teal-soft);font-weight:700;color:var(--teal)">GROW</td></tr>
+          <tr><td><b>5. Activate</b></td><td>Incentive terms in ORMB; card migration or technical integration; certification; go-live</td><td>Implementation, client incentive ops</td><td>Signed-Not-Live ageing; days to go-live</td></tr>
+          <tr><td><b>6. Adopt &amp; consume</b></td><td>Network: card activation, spend per card, tokenisation, cross-border. VAS: features switched on, usage vs contract. VIK-funded adoption campaigns</td><td>Client team, client services, VCA</td><td>Active-card rate; VAS usage vs contracted; time to first value</td></tr>
+          <tr><td><b>7. Realise value</b></td><td>Actuals vs deal model (DPT); client outcomes such as fraud losses down or approvals up; client value reviews</td><td>Client director, deal desk, VCA</td><td>Realisation rate; documented client outcomes</td></tr>
+          <tr><td><b>8. Expand</b></td><td>Whitespace by client; cross-sell VAS, commercial cards and Visa Direct; upsell tiers; new portfolios</td><td>Client director + specialists</td><td>Products per client; expansion AANR; net revenue retention</td></tr>
+          <tr><td><b>9. Renew</b></td><td>Health score; renewal plan 18–24 months out; competitor watch; renewal deal within incentive guardrails</td><td>Client director, deal desk</td><td>Renewals retained on time; renewal economics vs prior contract</td></tr>
         </tbody>
       </table>
+    </div>
+
+    <h3 class="sub">What changes when the journey runs past the first sale</h3>
+    <div class="grid g3">
+      <div class="card"><span class="tag teal">New north-star metric</span><h4>Net revenue retention</h4><p class="muted small" style="margin:0">This year's net revenue from last year's clients, divided by last year's. It captures adoption, expansion and renewal in one number, the way software companies track their installed base.</p></div>
+      <div class="card"><span class="tag teal">New motion</span><h4>Client success for VAS</h4><p class="muted small" style="margin:0">A light client-success role, or pod, that owns adoption and time to first value for value-added services, working with client services and VCA.</p></div>
+      <div class="card"><span class="tag teal">Pay and credit</span><h4>Reward consumption and expansion</h4><p class="muted small" style="margin:0">Credit expansion AANR and realised usage, not only first bookings, so client teams stay invested after the signature.</p></div>
     </div>
   </div>
 </section>
@@ -449,27 +492,28 @@ body.ed-active{padding-bottom:96px}
     <div class="sec-head">
       <span class="sec-num">03 · AI USE CASES</span>
       <h2>Where AI adds value: two lenses</h2>
-      <p><b>Lens 1, the field:</b> walk the lead-to-cash flow and take admin off sellers so they spend more time with clients. <b>Lens 2, sales operations:</b> walk Design, Plan, Govern and Improve and automate the routine work so the team moves from producing reports to advising the business. Hours freed in both lenses go back into the capacity model.</p>
+      <p><b>Lens 1, the field:</b> walk the customer value journey: take admin off sellers in Win, and spot and act on usage signals in Grow. <b>Lens 2, sales operations:</b> walk Design, Plan, Govern and Improve and automate the routine work so the team moves from producing reports to advising the business. Hours freed in both lenses go back into the capacity model.</p>
     </div>
 
     <div class="grid g2">
       <div>
-        <h3 class="sub" style="margin-top:0">Lens 1: the field (lead to cash)</h3>
+        <h3 class="sub" style="margin-top:0">Lens 1: the field (customer value journey)</h3>
         <div class="table-box">
           <table style="min-width:0">
             <thead><tr><th>Stage</th><th>AI use case</th><th>Type</th></tr></thead>
             <tbody>
-              <tr><td><b>Lead generation</b></td><td>Next-product propensity from transaction data; AI account briefs; personalised outreach drafts</td><td>Predictive + copilot</td></tr>
-              <tr><td><b>Opportunity</b></td><td>Meeting prep; call notes turned into CRM updates; qualification gaps flagged; value-case drafts</td><td>Copilot → agent</td></tr>
-              <tr><td><b>Deal</b></td><td>Proposal drafts; deal-model prefill; "what will get approved" guidance</td><td>Copilot</td></tr>
-              <tr><td><b>Contracting</b></td><td>Clause drafting from templates; redline comparison; status chasing</td><td>Agent</td></tr>
-              <tr><td><b>Implement &amp; activate</b></td><td>Go-live tracking agent; integration Q&amp;A for clients; activation campaign ideas</td><td>Agent</td></tr>
-              <tr><td><b>Invoicing &amp; cash</b></td><td>Assistant that answers client billing and incentive questions</td><td>Agent</td></tr>
-              <tr><td><b>Control layer</b></td><td>Deal risk scores; forecast suggestions; pipeline-hygiene nudges</td><td>Predictive</td></tr>
+              <tr><td><b>Generate demand</b></td><td>Next-product propensity from transaction data; AI account briefs; outreach drafts</td><td>Predictive + copilot</td></tr>
+              <tr><td><b>Qualify &amp; shape</b></td><td>Meeting prep; call notes turned into CRM updates; qualification gaps flagged; value-case drafts</td><td>Copilot → agent</td></tr>
+              <tr><td><b>Deal &amp; contract</b></td><td>Proposal and deal-model drafts; approval guidance; clause drafting and redline checks</td><td>Copilot + agent</td></tr>
+              <tr><td><b>Activate</b></td><td>Go-live tracking agent chasing blockers; integration Q&amp;A for clients</td><td>Agent</td></tr>
+              <tr><td><b>Adopt &amp; consume</b></td><td>Usage-drop alerts with the likely cause and a suggested fix; adoption nudges and VIK-funded campaign ideas</td><td>Predictive + agent</td></tr>
+              <tr><td><b>Realise value</b></td><td>Client value reports generated automatically for QBRs: outcomes vs the business case</td><td>Agent</td></tr>
+              <tr><td><b>Expand &amp; renew</b></td><td>Next-best product per client; renewal-risk briefs 18–24 months out; renewal deal benchmarks</td><td>Predictive + copilot</td></tr>
+              <tr><td><b>Control layer</b></td><td>Deal risk scores; client health scores; forecast suggestions; pipeline-hygiene nudges</td><td>Predictive</td></tr>
             </tbody>
           </table>
         </div>
-        <p class="small muted" style="margin-top:10px"><b>Measure:</b> selling-time share (industry ~28% in 2022) · CRM completeness · win rate · cycle time</p>
+        <p class="small muted" style="margin-top:10px"><b>Measure:</b> selling-time share (industry ~28% in 2022) · win rate · time to first value · net revenue retention</p>
       </div>
       <div>
         <h3 class="sub" style="margin-top:0">Lens 2: sales operations</h3>
@@ -495,7 +539,7 @@ body.ed-active{padding-bottom:96px}
     <div class="grid g3">
       <div class="card"><span class="tag teal">Quick win · both lenses</span><h4>Admin off everyone's plate</h4><p class="muted small" style="margin:0">CRM updates from calls for sellers, automatic review packs for ops. Fast, visible, and it builds trust in AI.</p></div>
       <div class="card"><span class="tag teal">Biggest value · both lenses</span><h4>Deal-desk copilot</h4><p class="muted small" style="margin:0">Serves sellers (faster, cleaner deals) and ops (better incentive decisions). Touches the $15.8B incentive budget.</p></div>
-      <div class="card"><span class="tag teal">Visa's edge · field</span><h4>Transaction-data signals</h4><p class="muted small" style="margin:0">Propensity for value-added services and renewal-risk alerts from data no software company has.</p></div>
+      <div class="card"><span class="tag teal">Visa's edge · Grow</span><h4>Usage and health signals</h4><p class="muted small" style="margin:0">Adoption alerts, next-best product and renewal risk built on transaction data no software company has.</p></div>
     </div>
   </div>
 </section>
