@@ -140,6 +140,10 @@ footer ul{columns:1;padding-left:18px}
 @media(min-width:860px){footer ul{columns:2;column-gap:40px}}
 footer li{break-inside:avoid}
 
+.pillar{text-decoration:none;color:inherit;display:block}
+.pillar:hover{border-color:var(--amber)}
+.bb{scroll-margin-top:80px}
+.bb ul{margin:0;padding-left:18px}
 /* in-page editor (only active with ?edit in the URL) */
 .ed-toolbar{position:fixed;left:50%;transform:translateX(-50%);bottom:16px;z-index:50;display:flex;flex-wrap:wrap;justify-content:center;gap:6px;align-items:center;width:max-content;max-width:calc(100% - 32px);background:var(--hero);color:#fff;border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:8px;box-shadow:0 8px 30px rgba(0,0,0,.28);font-size:14px}
 .ed-toolbar button{font:inherit;font-size:13px;font-weight:600;min-height:40px;padding:6px 12px;border-radius:10px;border:1px solid rgba(255,255,255,.28);background:transparent;color:#fff;cursor:pointer}
@@ -218,42 +222,104 @@ body.ed-active{padding-bottom:96px}
       <p class="big">A commercial control tower that <u>maximises net revenue per incentive dollar</u> and <u>shortens the time from signature to revenue</u>, run as one connected system from plan to realised revenue, with AI doing the routine work.</p>
     </div>
 
-    <h3 class="sub">Five building blocks</h3>
-    <div class="blocks">
-      <div class="bb">
-        <div class="k"><small>01</small>Plan &amp; allocate</div>
-        <div><div class="lab">Best in class</div>Plan gap = target minus revenue already contracted. Coverage set by client value <i>and</i> renewal risk. Capacity shifted toward VAS and commercial payments.</div>
-        <div><div class="lab">Opportunity at Visa</div>Sales 2.0 and the target cascade exist. Plan coverage around the renewal calendar, not only client size.</div>
+    <h3 class="sub">Six pillars of commercial operations</h3>
+    <div class="grid g3">
+      <a class="card pillar" href="#p1"><span class="tag navy">01</span><h4>Commercial strategy &amp; planning</h4><p class="muted small" style="margin:0">Segmentation, coverage, territories and capacity</p></a>
+      <a class="card pillar" href="#p2"><span class="tag navy">02</span><h4>Performance, quota &amp; incentives</h4><p class="muted small" style="margin:0">Scorecards, forecasting, business reviews and pay</p></a>
+      <a class="card pillar" href="#p3"><span class="tag navy">03</span><h4>Sales process, deals &amp; lead-to-cash</h4><p class="muted small" style="margin:0">Pipeline, deal governance, contracting and VIK</p></a>
+      <a class="card pillar" href="#p4"><span class="tag navy">04</span><h4>Enablement &amp; capability</h4><p class="muted small" style="margin:0">Onboarding, methodology, sales plays and content</p></a>
+      <a class="card pillar" href="#p5"><span class="tag navy">05</span><h4>Technology, data &amp; AI</h4><p class="muted small" style="margin:0">CRM, analytics, data quality and a multi-year AI roadmap</p></a>
+      <a class="card pillar" href="#p6"><span class="tag navy">06</span><h4>Leadership &amp; stakeholders</h4><p class="muted small" style="margin:0">Regional advisor, global bridge, high-performing team</p></a>
+    </div>
+
+    <div class="blocks" style="margin-top:16px">
+      <div class="bb" id="p1">
+        <div class="k"><small>01</small>Commercial strategy &amp; planning</div>
+        <div><div class="lab">Best in class</div><ul class="small">
+          <li>Segments by client value <i>and</i> potential; coverage tiers: dedicated, pooled, digital, partner</li>
+          <li>Territories balanced on potential; capacity model linked to the annual and multi-year plan</li>
+          <li>Plan gap = target minus revenue already contracted; account plans for every key client</li>
+        </ul></div>
+        <div><div class="lab">Priorities for CEMEA</div><ul class="small">
+          <li>Cluster playbooks: the GCC (cross-border, domestic schemes), Africa (cash conversion, fintechs), Central Europe and Central Asia (mature renewals)</li>
+          <li>Coverage planned around the renewal calendar; scaled digital coverage for the long tail of 1,800+ clients</li>
+          <li>Defend domestic share against Jaywan, mada and instant A2A payments</li>
+        </ul><p class="small muted" style="margin:8px 0 0"><b>KPIs:</b> whitespace per seller · coverage cost · Visa share of client volume</p></div>
       </div>
-      <div class="bb">
-        <div class="k"><small>02</small>Deal economics</div>
-        <div><div class="lab">Best in class</div>One standard deal model; incentive-to-gross benchmarks by market; approval tiers by NPV and risk; a portfolio view of incentive return.</div>
-        <div><div class="lab">Opportunity at Visa</div>Deal data appears to span several systems (iDeal, DPT, Dealight, GIG, GARP, VIK Central, ORMB). A single view of incentive return is a likely win.<span class="inf">outside-in</span></div>
+
+      <div class="bb" id="p2">
+        <div class="k"><small>02</small>Performance management, quota &amp; incentives</div>
+        <div><div class="lab">Best in class</div><ul class="small">
+          <li>One scorecard from region to seller; a fixed monthly, quarterly and annual review rhythm</li>
+          <li>Quotas set on account potential and issued within 30–45 days of the year starting; no more than three plan measures</li>
+          <li>Pay on net, realised revenue; retention measured separately from growth</li>
+        </ul></div>
+        <div><div class="lab">Priorities for CEMEA</div><ul class="small">
+          <li>Co-design incentive plans with Global Sales Operations, Finance and HR; own quota setting and allocation</li>
+          <li>Partial true-up of seller pay to realised revenue; a retention objective with an incentive ceiling for renewals</li>
+          <li>Forecast accuracy tracked by market every month</li>
+        </ul><p class="small muted" style="margin:8px 0 0"><b>KPIs:</b> 60–70% of sellers at quota · forecast accuracy · AANR vs plan</p></div>
       </div>
-      <div class="bb">
-        <div class="k"><small>03</small>Time to revenue &amp; realisation</div>
-        <div><div class="lab">Best in class</div>One flow from lead to contract to go-live to activation. A target time to clear Signed-Not-Live. Realisation (actual vs forecast net revenue) reported like consumed ACV in software.</div>
-        <div><div class="lab">Opportunity at Visa</div>DPT already tracks deals. Make realisation a portfolio KPI in every business review.</div>
+
+      <div class="bb" id="p3">
+        <div class="k"><small>03</small>Sales process, deal governance &amp; lead-to-cash</div>
+        <div><div class="lab">Best in class</div><ul class="small">
+          <li>One methodology built into CRM stages with exit criteria; one definition of "qualified"</li>
+          <li>Tiered approvals with published turnaround targets; one deal model; standard contract templates</li>
+          <li>Lead-to-cash run end to end with Product, Finance, Legal, Technology and Operations</li>
+        </ul></div>
+        <div><div class="lab">Priorities for CEMEA</div><ul class="small">
+          <li>Governance as a service: approval turnaround by tier, actual deal results fed back into benchmarks</li>
+          <li>Contracting and VIK: track utilisation and drawdown, tie VIK to client activation, flag unused budgets well before renewal</li>
+          <li>Signed-Not-Live managed as a pipeline stage with named owners and deadlines</li>
+        </ul><p class="small muted" style="margin:8px 0 0"><b>KPIs:</b> approval turnaround · incentive-to-gross vs benchmark · VIK utilisation · time to revenue · realisation</p></div>
       </div>
-      <div class="bb">
-        <div class="k"><small>04</small>Performance &amp; incentives</div>
-        <div><div class="lab">Best in class</div>One scorecard. Pay on net AANR with a go-live gate and a partial true-up. Clear overlay crediting. Retention measured separately from growth.</div>
-        <div><div class="lab">Opportunity at Visa</div>TRUTH dashboards and the SIP exist. Link part of seller pay to realised, not just booked, revenue.</div>
+
+      <div class="bb" id="p4">
+        <div class="k"><small>04</small>Enablement &amp; capability</div>
+        <div><div class="lab">Best in class</div><ul class="small">
+          <li>Role-based onboarding and accreditation; manager coaching based on deal data</li>
+          <li>Methodology (IDDEA) built into stages and deal reviews, not just training</li>
+          <li>Sales plays per product; one governed source of content, with stale material retired</li>
+        </ul></div>
+        <div><div class="lab">Priorities for CEMEA</div><ul class="small">
+          <li>Adapt global enablement programmes to each cluster's needs</li>
+          <li>Regional sales plays for value-added services, commercial payments and Visa Direct</li>
+          <li>Build commercial acumen in payments economics: deal models, incentives, realisation</li>
+        </ul><p class="small muted" style="margin:8px 0 0"><b>KPIs:</b> time to productivity · pipeline from sales plays · content use vs win rate</p></div>
       </div>
-      <div class="bb">
-        <div class="k"><small>05</small>Productivity, data &amp; AI</div>
-        <div><div class="lab">Best in class</div>Transaction data joined with CRM and deal data. AI agents for account plans, deal-model prefill and contract checks. Freed seller time measured and reinvested.</div>
-        <div><div class="lab">Opportunity at Visa</div>Visa sees every transaction, a data edge software firms don't have. Put it to work for sellers.</div>
+
+      <div class="bb" id="p5">
+        <div class="k"><small>05</small>Sales technology, data &amp; AI</div>
+        <div><div class="lab">Best in class</div><ul class="small">
+          <li>CRM as the single source of truth, with named data owners and standard metric definitions</li>
+          <li>CRM, CPQ, deal, contract and billing data connected</li>
+          <li>A multi-year AI roadmap and a culture of AI fluency, with adoption targets per leader</li>
+        </ul></div>
+        <div><div class="lab">Priorities for CEMEA</div><ul class="small">
+          <li>Join Visa's transaction data with CRM and deal data, an edge no software company has</li>
+          <li>Year 1: admin agents and a deal-desk copilot pilot. Year 2: renewal-risk warning and VAS whitespace. Year 3: predictive forecasting and planning</li>
+          <li>Data readiness first: fix data quality before scaling models</li>
+        </ul><p class="small muted" style="margin:8px 0 0"><b>KPIs:</b> data completeness · seller selling time · tool adoption · forecast error</p></div>
+      </div>
+
+      <div class="bb" id="p6">
+        <div class="k"><small>06</small>Leadership &amp; stakeholder management</div>
+        <div><div class="lab">Best in class</div><ul class="small">
+          <li>Trusted advisor to regional leadership on growth, resources and transformation</li>
+          <li>Clear decision rights: global sets the standard, the region adapts, markets execute</li>
+          <li>A diverse, high-performing team with clear career paths</li>
+        </ul></div>
+        <div><div class="lab">Priorities for CEMEA</div><ul class="small">
+          <li>Be the two-way bridge between CEMEA leadership and Global Sales Operations</li>
+          <li>Data-driven recommendations for investment and resource allocation</li>
+          <li>One operating rhythm across 80+ markets, with room for local relevance</li>
+        </ul><p class="small muted" style="margin:8px 0 0"><b>KPIs:</b> initiatives delivered vs plan · team engagement · regretted attrition</p></div>
       </div>
     </div>
 
-    <h3 class="sub">Quota and compensation principles</h3>
-    <div class="grid g3">
-      <div class="card"><span class="tag navy">Pay on what's real</span><h4>Net, realised revenue</h4><p class="muted small" style="margin:0">Keep AANR net of incentives. Pay part at signing and go-live and true up the rest to realised revenue at 12 months. Add a guardrail when a deal exceeds the market's incentive-to-gross ceiling.</p></div>
-      <div class="card"><span class="tag navy">Defend and grow</span><h4>Separate retention from growth</h4><p class="muted small" style="margin:0">Incentives step up at renewal, so net revenue can fall even when a renewal is won. Measure renewals with a retention objective and an incentive ceiling, not incremental AANR.</p></div>
-      <div class="card"><span class="tag navy">Fair quotas</span><h4>Potential, not history</h4><p class="muted small" style="margin:0">Blend top-down plan gap with bottom-up account potential from transaction data. Aim for 60–70% of sellers at or above quota, with plans issued within 30–45 days of the year starting.</p></div>
-    </div>
-    <div class="table-box" style="margin-top:16px">
+    <h3 class="sub">Illustrative seller plan design</h3>
+    <div class="table-box">
       <table>
         <thead><tr><th>Seller role</th><th>Illustrative plan weights</th><th>Pay mix</th></tr></thead>
         <tbody>
@@ -265,28 +331,21 @@ body.ed-active{padding-bottom:96px}
       </table>
     </div>
 
-    <h3 class="sub">What changes for CEMEA</h3>
+    <h3 class="sub">Flagship AI use cases</h3>
     <div class="grid g3">
-      <div class="card"><h4>Cluster playbooks</h4><p class="muted small" style="margin:0">The GCC (cross-border, domestic schemes), Africa (cash conversion, fintechs) and Central Europe and Central Asia (mature renewals) are different businesses. Use one global standard with a playbook per cluster.</p></div>
-      <div class="card"><h4>Scaled coverage for the long tail</h4><p class="muted small" style="margin:0">Most of CEMEA's 1,800+ clients need digital and inside-sales coverage. Dedicated teams can't reach them economically.</p></div>
-      <div class="card"><h4>Defend domestic share</h4><p class="muted small" style="margin:0">Measure Visa's share of each client's volume against Jaywan, mada and instant A2A payments. Use incentives and VAS to stay hard to replace.</p></div>
-    </div>
-
-    <h3 class="sub">AI agenda for sales ops</h3>
-    <div class="grid g3">
-      <div class="card"><span class="tag teal">Deal desk</span><h4>Deal-model copilot</h4><p class="muted small" style="margin:0">Prefill forecasts from transaction data, benchmark incentives against similar deals, flag deals outside guardrails before approval.</p></div>
+      <div class="card"><span class="tag teal">Deal desk</span><h4>Deal-model copilot</h4><p class="muted small" style="margin:0">Prefill forecasts from transaction data, benchmark incentives against how similar deals actually performed, flag deals outside guardrails, draft the approval memo. People still decide.</p></div>
       <div class="card"><span class="tag teal">Retention</span><h4>Renewal-risk early warning</h4><p class="muted small" style="margin:0">Activation, spend per card and domestic-scheme leakage flag at-risk renewals 18–24 months out, not 6.</p></div>
       <div class="card"><span class="tag teal">Sellers</span><h4>Agents that remove admin</h4><p class="muted small" style="margin:0">Account plans, CRM updates and QBR packs drafted in Dynamics. Measure seller time freed and where it's reinvested.</p></div>
     </div>
 
-    <h3 class="sub">First 90 days</h3>
+    <h3 class="sub">A 90-day roadmap</h3>
     <div class="grid g3">
-      <div class="card"><span class="tag amber">Days 1–30</span><h4>Listen &amp; diagnose</h4><ul class="small"><li>Meet market leaders, the deal desk, Finance and GSCO</li><li>Assess CEMEA against the five building blocks</li><li>Map the renewal calendar for the next 24 months</li></ul></div>
-      <div class="card"><span class="tag amber">Days 31–60</span><h4>Baseline &amp; quick wins</h4><ul class="small"><li>Baseline realisation and incentive return by cluster</li><li>Settle the UAE–Kuwait–Qatar operating model and reporting</li><li>Clear the oldest Signed-Not-Live deals</li></ul></div>
-      <div class="card"><span class="tag amber">Days 61–90</span><h4>Commit</h4><ul class="small"><li>Agree three priority initiatives with the Regional President</li><li>Shape next year's plan and quota design</li><li>Launch one AI use case with measured outcomes</li></ul></div>
+      <div class="card"><span class="tag amber">Days 1–30</span><h4>Listen &amp; diagnose</h4><ul class="small"><li>Meet market leaders, the deal desk, Finance and Global Sales Operations</li><li>Assess CEMEA's maturity on the six pillars</li><li>Map the renewal calendar for the next 24 months</li></ul></div>
+      <div class="card"><span class="tag amber">Days 31–60</span><h4>Baseline &amp; quick wins</h4><ul class="small"><li>Baseline realisation, incentive return and VIK utilisation by cluster</li><li>Settle the UAE–Kuwait–Qatar operating model and reporting</li><li>Clear the oldest Signed-Not-Live deals</li></ul></div>
+      <div class="card"><span class="tag amber">Days 61–90</span><h4>Commit</h4><ul class="small"><li>Agree three priority initiatives with regional and global leadership</li><li>Shape next year's plan and quota design</li><li>Launch one AI use case with measured outcomes</li></ul></div>
     </div>
 
-    <h3 class="sub">KPIs I'd run the region on</h3>
+    <h3 class="sub">Regional KPI scorecard</h3>
     <div class="table-box">
       <table>
         <thead><tr><th>Outcome</th><th>Speed</th><th>Deal economics</th><th>Productivity</th></tr></thead>
