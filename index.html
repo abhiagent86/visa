@@ -229,6 +229,18 @@ footer li{break-inside:avoid}
 .chain .link p{font-size:13px;color:var(--muted);margin:0}
 .chain .arrow{display:flex;align-items:center;justify-content:center;color:var(--muted)}
 @media(max-width:900px){.chain{grid-template-columns:1fr}.chain .arrow{transform:rotate(90deg);height:20px}}
+/* consumption vs usage grid */
+.quad{display:grid;grid-template-columns:28px minmax(0,1fr) minmax(0,1fr);grid-template-rows:auto auto auto;gap:10px}
+.q-axis{font-size:12px;font-weight:700;letter-spacing:.06em;color:var(--muted);text-transform:uppercase}
+.q-y{grid-row:1/3;grid-column:1;writing-mode:vertical-rl;transform:rotate(180deg);display:flex;align-items:center;justify-content:center}
+.q-x{grid-column:2/4;text-align:center}
+.q-cell{border-radius:12px;padding:16px;border:1px solid var(--line);background:var(--surface)}
+.q-cell b{display:block;margin-bottom:4px}
+.q-cell span{font-size:14px;color:var(--muted)}
+.q-cell.good{background:var(--teal-soft);border-color:var(--teal)}
+.q-cell.warn{background:var(--amber-soft);border-color:var(--amber-line)}
+.q-cell.risk{background:var(--brown-soft);border-color:var(--brown)}
+@media(max-width:600px){.quad{grid-template-columns:1fr}.q-y,.q-x{writing-mode:horizontal-tb;transform:none;grid-row:auto;grid-column:auto;text-align:left;justify-content:flex-start}}
 /* in-page editor (only active with ?edit in the URL) */
 .ed-toolbar{position:fixed;left:50%;transform:translateX(-50%);bottom:16px;z-index:50;display:flex;flex-wrap:wrap;justify-content:center;gap:6px;align-items:center;width:max-content;max-width:calc(100% - 32px);background:var(--hero);color:#fff;border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:8px;box-shadow:0 8px 30px rgba(0,0,0,.28);font-size:14px}
 .ed-toolbar button{font:inherit;font-size:13px;font-weight:600;min-height:40px;padding:6px 12px;border-radius:10px;border:1px solid rgba(255,255,255,.28);background:transparent;color:#fff;cursor:pointer}
@@ -497,6 +509,48 @@ body.ed-active{padding-bottom:96px}
     </div>
   
 
+    <h3 class="sub">Handover: the pre-close activation plan</h3>
+    <div class="grid g2">
+      <div class="card">
+        <span class="tag teal">Time to revenue starts before signature</span>
+        <h4>What the plan contains</h4>
+        <ul class="small" style="margin:0">
+          <li>Migration or integration timeline and a committed go-live date</li>
+          <li>Client resources and the joint governance for the project</li>
+          <li>Client goals with baseline KPIs: active cards, spend per card, token use, VAS usage</li>
+          <li>Activation programme, including planned use of VIK</li>
+          <li>Known risks and who owns them</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="tag teal">How it is governed</span>
+        <h4>Who signs, and what is measured</h4>
+        <ul class="small" style="margin:0">
+          <li>Led by the client team; signed off by implementation for incentive deals above a threshold, <b>before</b> deal approval</li>
+          <li>After signature, the post-sales team leads and the client team supports</li>
+          <li>Measured by: clients with no confirmed path to go-live · time to go-live · share of deals with a signed-off plan</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="sub">Consumption vs usage: a diagnostic for every key client</h3>
+    <div class="quad" role="img" aria-label="Two-by-two grid. Columns: narrow or broad product use. Rows: consumption above or below the deal model.">
+      <div class="q-axis q-y">Consumption vs deal model ↑</div>
+      <div class="q-cell warn"><b>High consumption, narrow use</b><span>Dependent on one product. Cross-sell gap: tokens, risk tools, data, commercial cards.</span></div>
+      <div class="q-cell good"><b>High consumption, broad use</b><span>Healthy. Expand, explore an early renewal, use as a reference.</span></div>
+      <div class="q-cell risk"><b>Low consumption, narrow use</b><span>Renewal risk. Recovery plan, executive engagement, reason code logged.</span></div>
+      <div class="q-cell warn"><b>Low consumption, broad use</b><span>Adopted but volume behind plan. Realisation risk: activation campaigns, VIK-funded programmes.</span></div>
+      <div class="q-axis q-x">Breadth of product use →</div>
+    </div>
+    <p class="small muted" style="margin-top:10px">Usage above the contracted tier is an upsell or re-pricing signal; usage below it is logged as renewal risk with a mitigation plan.</p>
+
+    <h3 class="sub">Renewal risk and client engagement practices</h3>
+    <div class="grid g3">
+      <div class="card"><span class="tag teal">Risk</span><h4>AANR-at-risk register</h4><p class="muted small" style="margin:0">Every at-risk client has AANR at risk, a standard reason code (competitor offer, domestic-scheme mandate, incentive gap, product gap, merger), notes and a retention plan. Product gaps go back to product teams.</p></div>
+      <div class="card"><span class="tag teal">Renewal</span><h4>Owned early, priced deliberately</h4><p class="muted small" style="margin:0">A named renewal owner 18–24 months before expiry; renewal forecast for the next four quarters; <b>incentive cost of renewal</b> (step-up per dollar of AANR retained) tracked by the deal desk.</p></div>
+      <div class="card"><span class="tag teal">Engagement</span><h4>Value proven with the client</h4><p class="muted small" style="margin:0">Standard client business reviews showing value against documented goals; an annual relationship assessment for Tier 1–2 clients; client success stories developed as references.</p></div>
+    </div>
+
     <div class="part"><span class="part-code">1C</span><h3>Core metrics: from booked to realised</h3><p>The chain that links Win to Grow, and the KPIs that sit behind it.</p></div>
 
     <div class="chain" role="img" aria-label="Metric chain: AANR booked, then time to revenue, then realisation, then net revenue retention">
@@ -612,6 +666,7 @@ body.ed-active{padding-bottom:96px}
     <div class="card">
       <p class="small" style="margin:0 0 8px"><b>Net AANR forecast = new and expansion AANR − losses</b> (renewal step-downs, leakage to domestic schemes and A2A, full losses), for this quarter and next, with a rolling two-year view of renewal risk.</p>
       <p class="muted small" style="margin:0">Managers' judgement (best and worst case) is layered on a system forecast built from clean CRM data, after a hygiene check before each review. Over time, AI forecasts sit alongside both.</p>
+      <p class="muted small" style="margin:8px 0 0"><b>Forecast quality is measured too:</b> predictability (the week-2 call vs the final result) · how much is due to close at quarter-end · next quarter's forecast ready by month 2.</p>
     </div>
 
     <h3 class="sub">Business rhythm calendar (illustrative)</h3>
@@ -639,6 +694,34 @@ body.ed-active{padding-bottom:96px}
       <div class="card"><span class="tag amber">Plan</span><h4>Account &amp; territory planning</h4><p class="muted small" style="margin:0">Prioritise accounts → explore with the client → workshop with the extended team → share back with the client → joint roadmap and action plan. Territory plans with a pipeline gap analysis and sales plays. Mid-year account plan reviews with regional leadership.</p></div>
       <div class="card"><span class="tag amber">Plan</span><h4>Fast start</h4><p class="muted small" style="margin:0">Territories confirmed by the sales kickoff and quotas in systems on a fixed date. A yearly check of how each cluster applied the global model.</p></div>
       <div class="card"><span class="tag amber">Grow</span><h4>Outcome success plans</h4><p class="muted small" style="margin:0">Annual relationship assessment for key clients, an outcome success plan, a consumption forecast, flags for unused or overused services, and tracking of signed deals with no path to go-live.</p></div>
+    </div>
+
+    <h3 class="sub">Practice cards: every process has an owner, an outcome and an adherence measure</h3>
+    <div class="table-box">
+      <table>
+        <thead><tr><th>Practice</th><th>Owner</th><th>Outcome metric</th><th>Adherence metric (is the process followed?)</th></tr></thead>
+        <tbody>
+          <tr><td><b>Planning &amp; coverage</b></td><td>Planning team</td><td>Quota attainment spread; quota coverage</td><td>100% of accounts assigned and quotas live before kickoff</td></tr>
+          <tr><td><b>Demand</b></td><td>Demand team + marketing</td><td>Qualified pipeline created vs plan; partner-sourced pipeline</td><td>Sales-play coverage of target accounts; demand plans completed</td></tr>
+          <tr><td><b>Deal management</b></td><td>Deal desk</td><td>Win rate; deal conversion</td><td>% of deals scored; % of top deals with a validated close plan</td></tr>
+          <tr><td><b>Incentives &amp; VIK</b></td><td>Deal desk</td><td>Incentive-to-gross vs benchmark; VIK utilisation</td><td>% of incentive deals with a deal model and benchmark check; approval turnaround</td></tr>
+          <tr><td><b>Handover to activation</b></td><td>Implementation</td><td>Time to go-live; Signed-Not-Live ageing</td><td>% of incentive deals with a signed-off pre-close activation plan</td></tr>
+          <tr><td><b>Adoption &amp; consumption</b></td><td>Client team / client success</td><td>Active-card rate; VAS usage vs contract</td><td>% of key clients with a consumption plan; usage flags actioned</td></tr>
+          <tr><td><b>Client engagement &amp; value</b></td><td>Client director + VCA</td><td>Realisation; client survey score</td><td>% of Tier 1–2 clients with documented goals, a business review and a relationship assessment</td></tr>
+          <tr><td><b>Renewal risk</b></td><td>Renewal owner</td><td>AANR at risk retained</td><td>% of at-risk clients with a reason code and retention plan</td></tr>
+          <tr><td><b>Renewal execution</b></td><td>Client director / renewal specialist</td><td>Renewals retained on time; incentive cost of renewal</td><td>Renewal pipeline built 18–24 months out; renewal forecast accuracy</td></tr>
+          <tr><td><b>Expansion</b></td><td>Client team + specialists</td><td>Expansion AANR; products per client</td><td>Leads from post-sales teams logged, with contributor credit</td></tr>
+          <tr><td><b>Forecasting</b></td><td>Forecasting team</td><td>Forecast accuracy; predictability (week-2 call vs actual)</td><td>Hygiene check before every review; next quarter's forecast ready by month 2</td></tr>
+          <tr><td><b>Performance management</b></td><td>Operations excellence</td><td>KPIs on track; attainment trend</td><td>% of overdue actions; root-cause reviews held for at-risk KPIs</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="sub">Keeping the framework alive</h3>
+    <div class="grid g3">
+      <div class="card"><span class="tag amber">Demand</span><h4>Four phases of demand</h4><p class="muted small" style="margin:0">Discover (market view, sales plays) → Plan (sales, marketing and partner plans) → Steer (demand council, pipeline reviews) → Execute (marketing, partners, sales development, sellers).</p></div>
+      <div class="card"><span class="tag amber">Credit</span><h4>Post-sales as a source of growth</h4><p class="muted small" style="margin:0">Client success and implementation teams log upsell and cross-sell leads and are recorded as contributors, so growth after the sale is visible and rewarded.</p></div>
+      <div class="card"><span class="tag amber">Learning</span><h4>Share and refresh</h4><p class="muted small" style="margin:0">Regional best practices are spread to other clusters; the framework is refreshed every year with a published "what changed" log.</p></div>
     </div>
 
     <h3 class="sub">Sales operations organisation</h3>
