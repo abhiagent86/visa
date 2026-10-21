@@ -216,6 +216,19 @@ footer li{break-inside:avoid}
   .vj .arrow{transform:rotate(90deg);height:20px}
   .f-cols.f2{grid-template-columns:1fr}
 }
+/* section parts and metric chain */
+.part{margin:56px 0 20px;padding-top:24px;border-top:2px solid var(--line)}
+.part:first-of-type{margin-top:40px}
+.part-code{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--amber);font-weight:500}
+.part h3{font-size:clamp(24px,3vw,30px);font-weight:700;margin:4px 0 8px;color:var(--ink)}
+.part p{color:var(--muted);font-size:17px;margin:0;max-width:860px}
+.part p:empty{display:none}
+.chain{display:grid;grid-template-columns:minmax(0,1fr) 24px minmax(0,1fr) 24px minmax(0,1fr) 24px minmax(0,1fr);gap:12px 4px;align-items:stretch}
+.chain .link{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;box-shadow:var(--shadow)}
+.chain .link h4{font-size:18px;margin:4px 0 4px}
+.chain .link p{font-size:13px;color:var(--muted);margin:0}
+.chain .arrow{display:flex;align-items:center;justify-content:center;color:var(--muted)}
+@media(max-width:900px){.chain{grid-template-columns:1fr}.chain .arrow{transform:rotate(90deg);height:20px}}
 /* in-page editor (only active with ?edit in the URL) */
 .ed-toolbar{position:fixed;left:50%;transform:translateX(-50%);bottom:16px;z-index:50;display:flex;flex-wrap:wrap;justify-content:center;gap:6px;align-items:center;width:max-content;max-width:calc(100% - 32px);background:var(--hero);color:#fff;border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:8px;box-shadow:0 8px 30px rgba(0,0,0,.28);font-size:14px}
 .ed-toolbar button{font:inherit;font-size:13px;font-weight:600;min-height:40px;padding:6px 12px;border-radius:10px;border:1px solid rgba(255,255,255,.28);background:transparent;color:#fff;cursor:pointer}
@@ -251,12 +264,9 @@ body.ed-active{padding-bottom:96px}
   <div class="wrap">
     <a class="brand" href="#top">Visa CEMEA<span> · sales operations</span></a>
     <div class="nav-links">
-      <a href="#framework">Framework</a>
-      <a href="#journey">Value journey</a>
-      <a href="#ai">AI</a>
-      <a href="#vision">Vision</a>
-      <a href="#visa">Understanding Visa</a>
-      <a href="#questions">Questions</a>
+      <a href="#vision">Sales ops vision</a>
+      <a href="#ai">AI &amp; automation</a>
+      <a href="#visa">Visa &amp; recommendations</a>
     </div>
     <button class="theme-btn" id="themeBtn" type="button" aria-label="Toggle light or dark theme">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
@@ -269,8 +279,8 @@ body.ed-active{padding-bottom:96px}
     <h1>Building Visa CEMEA's commercial engine</h1>
     <p class="lede">A vision for best-in-class sales operations, and an outside-in view of how Visa sells. The next phase moves <b>from network deals to solution selling, with AI built into how sellers work</b>.</p>
     <div class="cta">
-      <a class="btn btn-primary" href="#framework">See the framework</a>
-      <a class="btn btn-ghost" href="#visa">How Visa sells</a>
+      <a class="btn btn-primary" href="#vision">Sales ops vision</a>
+      <a class="btn btn-ghost" href="#ai">AI potential</a>
     </div>
     <div class="stats">
       <div class="stat"><b>$40.0B</b><span>Visa net revenue, FY2025 (+11%)</span></div>
@@ -284,14 +294,23 @@ body.ed-active{padding-bottom:96px}
 
 <main>
 
-<!-- ============ 1. OPERATING FRAMEWORK ============ -->
-<section class="block" id="framework">
+<!-- ============ 1. VISION ============ -->
+<section class="block" id="vision">
   <div class="wrap">
     <div class="sec-head">
-      <span class="sec-num">01 · OPERATING FRAMEWORK</span>
-      <h2>The sales operations engine</h2>
-      <p>Four stages run as a yearly loop: <b>Design</b> where and how we sell, <b>Plan</b> how much and by whom, <b>Govern</b> whether we're on track and making good deals, and <b>Improve</b> so every cycle runs better than the last. <b>Automate</b> runs underneath all four: each step is redesigned around data, tools and AI.</p>
+      <span class="sec-num">01 · VISION</span>
+      <h2>Best-in-class B2B sales operations</h2>
+      <p>Two lenses on one engine. <b>Operations</b>: how the sales machine is designed, planned, governed and improved. <b>Field</b>: how every client is won and then grown through adoption, value and expansion. Four metrics connect them: AANR, time to revenue, realisation and net revenue retention.</p>
     </div>
+
+
+    <div class="callout">
+      <p class="big">A commercial control tower that <u>maximises net revenue per incentive dollar</u> and <u>shortens the time from signature to revenue</u>, run as one connected system from plan to realised revenue, with AI doing the routine work.</p>
+    </div>
+
+
+    <div class="part"><span class="part-code">1A</span><h3>Operations lens: the sales operations engine</h3><p>Four stages run as a yearly loop: <b>Design</b> where and how we sell, <b>Plan</b> how much and by whom, <b>Govern</b> whether we are on track and making good deals, <b>Improve</b> so each cycle runs better. <b>Automate</b> runs underneath all four.</p></div>
+
 
     <div class="engine" role="img" aria-label="Framework: Design, Plan, Govern and Improve in a loop, with Automate as the foundation underneath all four">
       <div class="stage s1"><span class="stage-n">1</span><h4>Design</h4><p class="q">Where and how do we sell?</p><ul><li>Go-to-market model &amp; segmentation</li><li>Roles, coverage &amp; account density</li><li>Crediting rules &amp; comp plans</li><li>Deal policy &amp; approval tiers</li></ul><span class="cad">Annual</span></div>
@@ -395,7 +414,7 @@ body.ed-active{padding-bottom:96px}
       <div class="card"><span class="tag navy">Comp</span><h4>Compensation statement portal</h4><p class="muted small" style="margin:0">Credits, payouts, dispute status and plan rules, visible to every seller.</p></div>
     </div>
 
-    <h3 class="sub">How the engine connects to the six pillars</h3>
+    <h3 class="sub">How the engine connects to the six CEMEA pillars (section 3)</h3>
     <div class="table-box">
       <table>
         <thead><tr><th>Stage</th><th>Pillars it delivers</th></tr></thead>
@@ -409,17 +428,10 @@ body.ed-active{padding-bottom:96px}
         </tbody>
       </table>
     </div>
-  </div>
-</section>
+  
 
-<!-- ============ 2. CUSTOMER VALUE JOURNEY ============ -->
-<section class="block" id="journey">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="sec-num">02 · ENGAGEMENT FRAMEWORK</span>
-      <h2>The customer value journey: from first deal to expansion</h2>
-      <p>Lead to cash stops at the first sale, but most of Visa's value comes after it. Cards have to go live and be used; value-added services have to be adopted and consumed before they earn, renew and expand. The journey has two arcs: <b>Win</b> lands the client, <b>Grow</b> turns the contract into usage, proven value, expansion and renewal. Billing and cash run continuously from go-live.</p>
-    </div>
+    <div class="part"><span class="part-code">1B</span><h3>Field lens: the customer value journey</h3><p>Lead to cash stops at the first sale, but most value comes after it. <b>Win</b> lands the client; <b>Grow</b> turns the contract into usage, proven value, expansion and renewal. Billing and cash run continuously from go-live.</p></div>
+
 
     <div class="vj" role="img" aria-label="Customer value journey. Win: generate demand, qualify and shape, deal and price, contract. Grow: activate, adopt and consume, realise value, expand, renew. Renewal and expansion loop back. Control, finance and AI layers run underneath.">
       <div class="vj-label win">WIN · land the client</div>
@@ -483,17 +495,92 @@ body.ed-active{padding-bottom:96px}
       <div class="card"><span class="tag teal">New motion</span><h4>Client success for VAS</h4><p class="muted small" style="margin:0">A light client-success role, or pod, that owns adoption and time to first value for value-added services, working with client services and VCA.</p></div>
       <div class="card"><span class="tag teal">Pay and credit</span><h4>Reward consumption and expansion</h4><p class="muted small" style="margin:0">Credit expansion AANR and realised usage, not only first bookings, so client teams stay invested after the signature.</p></div>
     </div>
+  
+
+    <div class="part"><span class="part-code">1C</span><h3>Core metrics: from booked to realised</h3><p>The chain that links Win to Grow, and the KPIs that sit behind it.</p></div>
+
+    <div class="chain" role="img" aria-label="Metric chain: AANR booked, then time to revenue, then realisation, then net revenue retention">
+      <div class="link"><span class="tag navy">Win output</span><h4>AANR</h4><p>Annualised net revenue <i>booked</i> at signature</p></div>
+      <div class="arrow" aria-hidden="true"><svg viewBox="0 0 24 16" width="24" height="16"><path d="M0 8h18M13 3l6 5-6 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="link"><span class="tag amber">Bridge</span><h4>Time to revenue</h4><p>Signed → live → first full month of revenue</p></div>
+      <div class="arrow" aria-hidden="true"><svg viewBox="0 0 24 16" width="24" height="16"><path d="M0 8h18M13 3l6 5-6 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="link"><span class="tag teal">Grow</span><h4>Realisation</h4><p>Actual net revenue ÷ deal-model net revenue (consumption vs plan)</p></div>
+      <div class="arrow" aria-hidden="true"><svg viewBox="0 0 24 16" width="24" height="16"><path d="M0 8h18M13 3l6 5-6 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="link"><span class="tag teal">Grow</span><h4>Net revenue retention</h4><p>This year's net revenue from last year's clients ÷ last year's; reported and market-adjusted</p></div>
+    </div>
+
+    <h3 class="sub">KPIs across Win and Grow</h3>
+    <div class="table-box">
+      <table>
+        <thead><tr><th>Arc</th><th>Leading indicators (act early)</th><th>Lagging indicators (results)</th></tr></thead>
+        <tbody>
+          <tr><td><b>Win</b></td><td>Pipeline coverage · qualified pipeline created · stage conversion · monthly AANR outlook</td><td><b>AANR vs quota</b> · win rate · approval turnaround · incentive cost vs net revenue growth</td></tr>
+          <tr><td><b>Bridge</b></td><td>Signed-Not-Live backlog and ageing · implementation milestones</td><td><b>Time to revenue</b> · go-live</td></tr>
+          <tr><td><b>Grow</b></td><td>Active-card rate · spend per card · VAS usage vs contract · VIK use · client health score · client survey</td><td><b>Net revenue vs target</b> · <b>realisation</b> · products per client · <b>net revenue retention</b> · renewals retained</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="sub">Account net-revenue bridge (illustrative)</h3>
+    <div class="grid g2">
+      <div class="table-box">
+        <table style="min-width:0">
+          <thead><tr><th>Driver of one bank's year-on-year change</th><th>$M</th></tr></thead>
+          <tbody>
+            <tr><td>Last year's net revenue</td><td class="num">21.3</td></tr>
+            <tr><td>+ Organic growth on the existing portfolio</td><td class="num">+1.7</td></tr>
+            <tr><td>+ Cross-border mix</td><td class="num">+0.5</td></tr>
+            <tr><td>+ New value-added services sold</td><td class="num">+1.0</td></tr>
+            <tr><td>− Incentive step-up at renewal</td><td class="num">−0.8</td></tr>
+            <tr><td>− Domestic debit lost to a national scheme</td><td class="num">−1.2</td></tr>
+            <tr class="total"><td>This year's net revenue · NRR 106%</td><td class="num">22.5</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card">
+        <span class="tag amber">Why it matters</span>
+        <h4>From "did we hit target?" to "what drove it?"</h4>
+        <p class="small">The bridge splits growth into market, sales (share, value-added services) and pricing effects, and shows what is leaking. Rolled up by cluster it turns business reviews into decisions.</p>
+        <p class="small" style="margin:0">Clients rarely leave a network outright and volume moves with the economy, so report net revenue retention both as reported and market-adjusted.</p>
+      </div>
+    </div>
+
+
+    <div class="part"><span class="part-code">1D</span><h3>Quota and incentives</h3><p>Pay for what is real, defend and grow separately, and set quotas on potential.</p></div>
+
+    <div class="grid g3">
+      <div class="card"><span class="tag navy">Pay on what's real</span><h4>Net, realised revenue</h4><p class="muted small" style="margin:0">Keep AANR net of incentives. Pay part at signing and go-live and true up the rest to realised revenue at 12 months. Reduce payout when a deal exceeds the market's incentive-to-gross ceiling.</p></div>
+      <div class="card"><span class="tag navy">Defend and grow</span><h4>Separate retention from growth</h4><p class="muted small" style="margin:0">Incentives step up at renewal, so net revenue can fall even when a renewal is won. Measure renewals with a retention objective and an incentive ceiling; credit expansion AANR separately.</p></div>
+      <div class="card"><span class="tag navy">Fair quotas</span><h4>Potential, not history</h4><p class="muted small" style="margin:0">Blend the top-down plan gap with bottom-up account potential from transaction data. Aim for 60–70% of sellers at or above quota, with plans issued within 30–45 days of the year starting.</p></div>
+    </div>
+
+    <h3 class="sub">Illustrative seller plan design</h3>
+    <div class="table-box">
+      <table>
+        <thead><tr><th>Seller role</th><th>Illustrative plan weights</th><th>Pay mix</th></tr></thead>
+        <tbody>
+          <tr><td><b>Issuer client director</b></td><td>50% net AANR · 20% go-live &amp; realisation · 30% objectives (retention, product take-up)</td><td>~60/40</td></tr>
+          <tr><td><b>Acquirer / acceptance seller</b></td><td>60% AANR above baseline · 20% new acceptance · 20% product take-up</td><td>~60/40</td></tr>
+          <tr><td><b>VAS / CMS specialist</b></td><td>70% product AANR · 30% go-live; shared credit with client teams</td><td>~70/30</td></tr>
+          <tr><td><b>Sales engineers, ops staff</b></td><td>No quota; bonus on company and business-unit results, which keeps ops neutral</td><td>Bonus</td></tr>
+        </tbody>
+      </table>
+    </div>
+
   </div>
 </section>
 
-<!-- ============ 3. AI: TWO LENSES ============ -->
+<!-- ============ 2. AI & AUTOMATION ============ -->
 <section class="block" id="ai">
   <div class="wrap">
     <div class="sec-head">
-      <span class="sec-num">03 · AI USE CASES</span>
-      <h2>Where AI adds value: two lenses</h2>
-      <p><b>Lens 1, the field:</b> walk the customer value journey: take admin off sellers in Win, and spot and act on usage signals in Grow. <b>Lens 2, sales operations:</b> walk Design, Plan, Govern and Improve and automate the routine work so the team moves from producing reports to advising the business. Hours freed in both lenses go back into the capacity model.</p>
+      <span class="sec-num">02 · AI &amp; AUTOMATION</span>
+      <h2>AI and automation potential</h2>
+      <p>The foundations come first: targets and incentives, capacity, segmentation and coverage. AI is the next phase on top of them, aimed at two things: <b>more selling time in the field</b> and <b>a sales operations team that advises rather than reports</b>. Every hour freed is returned to the capacity model and redeployed.</p>
     </div>
+
+    <div class="part"><span class="part-code">2A</span><h3>Two lenses</h3><p><b>Field</b>: walk the customer value journey. <b>Operations</b>: walk Design, Plan, Govern and Improve. Each use case is labelled predictive, copilot or agent.</p></div>
+
 
     <div class="grid g2">
       <div>
@@ -535,27 +622,254 @@ body.ed-active{padding-bottom:96px}
       </div>
     </div>
 
-    <h3 class="sub">Priorities</h3>
+    <h3 class="sub">Priority use cases</h3>
     <div class="grid g3">
       <div class="card"><span class="tag teal">Quick win · both lenses</span><h4>Admin off everyone's plate</h4><p class="muted small" style="margin:0">CRM updates from calls for sellers, automatic review packs for ops. Fast, visible, and it builds trust in AI.</p></div>
       <div class="card"><span class="tag teal">Biggest value · both lenses</span><h4>Deal-desk copilot</h4><p class="muted small" style="margin:0">Serves sellers (faster, cleaner deals) and ops (better incentive decisions). Touches the $15.8B incentive budget.</p></div>
       <div class="card"><span class="tag teal">Visa's edge · Grow</span><h4>Usage and health signals</h4><p class="muted small" style="margin:0">Adoption alerts, next-best product and renewal risk built on transaction data no software company has.</p></div>
     </div>
+  
+
+    <div class="part"><span class="part-code">2B</span><h3>How to build a use case: the deal-desk copilot</h3><p>Value case → workflow → data → solution → backtest and pilot → scale. AI prepares, compares and flags; people decide.</p></div>
+
+    <ol class="steps">
+      <li><h4>Value case</h4><p>Incentive deals are slow to model and approve; underperformers are found after signing. Levers: better incentive allocation, faster approvals, fewer misses.</p></li>
+      <li><h4>Workflow</h4><p>Pre-fill the deal model from transaction data, generate base and downside scenarios, benchmark against how similar deals performed, route the approval, draft the memo.</p></li>
+      <li><h4>Data</h4><p>Client transaction history, past deal models alongside their actual results, CRM context, contract templates and pricing standards.</p></li>
+      <li><h4>Solution &amp; guardrails</h4><p>Built on the existing CRM and cloud stack. No automatic approvals; every number traceable; audit log; client data stays in-house.</p></li>
+      <li><h4>Backtest</h4><p>Run it on two to three years of past deals: would it have flagged the ones that underperformed?</p></li>
+      <li><h4>Pilot</h4><p>One cluster, 20–30 deals, against a comparison group. Targets: half the preparation time; approvals in one week instead of three.</p></li>
+      <li><h4>Stop or scale</h4><p>Stop if it doesn't beat manual forecasts or adoption stays low; otherwise scale across the region, then offer it as a global standard.</p></li>
+      <li><h4>Change</h4><p>Deal specialists help design it; approval committees agree the memo format; monthly value report.</p></li>
+    </ol>
+
+
+    <div class="part"><span class="part-code">2C</span><h3>Measuring productivity</h3><p>Four levels, against a baseline and a control group.</p></div>
+
+    <div class="table-box">
+      <table>
+        <thead><tr><th>Level</th><th>What is measured</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td><b>1. Adoption</b></td><td>Active users, use cases in use, adoption per leader</td><td>80% of sellers using it weekly</td></tr>
+          <tr><td><b>2. Efficiency</b></td><td>Hours freed per role; selling-time share; report-production time</td><td>Selling time from ~28% (industry, 2022) toward 40%+</td></tr>
+          <tr><td><b>3. Effectiveness</b></td><td>Win rate, cycle time, forecast accuracy, approval turnaround, cost to serve</td><td>Approvals in one week instead of three</td></tr>
+          <tr><td><b>4. Capacity reinvested</b></td><td>Hours freed converted into seller capacity and redeployed</td><td>More coverage of the long tail without adding headcount</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+
+    <div class="part"><span class="part-code">2D</span><h3>Roadmap and making it stick</h3><p>Quick, visible wins first, then the decision-quality use cases where the money is.</p></div>
+
+    <div class="table-box">
+      <table>
+        <thead><tr><th>Horizon</th><th>Field</th><th>Sales operations</th><th>Foundation</th></tr></thead>
+        <tbody>
+          <tr><td><b>0–6 months</b></td><td>CRM updates from calls; meeting prep; AI pitch practice</td><td>Review packs built automatically; deal-desk copilot pilot</td><td>Baseline; data-quality fixes; AI fluency, wave 1</td></tr>
+          <tr><td><b>6–18 months</b></td><td>Deal scoring; renewal-risk alerts; next-best product</td><td>Agents for approval routing, contract checks, VIK tracking, crediting checks</td><td>CRM, deal and transaction data joined; responsible-AI governance</td></tr>
+          <tr><td><b>18–36 months</b></td><td>Next-best action built into daily work</td><td>Predictive forecasting and planning; routine work run by agents, people on exceptions</td><td>Capacity model rebuilt around AI; roles redesigned</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="grid g3" style="margin-top:16px">
+      <div class="card"><span class="tag amber">Clarity</span><h4>Owned by sales, not IT</h4><p class="muted small" style="margin:0">AI is the next phase of the sales transformation. Leaders use it themselves and carry adoption targets.</p></div>
+      <div class="card"><span class="tag amber">Commitment</span><h4>Measured like a P&amp;L</h4><p class="muted small" style="margin:0">A small transformation squad, a value ledger, a person approving every commercial decision.</p></div>
+      <div class="card"><span class="tag amber">Capability</span><h4>Roles redesigned</h4><p class="muted small" style="margin:0">Learning paths per role plus a manager track. Sales operations evolves into GTM engineers who build automations and strategy advisors who coach the business.</p></div>
+    </div>
+
+
+    <div class="part"><span class="part-code">2E</span><h3>Beyond sales operations: agentic commerce</h3><p>Outside the sales engine, agents are becoming a new kind of customer, and Visa wants to be their trust layer.</p></div>
+
+    <div class="table-box">
+      <table>
+        <thead><tr><th>Proof point</th><th>Type</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>Visa Intelligent Commerce live in Europe (July 2026): agents completed real purchases with 30+ issuers</td><td>Agentic AI</td><td>Live pilot; no volumes disclosed</td></tr>
+          <tr><td>Visa, BILL and Billtrust (October 2026): agents pay approved B2B invoices end to end through supplier portals</td><td>Agentic AI</td><td>First live B2B pilot</td></tr>
+          <tr><td>Visa Agentic Ready in CEMEA (May 2026): 30+ issuers enrolled to test agent-initiated payments</td><td>Agentic AI</td><td>Testing stage</td></tr>
+          <tr><td>$40B of fraud blocked in 2024 with hundreds of AI models</td><td>Predictive AI</td><td>At scale</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small muted" style="margin-top:10px">Sales operations can turn agentic readiness into revenue: target accounts, sales plays and a "live and transacting" KPI for issuers and acquirers.</p>
+
   </div>
 </section>
 
-<!-- ============ 4. VISION ============ -->
-<section class="block" id="vision">
+<!-- ============ 3. VISA CONTEXT ============ -->
+<section class="block" id="visa">
   <div class="wrap">
     <div class="sec-head">
-      <span class="sec-num">04 · VISION</span>
-      <h2>Best-in-class sales operations for Visa CEMEA</h2>
-      <p>Visa's scarce resource isn't only seller time. It's the incentive budget: $15.8B a year paid back to clients. Sales ops exists to put each of those dollars where it buys the most durable volume.</p>
+      <span class="sec-num">03 · VISA CONTEXT</span>
+      <h2>Understanding Visa, and recommendations for CEMEA</h2>
+      <p>An outside-in view built from public filings, Investor Day 2025, earnings calls and job postings. Items marked <span class="inf">inferred</span> are industry practice or my reading, not published by Visa.</p>
     </div>
 
-    <div class="callout">
-      <p class="big">A commercial control tower that <u>maximises net revenue per incentive dollar</u> and <u>shortens the time from signature to revenue</u>, run as one connected system from plan to realised revenue, with AI doing the routine work.</p>
+    <div class="part"><span class="part-code">3A</span><h3>How Visa creates value and makes money</h3><p>Strategy, revenue model and the drivers of value.</p></div>
+
+    <h3 class="sub">Strategy: a network of networks</h3>
+    <div class="grid g2">
+      <div class="card">
+        <span class="tag navy">Investor Day 2025</span>
+        <h4>Be the best way to pay and be paid, across every flow</h4>
+        <ul class="small">
+          <li><b>Consumer payments:</b> ~$41T of consumer spend, ~$23T still on cash, legacy rails or domestic schemes</li>
+          <li><b>Commercial &amp; money movement:</b> ~$200T of B2B flows and ~$145T of other money movement; ~$115T actively pursued</li>
+          <li><b>Value-added services:</b> a $520B opportunity, ~2% captured</li>
+          <li><b>Foundation:</b> Visa-as-a-Service, an unbundled platform sold capability by capability</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="tag navy">Where it stands (Q3 FY26)</span>
+        <h4>Growth is shifting to services and new flows</h4>
+        <ul class="small">
+          <li>Net revenue $11.6B, +14%; full-year outlook raised</li>
+          <li><b>VAS $3.8B, +34%</b>, about a third of revenue</li>
+          <li>CMS revenue +17%; Visa Direct transactions +21%</li>
+          <li>New bets: agentic commerce, stablecoins, issuer processing (Pismo + DPS)</li>
+          <li>~7% of roles cut in July 2026, with savings reinvested in growth</li>
+        </ul>
+      </div>
     </div>
+
+    <h3 class="sub">How Visa makes money (FY2025)</h3>
+    <div class="grid g2">
+      <div class="table-box">
+        <table style="min-width:0">
+          <thead><tr><th>Revenue line</th><th>FY25</th><th>Growth</th></tr></thead>
+          <tbody>
+            <tr><td>Service: fees on payments volume</td><td class="num">$17.5B</td><td class="num">+9%</td></tr>
+            <tr><td>Data processing: per-transaction fees</td><td class="num">$20.0B</td><td class="num">+13%</td></tr>
+            <tr><td>International: cross-border and FX</td><td class="num">$14.2B</td><td class="num">+12%</td></tr>
+            <tr><td>Other: incl. value-added services</td><td class="num">$4.1B</td><td class="num">+27%</td></tr>
+            <tr><td>Client incentives (contra-revenue)</td><td class="num">−$15.8B</td><td class="num">+14%</td></tr>
+            <tr class="total"><td>Net revenue</td><td class="num">$40.0B</td><td class="num">+11%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card">
+        <span class="tag amber">Illustrative</span>
+        <h4>One $100 card payment</h4>
+        <p class="small">The merchant pays roughly $2 in fees. The <b>issuing bank</b> takes the largest share as interchange (Visa sets it but doesn't keep it). The <b>acquirer</b> keeps its margin. <b>Visa</b> earns a few cents of network fees, and several times more if the card is used abroad.</p>
+        <p class="small" style="margin:0">Visa takes no credit risk. Incentives are 28% of gross revenue and are growing faster than net revenue, which is why deal governance matters so much.</p>
+      </div>
+    </div>
+
+    <h3 class="sub">Drivers of value</h3>
+    <div class="table-box">
+      <table>
+        <thead><tr><th>#</th><th>Driver</th><th>Why it matters</th><th>Main risk</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td><b>Cash moving to digital, plus spending growth</b></td><td>The underlying engine; ~$23T of consumer spend still on cash and legacy rails</td><td>Slower economies; cash staying entrenched</td></tr>
+          <tr><td>2</td><td><b>Share of volume</b></td><td>Each renewal or conversion moves years of volume</td><td>Competing networks, domestic schemes, A2A</td></tr>
+          <tr><td>3</td><td><b>Cross-border</b></td><td>The highest fee rate; travel and e-commerce</td><td>Travel shocks; cheaper remittance rails</td></tr>
+          <tr><td>4</td><td><b>Value-added services and new flows</b></td><td>Diversifies away from network fees; VAS +34%</td><td>Slow adoption after signing</td></tr>
+          <tr><td>5</td><td><b>Incentive discipline</b></td><td>Incentives grow faster than revenue; every point saved is net revenue</td><td>Overpaying to defend renewals</td></tr>
+          <tr><td>6</td><td><b>Pricing and operating leverage</b></td><td>Mostly fixed-cost processing; margins of about two-thirds</td><td>Regulation and litigation</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small muted" style="margin-top:10px"><b>In one line:</b> value = volume × yield − incentives. Sales operations protects share, raises yield through value-added services, and lowers the incentive cost per dollar of volume.</p>
+
+
+    <div class="part"><span class="part-code">3B</span><h3>How Visa sells</h3><p>Customers and contracts, coverage, the deal-to-commission chain, and how sellers are paid.</p></div>
+
+    <h3 class="sub">Segments, customers and contracts</h3>
+    <div class="table-box">
+      <table>
+        <thead><tr><th>Customer type</th><th>Contract</th><th>Client incentives</th><th>Visa earns</th><th>Main risk</th></tr></thead>
+        <tbody>
+          <tr><td><span class="tag navy">Consumer</span><br><b>Issuing banks &amp; fintechs</b></td><td>Network licence + incentive agreement, typically 5–7 years, step-ups at renewal. ~20% of payments volume renews in FY26.</td><td>Upfront signing payment (amortised), tiered volume rebates, marketing funds, VIK; clawbacks</td><td>Volume, processing and cross-border fees</td><td>Losing the whole portfolio to Mastercard at renewal</td></tr>
+          <tr><td><span class="tag navy">Consumer</span><br><b>Acquirers, payment facilitators, large merchants</b></td><td>Network licence + shorter, smaller deals; no exclusivity <span class="inf">inferred</span></td><td>Rebates on growth above baseline, acceptance funding, token adoption; little upfront</td><td>Acquirer-side fees; inbound cross-border</td><td>Volume routed to domestic schemes and instant A2A</td></tr>
+          <tr><td><span class="tag teal">CMS</span><br><b>Commercial cards &amp; B2B</b></td><td>Issuer-style deals with banks; corporates and governments are end users</td><td>As for issuers, plus programme support</td><td>Fees on commercial volume, high cross-border share</td><td>Slow conversion from bank transfers and cheques</td></tr>
+          <tr><td><span class="tag teal">CMS</span><br><b>Visa Direct clients</b></td><td>Usage-based, per-transaction pricing with volume tiers</td><td>Price tiers</td><td>Per-transaction and cross-border fees</td><td>Competing rails: A2A, stablecoins</td></tr>
+          <tr><td><span class="tag brown">VAS</span><br><b>Product buyers</b></td><td>Subscription or per-use pricing off a governed price list; often bundled into renewals</td><td>VIK can fund adoption</td><td>Product revenue independent of network fees</td><td>Low adoption after signing</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="sub">Sales coverage and organisation</h3>
+    <div class="grid g3">
+      <div class="card"><span class="tag navy">Global</span><h4>GSCO</h4><p class="muted small" style="margin:0">Global Sales &amp; Commercial Operations, under the SVP Sales Transformation, sets the operating model, scorecards, incentive design, tools and deal governance, and runs Sales 2.0.</p></div>
+      <div class="card"><span class="tag navy">Regional</span><h4>BPO / Sales Excellence</h4><p class="muted small" style="margin:0">Each region's sales ops head advises the Regional President and owns business reviews, quota setting, VIK budgets and AI strategy.</p></div>
+      <div class="card"><span class="tag navy">Product</span><h4>BU commercial ops</h4><p class="muted small" style="margin:0">VAS, CMS and Visa Direct each run their own commercial operations for specialist sales motions.</p></div>
+    </div>
+    <div class="card" style="margin-top:16px">
+      <ul class="small" style="margin:0">
+        <li><b>~4,000 sellers globally</b> (Highspot case study). ~450 VAS specialists and ~5,400 resale partners; CMS specialist sellers grew ~3x from FY21 to FY24.</li>
+        <li><b>Coverage tiers:</b> dedicated teams for Tier 1 banks, pooled coverage for Tier 2, digital and inside sales for Tier 3 and fintechs. One client team owns each bank through the full contract term.</li>
+        <li><b>Sales 2.0:</b> the programme to become "a best-in-class B2B sales organization", covering segmentation and coverage, methodology, performance management, incentives and deal economics, and tools and AI.</li>
+        <li><b>IDDEA:</b> Visa's consultative selling methodology (now IDDEA 2.0 in CEMEA), delivered through bootcamps, quarterly accreditation and AI-scored pitch practice in Highspot.</li>
+      </ul>
+    </div>
+
+    <h3 class="sub">From pipeline to commission: eight steps</h3>
+    <ol class="steps">
+      <li><h4>Pipeline</h4><p>Opportunities, account plans, monthly AANR outlook</p><div class="sys">Dynamics 365 · Eloqua · DemandBase · ZoomInfo</div></li>
+      <li><h4>Deal model</h4><p>Volume × fees − incentives → AANR, NPV, payback</p><div class="sys">iDeal · Conga CPQ</div></li>
+      <li><h4>Approval</h4><p>CPQ → deal desk → regional GIG → GPIC for the largest deals</p><div class="sys">GIG · Dealight · GARP</div></li>
+      <li><h4>Contract &amp; booking</h4><p>Under Global Deal Pricing Operating Standards; AANR booked to quota</p><div class="sys">Legal / contract management</div></li>
+      <li><h4>Set-up &amp; go-live</h4><p>Incentive terms set up; migration or integration; Signed-Not-Live tracked</p><div class="sys">Oracle ORMB</div></li>
+      <li><h4>Billing &amp; incentives</h4><p>Fees billed on actual volume; rebates on actuals; VIK drawn down</p><div class="sys">Billing &amp; settlement · ORMB · VIK Central</div></li>
+      <li><h4>Performance tracking</h4><p>Actuals vs deal model; clawbacks; scorecards</p><div class="sys">DPT · Tableau (TRUTH) · Power BI</div></li>
+      <li><h4>Commission payout</h4><p>SIP on AANR + go-live + MBOs; monthly, with quarter-end look-back</p><div class="sys">NICE · Scorecard</div></li>
+    </ol>
+
+    <h3 class="sub">Compensation and quota mechanics</h3>
+    <div class="grid g2">
+      <div class="card">
+        <span class="tag navy">What's documented</span>
+        <ul class="small" style="margin:0">
+          <li>Sellers on a <b>Sales Incentive Plan</b>: ~62/38 base to variable, accelerators above 100%, paid on AANR + go-live + MBOs</li>
+          <li><b>MIP/TIP</b> team and market overlays; VAS-aligned incentives</li>
+          <li>Ops staff on the corporate bonus (VIP, 8–25% of base) + RSUs; sales engineers on a non-quota bonus</li>
+          <li>~60% of sellers reach quota (self-reported)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="tag amber">How multi-year deals count <span class="inf">inferred</span></span>
+        <ul class="small" style="margin:0">
+          <li><b>AANR = one year of the deal model's net revenue</b>, credited once at signing (like ACV, but net of incentives and based on forecast volume)</li>
+          <li>From year 2 the deal is part of the existing base; quota comes from new products, portfolios and conversions on top</li>
+          <li>Renewals usually <i>lower</i> net revenue, so they're best measured by a retention objective</li>
+          <li>Annual quota = plan target minus revenue already contracted, split by account potential</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="sub">What Visa measures today</h3>
+    <div class="table-box">
+      <table>
+        <thead><tr><th>Metric</th><th>Reported externally</th><th>Tracked internally</th></tr></thead>
+        <tbody>
+          <tr><td><b>AANR</b></td><td>No</td><td>Yes: the core booking metric, with a monthly outlook</td></tr>
+          <tr><td><b>Time to revenue</b></td><td>No</td><td>Yes: Signed-Not-Live, go-live as a seller objective</td></tr>
+          <tr><td><b>Realisation</b></td><td>No</td><td>Partly: deal performance tracking compares actuals with the deal model <span class="inf">inferred</span></td></tr>
+          <tr><td><b>Net revenue retention</b></td><td>No</td><td>No public evidence; account growth shows as net revenue vs target <span class="inf">inferred</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small muted" style="margin-top:10px">As value-added services and new flows grow, realisation and market-adjusted net revenue retention become the real measures of growth after signature.</p>
+
+
+    <div class="part"><span class="part-code">3C</span><h3>Market context</h3><p>CEMEA specifics and the industry shifts that shape the commercial model.</p></div>
+
+    <h3 class="sub">CEMEA context</h3>
+    <div class="grid g3">
+      <div class="card"><h4>Competing rails</h4><p class="muted small" style="margin:0">Domestic schemes (Jaywan, mada) and instant A2A payments (Aani, sarie) compete for domestic volume.</p></div>
+      <div class="card"><h4>Cross-border hub</h4><p class="muted small" style="margin:0">Tourism, expatriate spending and remittances make the GCC rich in Visa's most profitable flow.</p></div>
+      <div class="card"><h4>A region in motion</h4><p class="muted small" style="margin:0">A new UAE–Kuwait–Qatar region from January 2026; cash conversion across Africa; a live testbed for agentic payments and dirham stablecoins.</p></div>
+    </div>
+
+    <h3 class="sub">Industry trends to watch</h3>
+    <div class="grid g3">
+      <div class="card"><span class="tag teal">New rails</span><h4>Stablecoins</h4><p class="muted small" style="margin:0">~$300B+ in circulation; the US GENIUS Act is enforceable from January 2027. Visa settles in stablecoins at a ~$20B annualised run rate and is "multi-coin, multi-chain."</p></div>
+      <div class="card"><span class="tag teal">New buyers</span><h4>Agentic commerce</h4><p class="muted small" style="margin:0">AI agents paying within user-set limits, using agent tokens and "know your agent" checks. Early, with standards unsettled; B2B is likely to adopt it first.</p></div>
+      <div class="card"><span class="tag teal">New products</span><h4>Tokens, B2B, fraud</h4><p class="muted small" style="margin:0">Tokenisation and passkeys, digitising B2B payments, and AI-driven scams make value-added services the margin story.</p></div>
+    </div>
+  
+
+    <div class="part"><span class="part-code">3D</span><h3>Recommendations for CEMEA</h3><p>Six pillars, a 90-day roadmap and a regional scorecard.</p></div>
 
     <h3 class="sub">Six pillars of commercial operations</h3>
     <div class="grid g3">
@@ -653,26 +967,6 @@ body.ed-active{padding-bottom:96px}
       </div>
     </div>
 
-    <h3 class="sub">Illustrative seller plan design</h3>
-    <div class="table-box">
-      <table>
-        <thead><tr><th>Seller role</th><th>Illustrative plan weights</th><th>Pay mix</th></tr></thead>
-        <tbody>
-          <tr><td><b>Issuer client director</b></td><td>50% net AANR · 20% go-live &amp; realisation · 30% objectives (retention, product take-up)</td><td>~60/40</td></tr>
-          <tr><td><b>Acquirer / acceptance seller</b></td><td>60% AANR above baseline · 20% new acceptance · 20% product take-up</td><td>~60/40</td></tr>
-          <tr><td><b>VAS / CMS specialist</b></td><td>70% product AANR · 30% go-live; shared credit with client teams</td><td>~70/30</td></tr>
-          <tr><td><b>Sales engineers, ops staff</b></td><td>No quota; bonus on company and business-unit results, which keeps ops neutral</td><td>Bonus</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <h3 class="sub">Flagship AI use cases</h3>
-    <div class="grid g3">
-      <div class="card"><span class="tag teal">Deal desk</span><h4>Deal-model copilot</h4><p class="muted small" style="margin:0">Prefill forecasts from transaction data, benchmark incentives against how similar deals actually performed, flag deals outside guardrails, draft the approval memo. People still decide.</p></div>
-      <div class="card"><span class="tag teal">Retention</span><h4>Renewal-risk early warning</h4><p class="muted small" style="margin:0">Activation, spend per card and domestic-scheme leakage flag at-risk renewals 18–24 months out, not 6.</p></div>
-      <div class="card"><span class="tag teal">Sellers</span><h4>Agents that remove admin</h4><p class="muted small" style="margin:0">Account plans, CRM updates and QBR packs drafted in Dynamics. Measure seller time freed and where it's reinvested.</p></div>
-    </div>
-
     <h3 class="sub">A 90-day roadmap</h3>
     <div class="grid g3">
       <div class="card"><span class="tag amber">Days 1–30</span><h4>Listen &amp; diagnose</h4><ul class="small"><li>Meet market leaders, the deal desk, Finance and Global Sales Operations</li><li>Assess CEMEA's maturity on the six pillars</li><li>Map the renewal calendar for the next 24 months</li></ul></div>
@@ -694,152 +988,10 @@ body.ed-active{padding-bottom:96px}
         </tbody>
       </table>
     </div>
-  </div>
-</section>
+  
 
-<!-- ============ 5. UNDERSTANDING VISA ============ -->
-<section class="block" id="visa">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="sec-num">05 · OUTSIDE-IN VIEW</span>
-      <h2>My understanding of Visa's commercial engine</h2>
-      <p>Built from public filings, Investor Day 2025, earnings calls and job postings. Items marked <span class="inf">inferred</span> are industry practice or my reading, not published by Visa.</p>
-    </div>
+    <div class="part"><span class="part-code">3E</span><h3>Questions to explore</h3><p></p></div>
 
-    <h3 class="sub">Strategy: a network of networks</h3>
-    <div class="grid g2">
-      <div class="card">
-        <span class="tag navy">Investor Day 2025</span>
-        <h4>Be the best way to pay and be paid, across every flow</h4>
-        <ul class="small">
-          <li><b>Consumer payments:</b> ~$41T of consumer spend, ~$23T still on cash, legacy rails or domestic schemes</li>
-          <li><b>Commercial &amp; money movement:</b> ~$200T of B2B flows and ~$145T of other money movement; ~$115T actively pursued</li>
-          <li><b>Value-added services:</b> a $520B opportunity, ~2% captured</li>
-          <li><b>Foundation:</b> Visa-as-a-Service, an unbundled platform sold capability by capability</li>
-        </ul>
-      </div>
-      <div class="card">
-        <span class="tag navy">Where it stands (Q3 FY26)</span>
-        <h4>Growth is shifting to services and new flows</h4>
-        <ul class="small">
-          <li>Net revenue $11.6B, +14%; full-year outlook raised</li>
-          <li><b>VAS $3.8B, +34%</b>, about a third of revenue</li>
-          <li>CMS revenue +17%; Visa Direct transactions +21%</li>
-          <li>New bets: agentic commerce, stablecoins, issuer processing (Pismo + DPS)</li>
-          <li>~7% of roles cut in July 2026, with savings reinvested in growth</li>
-        </ul>
-      </div>
-    </div>
-
-    <h3 class="sub">How Visa makes money (FY2025)</h3>
-    <div class="grid g2">
-      <div class="table-box">
-        <table style="min-width:0">
-          <thead><tr><th>Revenue line</th><th>FY25</th><th>Growth</th></tr></thead>
-          <tbody>
-            <tr><td>Service: fees on payments volume</td><td class="num">$17.5B</td><td class="num">+9%</td></tr>
-            <tr><td>Data processing: per-transaction fees</td><td class="num">$20.0B</td><td class="num">+13%</td></tr>
-            <tr><td>International: cross-border and FX</td><td class="num">$14.2B</td><td class="num">+12%</td></tr>
-            <tr><td>Other: incl. value-added services</td><td class="num">$4.1B</td><td class="num">+27%</td></tr>
-            <tr><td>Client incentives (contra-revenue)</td><td class="num">−$15.8B</td><td class="num">+14%</td></tr>
-            <tr class="total"><td>Net revenue</td><td class="num">$40.0B</td><td class="num">+11%</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="card">
-        <span class="tag amber">Illustrative</span>
-        <h4>One $100 card payment</h4>
-        <p class="small">The merchant pays roughly $2 in fees. The <b>issuing bank</b> takes the largest share as interchange (Visa sets it but doesn't keep it). The <b>acquirer</b> keeps its margin. <b>Visa</b> earns a few cents of network fees, and several times more if the card is used abroad.</p>
-        <p class="small" style="margin:0">Visa takes no credit risk. Incentives are 28% of gross revenue and are growing faster than net revenue, which is why deal governance matters so much.</p>
-      </div>
-    </div>
-
-    <h3 class="sub">Segments, customers and contracts</h3>
-    <div class="table-box">
-      <table>
-        <thead><tr><th>Customer type</th><th>Contract</th><th>Client incentives</th><th>Visa earns</th><th>Main risk</th></tr></thead>
-        <tbody>
-          <tr><td><span class="tag navy">Consumer</span><br><b>Issuing banks &amp; fintechs</b></td><td>Network licence + incentive agreement, typically 5–7 years, step-ups at renewal. ~20% of payments volume renews in FY26.</td><td>Upfront signing payment (amortised), tiered volume rebates, marketing funds, VIK; clawbacks</td><td>Volume, processing and cross-border fees</td><td>Losing the whole portfolio to Mastercard at renewal</td></tr>
-          <tr><td><span class="tag navy">Consumer</span><br><b>Acquirers, payment facilitators, large merchants</b></td><td>Network licence + shorter, smaller deals; no exclusivity <span class="inf">inferred</span></td><td>Rebates on growth above baseline, acceptance funding, token adoption; little upfront</td><td>Acquirer-side fees; inbound cross-border</td><td>Volume routed to domestic schemes and instant A2A</td></tr>
-          <tr><td><span class="tag teal">CMS</span><br><b>Commercial cards &amp; B2B</b></td><td>Issuer-style deals with banks; corporates and governments are end users</td><td>As for issuers, plus programme support</td><td>Fees on commercial volume, high cross-border share</td><td>Slow conversion from bank transfers and cheques</td></tr>
-          <tr><td><span class="tag teal">CMS</span><br><b>Visa Direct clients</b></td><td>Usage-based, per-transaction pricing with volume tiers</td><td>Price tiers</td><td>Per-transaction and cross-border fees</td><td>Competing rails: A2A, stablecoins</td></tr>
-          <tr><td><span class="tag brown">VAS</span><br><b>Product buyers</b></td><td>Subscription or per-use pricing off a governed price list; often bundled into renewals</td><td>VIK can fund adoption</td><td>Product revenue independent of network fees</td><td>Low adoption after signing</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <h3 class="sub">Sales coverage and organisation</h3>
-    <div class="grid g3">
-      <div class="card"><span class="tag navy">Global</span><h4>GSCO</h4><p class="muted small" style="margin:0">Global Sales &amp; Commercial Operations, under the SVP Sales Transformation, sets the operating model, scorecards, incentive design, tools and deal governance, and runs Sales 2.0.</p></div>
-      <div class="card"><span class="tag navy">Regional</span><h4>BPO / Sales Excellence</h4><p class="muted small" style="margin:0">Each region's sales ops head advises the Regional President and owns business reviews, quota setting, VIK budgets and AI strategy.</p></div>
-      <div class="card"><span class="tag navy">Product</span><h4>BU commercial ops</h4><p class="muted small" style="margin:0">VAS, CMS and Visa Direct each run their own commercial operations for specialist sales motions.</p></div>
-    </div>
-    <div class="card" style="margin-top:16px">
-      <ul class="small" style="margin:0">
-        <li><b>~4,000 sellers globally</b> (Highspot case study). ~450 VAS specialists and ~5,400 resale partners; CMS specialist sellers grew ~3x from FY21 to FY24.</li>
-        <li><b>Coverage tiers:</b> dedicated teams for Tier 1 banks, pooled coverage for Tier 2, digital and inside sales for Tier 3 and fintechs. One client team owns each bank through the full contract term.</li>
-        <li><b>Sales 2.0:</b> the programme to become "a best-in-class B2B sales organization", covering segmentation and coverage, methodology, performance management, incentives and deal economics, and tools and AI.</li>
-        <li><b>IDDEA:</b> Visa's consultative selling methodology (now IDDEA 2.0 in CEMEA), delivered through bootcamps, quarterly accreditation and AI-scored pitch practice in Highspot.</li>
-      </ul>
-    </div>
-
-    <h3 class="sub">From pipeline to commission: eight steps</h3>
-    <ol class="steps">
-      <li><h4>Pipeline</h4><p>Opportunities, account plans, monthly AANR outlook</p><div class="sys">Dynamics 365 · Eloqua · DemandBase · ZoomInfo</div></li>
-      <li><h4>Deal model</h4><p>Volume × fees − incentives → AANR, NPV, payback</p><div class="sys">iDeal · Conga CPQ</div></li>
-      <li><h4>Approval</h4><p>CPQ → deal desk → regional GIG → GPIC for the largest deals</p><div class="sys">GIG · Dealight · GARP</div></li>
-      <li><h4>Contract &amp; booking</h4><p>Under Global Deal Pricing Operating Standards; AANR booked to quota</p><div class="sys">Legal / contract management</div></li>
-      <li><h4>Set-up &amp; go-live</h4><p>Incentive terms set up; migration or integration; Signed-Not-Live tracked</p><div class="sys">Oracle ORMB</div></li>
-      <li><h4>Billing &amp; incentives</h4><p>Fees billed on actual volume; rebates on actuals; VIK drawn down</p><div class="sys">Billing &amp; settlement · ORMB · VIK Central</div></li>
-      <li><h4>Performance tracking</h4><p>Actuals vs deal model; clawbacks; scorecards</p><div class="sys">DPT · Tableau (TRUTH) · Power BI</div></li>
-      <li><h4>Commission payout</h4><p>SIP on AANR + go-live + MBOs; monthly, with quarter-end look-back</p><div class="sys">NICE · Scorecard</div></li>
-    </ol>
-
-    <h3 class="sub">Compensation and quota mechanics</h3>
-    <div class="grid g2">
-      <div class="card">
-        <span class="tag navy">What's documented</span>
-        <ul class="small" style="margin:0">
-          <li>Sellers on a <b>Sales Incentive Plan</b>: ~62/38 base to variable, accelerators above 100%, paid on AANR + go-live + MBOs</li>
-          <li><b>MIP/TIP</b> team and market overlays; VAS-aligned incentives</li>
-          <li>Ops staff on the corporate bonus (VIP, 8–25% of base) + RSUs; sales engineers on a non-quota bonus</li>
-          <li>~60% of sellers reach quota (self-reported)</li>
-        </ul>
-      </div>
-      <div class="card">
-        <span class="tag amber">How multi-year deals count <span class="inf">inferred</span></span>
-        <ul class="small" style="margin:0">
-          <li><b>AANR = one year of the deal model's net revenue</b>, credited once at signing (like ACV, but net of incentives and based on forecast volume)</li>
-          <li>From year 2 the deal is part of the existing base; quota comes from new products, portfolios and conversions on top</li>
-          <li>Renewals usually <i>lower</i> net revenue, so they're best measured by a retention objective</li>
-          <li>Annual quota = plan target minus revenue already contracted, split by account potential</li>
-        </ul>
-      </div>
-    </div>
-
-    <h3 class="sub">CEMEA context</h3>
-    <div class="grid g3">
-      <div class="card"><h4>Competing rails</h4><p class="muted small" style="margin:0">Domestic schemes (Jaywan, mada) and instant A2A payments (Aani, sarie) compete for domestic volume.</p></div>
-      <div class="card"><h4>Cross-border hub</h4><p class="muted small" style="margin:0">Tourism, expatriate spending and remittances make the GCC rich in Visa's most profitable flow.</p></div>
-      <div class="card"><h4>A region in motion</h4><p class="muted small" style="margin:0">A new UAE–Kuwait–Qatar region from January 2026; cash conversion across Africa; a live testbed for agentic payments and dirham stablecoins.</p></div>
-    </div>
-
-    <h3 class="sub">Industry trends to watch</h3>
-    <div class="grid g3">
-      <div class="card"><span class="tag teal">New rails</span><h4>Stablecoins</h4><p class="muted small" style="margin:0">~$300B+ in circulation; the US GENIUS Act is enforceable from January 2027. Visa settles in stablecoins at a ~$20B annualised run rate and is "multi-coin, multi-chain."</p></div>
-      <div class="card"><span class="tag teal">New buyers</span><h4>Agentic commerce</h4><p class="muted small" style="margin:0">AI agents paying within user-set limits, using agent tokens and "know your agent" checks. Early, with standards unsettled; B2B is likely to adopt it first.</p></div>
-      <div class="card"><span class="tag teal">New products</span><h4>Tokens, B2B, fraud</h4><p class="muted small" style="margin:0">Tokenisation and passkeys, digitising B2B payments, and AI-driven scams make value-added services the margin story.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ QUESTIONS ============ -->
-<section class="block" id="questions">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="sec-num">06 · DIALOGUE</span>
-      <h2>Questions I'd like to explore</h2>
-    </div>
     <ol class="qa">
       <li>Which Sales 2.0 pillar is most mature in CEMEA, and which is furthest behind?</li>
       <li>How is the mandate split between Sales Operations and Sales Excellence in CEMEA?</li>
@@ -847,6 +999,7 @@ body.ed-active{padding-bottom:96px}
       <li>How does CEMEA protect domestic share against national schemes and instant A2A payments?</li>
       <li>How will the new UAE–Kuwait–Qatar region change the operating rhythm and reporting?</li>
     </ol>
+  
   </div>
 </section>
 
@@ -864,7 +1017,13 @@ body.ed-active{padding-bottom:96px}
       <li><a href="https://www.highspot.com/en-gb/success-stories/visa-2/" target="_blank" rel="noopener">Highspot: How Visa hones sales pitches</a></li>
       <li><a href="https://finance.yahoo.com/markets/crypto/articles/visa-stablecoin-settlement-just-hit-094445367.html" target="_blank" rel="noopener">Visa stablecoin settlement, Sept 2026</a></li>
       <li><a href="https://www.forrester.com/blogs/agentic-payments-in-b2c-commerce-where-we-are-now/" target="_blank" rel="noopener">Forrester: agentic payments in B2C commerce</a></li>
-    </ul>
+          <li><a href="https://theindustryspread.com/visa-agentic-payments-live-30-european-issuers/" target="_blank" rel="noopener">Visa agentic payments live with 30 European issuers (Jul 2026)</a></li>
+      <li><a href="https://usa.visa.com/about-visa/newsroom/press-releases.releaseId.22856.html" target="_blank" rel="noopener">Visa, BILL and Billtrust agentic B2B payments pilot (Oct 2026)</a></li>
+      <li><a href="https://thepaypers.com/payments/news/visa-launches-agentic-ready-programme-in-cemea" target="_blank" rel="noopener">Visa Agentic Ready programme in CEMEA (May 2026)</a></li>
+      <li><a href="https://corporate.visa.com/en/sites/visa-perspectives/security-trust/ai-and-trust-at-scale.html" target="_blank" rel="noopener">Visa: AI and trust at scale</a></li>
+      <li><a href="https://www.salesforce.com/news/?p=61283" target="_blank" rel="noopener">Salesforce State of Sales, 5th edition (2022)</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/partner-center/mcem-for-partners" target="_blank" rel="noopener">Microsoft Customer Engagement Methodology</a></li>
+</ul>
     <p style="margin-top:20px">Seller-pay data is self-reported (RepVue, Glassdoor, Levels.fyi). Org structure is drawn from public job postings and profiles. Acquirer terms, quota mechanics and approval tiers are industry practice, marked as inferred. This is an independent, personal perspective, not affiliated with or endorsed by Visa.</p>
   </div>
 </footer>

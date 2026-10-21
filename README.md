@@ -2,9 +2,9 @@
 
 Single-page site (`index.html`, no build step) covering:
 
-1. Vision for best-in-class sales operations at Visa CEMEA
-2. An outside-in view of Visa's strategy, segments, contracts, coverage, quote-to-cash and compensation
-3. Questions to explore
+1. Best-in-class B2B sales operations vision: the operations engine, the customer value journey, core metrics, quota and incentives
+2. AI and automation potential: two lenses, priority use cases, how to build one, measurement, roadmap, agentic commerce
+3. Understanding of Visa and recommendations for CEMEA, with questions to explore
 
 ## Edit the page in your browser
 
