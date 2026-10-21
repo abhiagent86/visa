@@ -2,7 +2,7 @@
 
 Single-page site (`index.html`, no build step) covering:
 
-1. Best-in-class B2B sales operations vision: the operations engine, the customer value journey, core metrics, quota and incentives
+1. Best-in-class B2B sales operations vision: the operations engine, the customer value journey, core metrics, quota and incentives, operating mechanics
 2. AI and automation potential: two lenses, priority use cases, how to build one, measurement, roadmap, agentic commerce
 3. Understanding of Visa and recommendations for CEMEA, with questions to explore
 
