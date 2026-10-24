@@ -268,6 +268,25 @@ body.ed-active{padding-bottom:96px}
   section.block{padding:28px 0;break-inside:avoid-page}
   .card,.bb,.steps li,.table-box{box-shadow:none;break-inside:avoid}
 }
+
+/* AI impact maps */
+:root{--im-u:#5F5A52;--im-a:#5444B8;--im-m:#1F5FAE;--im-n:#8A5A00}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--im-u:#CFCAC0;--im-a:#B9AFF5;--im-m:#93BFF3;--im-n:#F2C14E}}
+:root[data-theme="dark"]{--im-u:#CFCAC0;--im-a:#B9AFF5;--im-m:#93BFF3;--im-n:#F2C14E}
+.im-legend{display:flex;flex-wrap:wrap;gap:8px 20px;margin:4px 0 16px;font-size:14px;color:var(--muted)}
+.im-legend span{display:inline-flex;align-items:center;gap:8px}
+.sw{width:16px;height:16px;border-radius:4px;flex:none;display:inline-block}
+.sw.u{background:#BDB8AE}.sw.a{background:#8C7FE3}.sw.m{background:#5A9BE8}.sw.n{background:#E0A526}
+.imap{display:grid;gap:12px;grid-template-columns:1fr;margin:0 0 10px;padding:0;list-style:none}
+@media(min-width:600px){.imap{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:960px){.imap{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.itile{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px;box-shadow:var(--shadow);margin:0}
+.itile .ik{display:flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;margin-bottom:8px}
+.itile.u .ik{color:var(--im-u)}.itile.a .ik{color:var(--im-a)}.itile.m .ik{color:var(--im-m)}.itile.n .ik{color:var(--im-n)}
+.itile h4{font-size:15px;margin:0 0 6px}
+.itile p{font-size:13.5px;line-height:1.45;margin:0 0 4px;color:var(--muted)}
+.itile p b{color:var(--ink);font-weight:600}
+.im-sowhat{font-size:14px;color:var(--muted);margin:0 0 8px}
 </style>
 </head>
 <body>
@@ -808,7 +827,65 @@ body.ed-active{padding-bottom:96px}
     </ol>
 
 
-    <div class="part"><span class="part-code">2C</span><h3>Measuring productivity</h3><p>Four levels, against a baseline and a control group.</p></div>
+    <div class="part"><span class="part-code">2C</span><h3>AI impact maps: what changes, task by task</h3><p>Three core processes broken into tasks. Each task is <b>unchanged</b> (the value is human), <b>augmented</b> (AI proposes, people decide), <b>automated</b> (AI does it, people handle exceptions) or a <b>new task</b> that exists because AI is used.</p></div>
+
+    <div class="im-legend" aria-label="Legend">
+      <span><i class="sw u"></i>Unchanged</span><span><i class="sw a"></i>Augmented</span><span><i class="sw m"></i>Automated</span><span><i class="sw n"></i>New task</span>
+    </div>
+
+    <h3 class="sub">Account planning <span class="muted small" style="font-weight:400">· 3 automated · 4 augmented · 3 unchanged · 2 new</span></h3>
+    <p class="im-sowhat">Prepare (01–04) → Build (05–08) → Agree and run (09–12). Time shifts from compiling data and slides to client conversations.</p>
+    <ol class="imap">
+      <li class="itile m"><div class="ik"><i class="sw m"></i>01 · Automated</div><h4>Compile fact base</h4><p><b>Before</b> Pulled by hand from several systems</p><p><b>With AI</b> Agent assembles volumes and contracts</p></li>
+      <li class="itile m"><div class="ik"><i class="sw m"></i>02 · Automated</div><h4>Research the client</h4><p><b>Before</b> Seller reads reports and news</p><p><b>With AI</b> AI brief on strategy, results, regulation</p></li>
+      <li class="itile a"><div class="ik"><i class="sw a"></i>03 · Augmented</div><h4>Prioritise accounts</h4><p><b>Before</b> Last year’s revenue and gut feel</p><p><b>With AI</b> Propensity scores; the leader decides</p></li>
+      <li class="itile a"><div class="ik"><i class="sw a"></i>04 · Augmented</div><h4>Map stakeholders</h4><p><b>Before</b> Built from memory</p><p><b>With AI</b> AI suggests the map; seller validates</p></li>
+      <li class="itile u"><div class="ik"><i class="sw u"></i>05 · Unchanged</div><h4>Explore client goals</h4><p><b>Before</b> Face-to-face discovery meeting</p><p><b>With AI</b> Still human: trust is the job</p></li>
+      <li class="itile a"><div class="ik"><i class="sw a"></i>06 · Augmented</div><h4>Size opportunities</h4><p><b>Before</b> Spreadsheet built with the deal desk</p><p><b>With AI</b> AI drafts deal model and incentive case</p></li>
+      <li class="itile u"><div class="ik"><i class="sw u"></i>07 · Unchanged</div><h4>Run team workshop</h4><p><b>Before</b> Product, risk and data experts shape it</p><p><b>With AI</b> Judgement stays with the team</p></li>
+      <li class="itile a"><div class="ik"><i class="sw a"></i>08 · Augmented</div><h4>Write the plan</h4><p><b>Before</b> Hours assembling slides</p><p><b>With AI</b> First draft from data and workshop notes</p></li>
+      <li class="itile u"><div class="ik"><i class="sw u"></i>09 · Unchanged</div><h4>Agree joint roadmap</h4><p><b>Before</b> Shared back and signed off with client</p><p><b>With AI</b> Executive commitment stays human</p></li>
+      <li class="itile m"><div class="ik"><i class="sw m"></i>10 · Automated</div><h4>Track actions &amp; KPIs</h4><p><b>Before</b> Updated by hand before each review</p><p><b>With AI</b> Live dashboard and slippage alerts</p></li>
+      <li class="itile n"><div class="ik"><i class="sw n"></i>11 · New task</div><h4>Check the AI’s brief</h4><p><b>Before</b> Did not exist</p><p><b>With AI</b> Correct errors, add missing context</p></li>
+      <li class="itile n"><div class="ik"><i class="sw n"></i>12 · New task</div><h4>Review AI picks</h4><p><b>Before</b> Did not exist</p><p><b>With AI</b> Accept or reject; the model learns</p></li>
+    </ol>
+
+    <h3 class="sub">Pipeline management <span class="muted small" style="font-weight:400">· 3 automated · 4 augmented · 3 unchanged · 2 new</span></h3>
+    <p class="im-sowhat">Capture (01–03) → Qualify (04–06) → Progress (07–09) → Forecast and govern (10–12). Time shifts from chasing data to coaching and closing; clean data makes every other AI use case work.</p>
+    <ol class="imap">
+      <li class="itile m"><div class="ik"><i class="sw m"></i>01 · Automated</div><h4>Update CRM records</h4><p><b>Before</b> Typed in by sellers after meetings</p><p><b>With AI</b> Captured from calls, emails, meetings</p></li>
+      <li class="itile m"><div class="ik"><i class="sw m"></i>02 · Automated</div><h4>Check hygiene</h4><p><b>Before</b> Ops chases stale deals by email</p><p><b>With AI</b> Agent flags stalled and aged deals</p></li>
+      <li class="itile m"><div class="ik"><i class="sw m"></i>03 · Automated</div><h4>Measure coverage</h4><p><b>Before</b> Spreadsheet of pipeline vs quota</p><p><b>With AI</b> Live coverage by seller and quarter</p></li>
+      <li class="itile a"><div class="ik"><i class="sw a"></i>04 · Augmented</div><h4>Qualify new deals</h4><p><b>Before</b> Seller judgement, uneven criteria</p><p><b>With AI</b> AI scores deals on eight criteria</p></li>
+      <li class="itile a"><div class="ik"><i class="sw a"></i>05 · Augmented</div><h4>Find pipeline gaps</h4><p><b>Before</b> Gap spotted at quarter-end</p><p><b>With AI</b> AI suggests plays to close the gap</p></li>
+      <li class="itile u"><div class="ik"><i class="sw u"></i>06 · Unchanged</div><h4>Run pipeline 1:1s</h4><p><b>Before</b> Monthly manager–seller conversation</p><p><b>With AI</b> The coaching conversation stays human</p></li>
+      <li class="itile a"><div class="ik"><i class="sw a"></i>07 · Augmented</div><h4>Review top deals</h4><p><b>Before</b> Pack built by hand for each review</p><p><b>With AI</b> AI pack: risks, next steps, help needed</p></li>
+      <li class="itile u"><div class="ik"><i class="sw u"></i>08 · Unchanged</div><h4>Decide deal strategy</h4><p><b>Before</b> Leaders decide where to invest</p><p><b>With AI</b> Investment calls stay with leaders</p></li>
+      <li class="itile u"><div class="ik"><i class="sw u"></i>09 · Unchanged</div><h4>Engage the client</h4><p><b>Before</b> Seller advances the deal with client</p><p><b>With AI</b> Relationship work stays human</p></li>
+      <li class="itile a"><div class="ik"><i class="sw a"></i>10 · Augmented</div><h4>Call the forecast</h4><p><b>Before</b> Manager roll-up and judgement</p><p><b>With AI</b> AI forecast beside the manager’s call</p></li>
+      <li class="itile n"><div class="ik"><i class="sw n"></i>11 · New task</div><h4>Check AI deal scores</h4><p><b>Before</b> Did not exist</p><p><b>With AI</b> Override with a reason; model learns</p></li>
+      <li class="itile n"><div class="ik"><i class="sw n"></i>12 · New task</div><h4>Govern CRM data</h4><p><b>Before</b> Did not exist</p><p><b>With AI</b> Own the data quality AI depends on</p></li>
+    </ol>
+
+    <h3 class="sub">Forecasting <span class="muted small" style="font-weight:400">· 3 automated · 4 augmented · 3 unchanged · 2 new</span></h3>
+    <p class="im-sowhat">Prepare (01–03) → Build (04–06) → Call (07–09) → Learn and govern (10–12). The net AANR forecast gets faster and more honest; time shifts from compiling numbers to deciding actions.</p>
+    <ol class="imap">
+      <li class="itile m"><div class="ik"><i class="sw m"></i>01 · Automated</div><h4>Clean the data</h4><p><b>Before</b> Ops checks records before each call</p><p><b>With AI</b> Agent fixes gaps before every review</p></li>
+      <li class="itile m"><div class="ik"><i class="sw m"></i>02 · Automated</div><h4>Run base forecast</h4><p><b>Before</b> Spreadsheet roll-up of seller inputs</p><p><b>With AI</b> System forecast from pipeline history</p></li>
+      <li class="itile a"><div class="ik"><i class="sw a"></i>03 · Augmented</div><h4>Forecast renewals</h4><p><b>Before</b> Renewal calendar tracked by hand</p><p><b>With AI</b> AI flags at-risk renewals; owner confirms</p></li>
+      <li class="itile a"><div class="ik"><i class="sw a"></i>04 · Augmented</div><h4>Categorise deals</h4><p><b>Before</b> Sellers pick commit or upside</p><p><b>With AI</b> AI flags deals in the wrong category</p></li>
+      <li class="itile a"><div class="ik"><i class="sw a"></i>05 · Augmented</div><h4>Run scenarios</h4><p><b>Before</b> Rare, and built by hand</p><p><b>With AI</b> AI runs what-ifs on deals and FX</p></li>
+      <li class="itile a"><div class="ik"><i class="sw a"></i>06 · Augmented</div><h4>Write commentary</h4><p><b>Before</b> Managers write the narrative</p><p><b>With AI</b> AI drafts what changed and why</p></li>
+      <li class="itile u"><div class="ik"><i class="sw u"></i>07 · Unchanged</div><h4>Make the call</h4><p><b>Before</b> Best and worst case by judgement</p><p><b>With AI</b> Accountability stays with the manager</p></li>
+      <li class="itile u"><div class="ik"><i class="sw u"></i>08 · Unchanged</div><h4>Run forecast call</h4><p><b>Before</b> Fortnightly; weekly in month 3</p><p><b>With AI</b> Leaders still debate and commit</p></li>
+      <li class="itile u"><div class="ik"><i class="sw u"></i>09 · Unchanged</div><h4>Plan recovery</h4><p><b>Before</b> Actions agreed in the call</p><p><b>With AI</b> People decide owners and actions</p></li>
+      <li class="itile m"><div class="ik"><i class="sw m"></i>10 · Automated</div><h4>Track accuracy</h4><p><b>Before</b> Calculated after quarter close</p><p><b>With AI</b> Accuracy and bias tracked by seller</p></li>
+      <li class="itile n"><div class="ik"><i class="sw n"></i>11 · New task</div><h4>Compare AI vs call</h4><p><b>Before</b> Did not exist</p><p><b>With AI</b> Explain big gaps between AI and call</p></li>
+      <li class="itile n"><div class="ik"><i class="sw n"></i>12 · New task</div><h4>Govern the model</h4><p><b>Before</b> Did not exist</p><p><b>With AI</b> Retrain, check bias, sign off changes</p></li>
+    </ol>
+    <p class="small muted" style="margin-top:6px">Illustrative. New tasks are the governance layer: they keep people accountable for AI output and feed corrections back so the models improve.</p>
+
+    <div class="part"><span class="part-code">2D</span><h3>Measuring productivity</h3><p>Four levels, against a baseline and a control group.</p></div>
 
     <div class="table-box">
       <table>
@@ -823,7 +900,7 @@ body.ed-active{padding-bottom:96px}
     </div>
 
 
-    <div class="part"><span class="part-code">2D</span><h3>Roadmap and making it stick</h3><p>Quick, visible wins first, then the decision-quality use cases where the money is.</p></div>
+    <div class="part"><span class="part-code">2E</span><h3>Roadmap and making it stick</h3><p>Quick, visible wins first, then the decision-quality use cases where the money is.</p></div>
 
     <div class="table-box">
       <table>
@@ -842,7 +919,7 @@ body.ed-active{padding-bottom:96px}
     </div>
 
 
-    <div class="part"><span class="part-code">2E</span><h3>Beyond sales operations: agentic commerce</h3><p>Outside the sales engine, agents are becoming a new kind of customer, and Visa wants to be their trust layer.</p></div>
+    <div class="part"><span class="part-code">2F</span><h3>Beyond sales operations: agentic commerce</h3><p>Outside the sales engine, agents are becoming a new kind of customer, and Visa wants to be their trust layer.</p></div>
 
     <div class="table-box">
       <table>
