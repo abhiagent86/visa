@@ -718,7 +718,7 @@ body.ed-active{padding-bottom:96px}
     <p class="small muted" style="margin-top:10px"><b>Implication for sales operations</b> <span class="inf">inferred</span>: segment coverage, playbooks and targets by market archetype, not only by geography; keep one standard engine (plan, forecast, deal desk) with local plays on top; package the capability catalogue into priced, market-ready offers; and run sales operations as a lean service to the markets that adds no layer between clients and leaders.</p>
 
     <h3 class="sub" id="opportunity-map">CEMEA opportunity map: capabilities × market archetypes × segments</h3>
-    <p class="im-method">An outside-in view of where each Visa capability matters most, by market archetype and customer segment. Choose a segment to re-score the map, roll capabilities up into groups or drill down, and select any cell or archetype for the detail. Archetypes extend the market personas Visa’s regional leadership has described publicly; all scores are <span class="inf">inferred</span> and would be validated against internal data.</p>
+    <p class="im-method">An outside-in view of where each Visa capability matters most, by market archetype and customer segment, including consumers as the end-user demand lens. Choose a segment to re-score the map, roll capabilities up into groups or drill down, and select any cell or archetype for the detail. Archetypes extend the market personas Visa’s regional leadership has described publicly; all scores are <span class="inf">inferred</span> and would be validated against internal data.</p>
 
     <div class="om-ctl" role="group" aria-label="Customer segment">
       <span>Segment</span>
@@ -750,7 +750,7 @@ body.ed-active{padding-bottom:96px}
     <div class="grid g2" style="align-content:start">
       <div class="card"><span class="tag navy">1 · Trust is universal</span><h4>Lead with risk everywhere</h4><p class="muted small" style="margin:0">Fraud and scam prevention is High or Priority in four of five archetypes and for banks, acquirers and fintechs alike. It is the one door-opener that travels across the whole region.</p></div>
       <div class="card"><span class="tag navy">2 · Maturity flips the portfolio</span><h4>Two different shopping lists</h4><p class="muted small" style="margin:0">Digital leaders pull tokens, agentic commerce, premium and commercial cards. Transitioning, mobile-first and frontier markets pull credentials, Tap to Phone and Visa Accept, and disbursements. One catalogue, two playbooks.</p></div>
-      <div class="card"><span class="tag navy">3 · Corridors pair archetypes</span><h4>Sell both ends of the flow</h4><p class="muted small" style="margin:0">Gulf outbound remittances meet inbound demand in Egypt, Pakistan and Africa. Plan Visa Direct by corridor, with the sending and receiving markets on one account plan and one target.</p></div>
+      <div class="card"><span class="tag navy">3 · Corridors pair archetypes</span><h4>Sell both ends of the flow</h4><p class="muted small" style="margin:0">Gulf outbound remittances meet inbound demand in Egypt, Pakistan and Africa. Plan Visa Direct by corridor, with the sending and receiving markets on one account plan and one target. Domestic P2P is a different game: it competes with instant-payment systems and mobile money, so Visa wins on reach across apps, safety and scam protection rather than price.</p></div>
       <div class="card"><span class="tag navy">4 · The buyer changes with maturity</span><h4>Banks at the core, fintechs at the edge</h4><p class="muted small" style="margin:0">Banks remain the main buyer in digital leaders and established markets. In mobile-first and frontier markets, fintechs, wallets, telcos and governments carry more of the opportunity, so partner coverage matters more there.</p></div>
     </div>
     <p class="small muted" style="margin-top:10px"><b>Implication for sales operations</b> <span class="inf">inferred</span>: use this matrix as the backbone for coverage and quota setting (opportunity by archetype and segment), for the offer catalogue (lead capabilities per cell) and for the scorecard (attach and adoption tracked against the cells marked Priority).</p>
@@ -2626,35 +2626,36 @@ var A=[
  {k:'M',n:'Mobile- and fintech-first',c:'Nigeria, Kenya, Ghana, Tanzania, Uganda, Rwanda',t:'Mobile money and instant payments lead, vibrant fintechs, millions of micro-merchants, high scam exposure.'},
  {k:'F',n:'Frontier and inclusion',c:'DRC, Angola, Côte d’Ivoire, Ethiopia, West and Central Africa',t:'Low banking penetration, cash-only merchants, infrastructure gaps, aid and government flows; digital credentials leapfrog branches.'}
 ];
-var S=[{k:'all',n:'All segments'},{k:'iss',n:'Issuing banks'},{k:'acq',n:'Acquirers and PSPs'},{k:'mer',n:'Large and e-commerce merchants'},{k:'sme',n:'SMEs and micro-merchants'},{k:'fin',n:'Fintechs, wallets, telcos'},{k:'cg',n:'Corporates and government'}];
+var S=[{k:'all',n:'All segments'},{k:'iss',n:'Issuing banks'},{k:'acq',n:'Acquirers and PSPs'},{k:'mer',n:'Large and e-commerce merchants'},{k:'sme',n:'SMEs and micro-merchants'},{k:'fin',n:'Fintechs, wallets, telcos'},{k:'cg',n:'Corporates and government'},{k:'con',n:'Consumers (end-user demand)'}];
 var G=[
  {n:'Credentials and tokens',m:[0,1]},
  {n:'Issuing services',m:[2,3]},
  {n:'Acceptance',m:[4,5]},
  {n:'Risk and identity',m:[6,7]},
- {n:'Money movement',m:[8,9]},
- {n:'Commercial and B2B',m:[10,11]},
- {n:'Advisory and data',m:[12]},
- {n:'New rails',m:[13,14,15]}
+ {n:'Money movement',m:[8,9,10]},
+ {n:'Commercial and B2B',m:[11,12]},
+ {n:'Advisory and data',m:[13]},
+ {n:'New rails',m:[14,15,16]}
 ];
-// base score by archetype D,E,T,M,F ; relevance by segment iss,acq,mer,sme,fin,cg
+// base score by archetype D,E,T,M,F ; relevance by segment iss,acq,mer,sme,fin,cg,con
 var C=[
- {n:'Credentials and digital issuance',x:'Debit, credit, prepaid; digital-first issuance',s:[2,2,4,3,4],r:[1,0,0,.3,1,.3],p:'Digitise and widen the card base: digital issuance with banks, wallets and telcos.'},
- {n:'Tokenisation and Click to Pay',x:'Network tokens, wallets, e-commerce checkout',s:[4,3,2,2,1],r:[1,.7,1,0,.7,0],p:'Raise token penetration to lift approvals and cut fraud in e-commerce and wallets.'},
- {n:'Issuer processing and resilience',x:'Processing, Smarter Stand-In',s:[2,3,3,3,3],r:[1,0,0,0,.7,0],p:'Offer processing and stand-in to banks modernising core systems.'},
- {n:'Premium, loyalty and engagement',x:'Infinite, benefits, Visa Destinations',s:[4,3,2,1,1],r:[1,0,.5,0,.5,0],p:'Premium propositions and benefits that drive affluent and travel spend.'},
- {n:'Acceptance platform and gateway',x:'Cybersource, Authorize.net, e-commerce',s:[4,3,3,3,2],r:[0,1,1,.5,.5,0],p:'Gateway, optimisation and fraud tools for merchants and payment providers.'},
- {n:'Tap to Phone and Visa Accept',x:'Phone as terminal; micro-sellers',s:[2,2,4,4,4],r:[.3,1,.3,1,.7,0],p:'Convert cash-only and micro-merchants with phone-based acceptance and fast settlement.'},
- {n:'Fraud and scam prevention',x:'Visa Protect, Featurespace, A2A protection',s:[4,4,3,4,2],r:[1,1,.7,0,1,.3],p:'Lead with scams and fraud: the most urgent client problem, sold across rails.'},
- {n:'Authentication and identity',x:'3-D Secure, biometrics, agent identity',s:[4,3,2,3,2],r:[1,.7,.7,0,.7,0],p:'Lower friction and fraud at checkout; identity for agents and digital onboarding.'},
- {n:'Remittances and P2P',x:'Visa Direct, Visa+',s:[4,3,4,4,3],r:[1,0,0,0,1,0],p:'Corridor plays: outbound from the Gulf, inbound to Egypt, Pakistan and Africa.'},
- {n:'Payouts and disbursements',x:'B2C payouts, government-to-citizen',s:[3,2,4,4,4],r:[.7,0,.5,.3,1,1],p:'Gig, insurance and government payouts pushed to cards, accounts and wallets.'},
- {n:'Commercial cards and virtual payables',x:'Corporate, purchasing, fleet, virtual cards',s:[4,3,2,2,1],r:[1,0,0,.5,.3,1],p:'Commercial card programmes through banks, aimed at named corporates and government.'},
- {n:'B2B payments and AP/AR digitisation',x:'B2B Connect, ERP-embedded payments',s:[3,3,3,3,2],r:[.7,0,.3,.7,.5,1],p:'Digitise supplier payments and receivables with banks, ERP and spend platforms.'},
- {n:'Consulting, analytics and data',x:'Visa Consulting & Analytics',s:[3,3,3,3,2],r:[1,.7,.7,0,.7,1],p:'Advisory that opens the door and turns into repeatable services.'},
- {n:'Agentic commerce',x:'Visa Intelligent Commerce, agent credentials',s:[4,2,1,2,1],r:[.7,.7,1,0,1,0],p:'Pilot agent payments with banks, merchants and AI platforms where consumers are ready.'},
- {n:'Stablecoins and digital assets',x:'Settlement, stablecoin-linked cards',s:[3,3,2,3,2],r:[.7,.3,.3,0,1,.3],p:'Stablecoin-linked cards and settlement with licensed virtual-asset firms and banks.'},
- {n:'A2A and real-time payment services',x:'Risk, disputes and connectivity for instant payments',s:[3,3,2,4,2],r:[1,.3,0,0,.7,1],p:'Engage real-time payment systems with risk, disputes and Visa Direct connectivity.'}
+ {n:'Credentials and digital issuance',x:'Debit, credit, prepaid; digital-first issuance',s:[2,2,4,3,4],r:[1,0,0,.3,1,.3,1],p:'Digitise and widen the card base: digital issuance with banks, wallets and telcos.'},
+ {n:'Tokenisation and Click to Pay',x:'Network tokens, wallets, e-commerce checkout',s:[4,3,2,2,1],r:[1,.7,1,0,.7,0,1],p:'Raise token penetration to lift approvals and cut fraud in e-commerce and wallets.'},
+ {n:'Issuer processing and resilience',x:'Processing, Smarter Stand-In',s:[2,3,3,3,3],r:[1,0,0,0,.7,0,0],p:'Offer processing and stand-in to banks modernising core systems.'},
+ {n:'Premium, loyalty and engagement',x:'Infinite, benefits, Visa Destinations',s:[4,3,2,1,1],r:[1,0,.5,0,.5,0,1],p:'Premium propositions and benefits that drive affluent and travel spend.'},
+ {n:'Acceptance platform and gateway',x:'Cybersource, Authorize.net, e-commerce',s:[4,3,3,3,2],r:[0,1,1,.5,.5,0,.3],p:'Gateway, optimisation and fraud tools for merchants and payment providers.'},
+ {n:'Tap to Phone and Visa Accept',x:'Phone as terminal; micro-sellers',s:[2,2,4,4,4],r:[.3,1,.3,1,.7,0,.3],p:'Convert cash-only and micro-merchants with phone-based acceptance and fast settlement.'},
+ {n:'Fraud and scam prevention',x:'Visa Protect, Featurespace, A2A protection',s:[4,4,3,4,2],r:[1,1,.7,0,1,.3,1],p:'Lead with scams and fraud: the most urgent client problem, sold across rails.'},
+ {n:'Authentication and identity',x:'3-D Secure, biometrics, agent identity',s:[4,3,2,3,2],r:[1,.7,.7,0,.7,0,1],p:'Lower friction and fraud at checkout; identity for agents and digital onboarding.'},
+ {n:'Cross-border remittances',x:'Visa Direct to cards, accounts and wallets',s:[4,3,4,4,3],r:[1,0,0,0,1,0,1],p:'Corridor plays: outbound from the Gulf, inbound to Egypt, Pakistan and Africa.'},
+ {n:'Domestic P2P transfers',x:'Visa Direct, Visa+, phone-to-phone tap',s:[3,3,3,2,3],r:[1,0,0,.3,1,0,1],p:'Real-time transfers between friends and family inside banking and wallet apps; interoperability across apps (Visa+), tap-to-transfer and tipping. Competes with domestic instant-payment systems and mobile money, so lead with reach, safety and scam protection.'},
+ {n:'Payouts and disbursements',x:'B2C payouts, government-to-citizen',s:[3,2,4,4,4],r:[.7,0,.5,.3,1,1,.7],p:'Gig, insurance and government payouts pushed to cards, accounts and wallets.'},
+ {n:'Commercial cards and virtual payables',x:'Corporate, purchasing, fleet, virtual cards',s:[4,3,2,2,1],r:[1,0,0,.5,.3,1,0],p:'Commercial card programmes through banks, aimed at named corporates and government.'},
+ {n:'B2B payments and AP/AR digitisation',x:'B2B Connect, ERP-embedded payments',s:[3,3,3,3,2],r:[.7,0,.3,.7,.5,1,0],p:'Digitise supplier payments and receivables with banks, ERP and spend platforms.'},
+ {n:'Consulting, analytics and data',x:'Visa Consulting & Analytics',s:[3,3,3,3,2],r:[1,.7,.7,0,.7,1,0],p:'Advisory that opens the door and turns into repeatable services.'},
+ {n:'Agentic commerce',x:'Visa Intelligent Commerce, agent credentials',s:[4,2,1,2,1],r:[.7,.7,1,0,1,0,1],p:'Pilot agent payments with banks, merchants and AI platforms where consumers are ready.'},
+ {n:'Stablecoins and digital assets',x:'Settlement, stablecoin-linked cards',s:[3,3,2,3,2],r:[.7,.3,.3,0,1,.3,.7],p:'Stablecoin-linked cards and settlement with licensed virtual-asset firms and banks.'},
+ {n:'A2A and real-time payment services',x:'Risk, disputes and connectivity for instant payments',s:[3,3,2,4,2],r:[1,.3,0,0,.7,1,.5],p:'Engage real-time payment systems with risk, disputes and Visa Direct connectivity.'}
 ];
 var LV=['Not relevant','Low','Emerging','High','Priority'];
 var st={seg:'all',lvl:'cap',sel:null,arch:null};
@@ -2706,6 +2707,7 @@ function renderSeg(){
   });
   t.appendChild(tb);
 }
+function conNote(){return st.seg==='con'?'<p class="small"><b>Consumers</b> are the demand lens, not a direct buyer: Visa reaches them through issuers, wallets and fintechs, with brand, benefits and marketing. Score = how strongly consumer behaviour pulls the capability.</p>':'';}
 function top(ai){
   return C.map(function(c,ci){return {c:c,v:score(ci,ai,st.seg)}}).filter(function(x){return x.v>0}).sort(function(p,q){return q.v-p.v}).slice(0,3);
 }
@@ -2714,13 +2716,13 @@ function renderDetail(){
   if(st.sel){
     var a=A[st.sel.a];
     if(st.sel.c!=null){var c=C[st.sel.c]; var v=score(st.sel.c,st.sel.a,st.seg);
-      d.innerHTML='<span class="om-k">'+LV[v]+' · '+segN+'</span><h5>'+c.n+' in '+a.n.toLowerCase()+'</h5><p><b>The play:</b> '+c.p+'</p><p><b>Market context:</b> '+a.t+'</p><p class="small">Examples: '+a.c+'</p>';
+      d.innerHTML='<span class="om-k">'+LV[v]+' · '+segN+'</span><h5>'+c.n+' in '+a.n.toLowerCase()+'</h5><p><b>The play:</b> '+c.p+'</p>'+conNote()+'<p><b>Market context:</b> '+a.t+'</p><p class="small">Examples: '+a.c+'</p>';
     } else {var g=G[st.sel.g]; var v2=gscore(st.sel.g,st.sel.a,st.seg);
       d.innerHTML='<span class="om-k">'+LV[v2]+' · '+segN+'</span><h5>'+g.n+' in '+a.n.toLowerCase()+'</h5><ul>'+g.m.map(function(ci){return '<li><b>'+C[ci].n+'</b> ('+LV[score(ci,st.sel.a,st.seg)]+'): '+C[ci].p+'</li>'}).join('')+'</ul><p><b>Market context:</b> '+a.t+'</p>';}
     return;
   }
   var ai=st.arch==null?0:st.arch; var a2=A[ai];
-  d.innerHTML='<span class="om-k">Archetype profile · '+segN+'</span><h5>'+a2.n+'</h5><p class="small">'+a2.c+'</p><p>'+a2.t+'</p><p style="margin-bottom:4px"><b>Top plays</b></p><ol>'+top(ai).map(function(x){return '<li><b>'+x.c.n+'</b> ('+LV[x.v]+'): '+x.c.p+'</li>'}).join('')+'</ol><p class="small">Select an archetype heading or any cell for detail.</p>';
+  d.innerHTML='<span class="om-k">Archetype profile · '+segN+'</span><h5>'+a2.n+'</h5><p class="small">'+a2.c+'</p><p>'+a2.t+'</p><p style="margin-bottom:4px"><b>Top plays</b></p><ol>'+top(ai).map(function(x){return '<li><b>'+x.c.n+'</b> ('+LV[x.v]+'): '+x.c.p+'</li>'}).join('')+'</ol>'+conNote()+'<p class="small">Select an archetype heading or any cell for detail.</p>';
 }
 render();
 })();
