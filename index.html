@@ -370,6 +370,21 @@ body.ed-active{padding-bottom:96px}
 .om-detail ol,.om-detail ul{margin:0 0 6px;padding-left:18px;color:var(--muted)}
 .om-detail .om-k{font-size:11px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:var(--amber)}
 .om-h4{font-size:17px;margin:6px 0 4px}
+.tam-stats .stat{background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow)}.tam-stats .stat b{color:var(--navy-ink)}.tam-stats .stat span{color:var(--muted);font-size:14px}.tam-stats .stat span.inf{display:inline-block;width:auto;font-size:12px;margin-top:4px}
+@media (min-width:900px){.tam-stats{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.tam-legend{display:flex;flex-wrap:wrap;gap:6px 18px;margin:4px 0 12px;font-size:13px;color:var(--muted)}
+.tam-legend span{display:inline-flex;align-items:center;gap:6px}
+.tam-sw{display:inline-block;width:16px;height:16px;border-radius:4px}
+.tam-card{background:var(--om-4)}.tam-oth{background:var(--teal)}.tam-cash{background:var(--amber-strong)}
+.tam-chart{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:grid;gap:12px}
+.tam-row{display:grid;grid-template-columns:minmax(120px,200px) minmax(0,1fr) 64px;gap:12px;align-items:center}
+.tam-row .tam-n{font-size:14px;font-weight:600;line-height:1.25}
+.tam-row .tam-n small{display:block;font-weight:400;color:var(--muted);font-size:12px}
+.tam-bar{display:flex;height:30px;border-radius:6px;overflow:hidden;background:var(--surface-2)}
+.tam-seg{display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;white-space:nowrap;overflow:hidden;min-width:0}
+.tam-seg.c{background:var(--om-4);color:var(--om-t4)}.tam-seg.o{background:var(--teal);color:#fff}.tam-seg.k{background:var(--amber-strong);color:#141A33}
+.tam-tot{font-size:14px;font-weight:700;font-variant-numeric:tabular-nums;text-align:right}
+@media (max-width:640px){.tam-row{grid-template-columns:minmax(0,1fr) 56px}.tam-row .tam-n{grid-column:1 / -1}}
 </style>
 </head>
 <body>
@@ -754,6 +769,49 @@ body.ed-active{padding-bottom:96px}
       <div class="card"><span class="tag navy">4 · The buyer changes with maturity</span><h4>Banks at the core, fintechs at the edge</h4><p class="muted small" style="margin:0">Banks remain the main buyer in digital leaders and established markets. In mobile-first and frontier markets, fintechs, wallets, telcos and governments carry more of the opportunity, so partner coverage matters more there.</p></div>
     </div>
     <p class="small muted" style="margin-top:10px"><b>Implication for sales operations</b> <span class="inf">inferred</span>: use this matrix as the backbone for coverage and quota setting (opportunity by archetype and segment), for the offer catalogue (lead capabilities per cell) and for the scorecard (attach and adoption tracked against the cells marked Priority).</p>
+
+    <h3 class="sub" id="addressable-market">Addressable market: an outside-in sizing</h3>
+    <p class="im-method">How big the prize is in CEMEA, sized the way Visa sizes its own consumer opportunity: addressable consumer spend (household consumption less non-payment items such as imputed rent), split into spend already on global card networks and the “underserved” remainder (cash and cheques, domestic schemes, account-to-account and mobile money). Archetype figures are <span class="inf">inferred</span> estimates for 27 representative markets; Visa’s own figures are as reported.</p>
+
+    <div class="stats tam-stats" style="margin:0 0 16px">
+      <div class="stat"><b>$1.02T</b><span>Visa payments volume in CEMEA, FY2026 (+13.6% constant $), on 34B transactions</span></div>
+      <div class="stat"><b>$527B</b><span>cash withdrawn on Visa credentials in CEMEA, FY2026: equal to half of payments volume</span></div>
+      <div class="stat"><b>~$2.5T</b><span>addressable consumer spend in the 27 sample markets <span class="inf">inferred</span></span></div>
+      <div class="stat"><b>~$1.6T</b><span>of it outside global card networks: about two-thirds <span class="inf">inferred</span></span></div>
+    </div>
+
+    <div class="om-ctl" role="group" aria-label="Chart units">
+      <span>Show</span>
+      <div class="om-pills" id="tam-unit"></div>
+    </div>
+    <div class="tam-legend" aria-hidden="true">
+      <span><i class="tam-sw tam-card"></i>Global card networks</span>
+      <span><i class="tam-sw tam-oth"></i>Domestic schemes, A2A and mobile money</span>
+      <span><i class="tam-sw tam-cash"></i>Cash and cheques</span>
+    </div>
+    <div class="tam-chart" id="tam-chart" role="img" aria-label="Addressable consumer spend by archetype, split by payment method"></div>
+
+    <div class="table-box" style="margin-top:16px">
+      <table>
+        <thead><tr><th>Archetype (sample markets)</th><th>Household consumption</th><th>Addressable spend</th><th>On card networks</th><th>Underserved</th><th>Where the headroom is, and the play</th></tr></thead>
+        <tbody id="tam-table"></tbody>
+      </table>
+    </div>
+
+    <h4 class="om-h4">Beyond consumer spend</h4>
+    <div class="grid g3" style="align-content:start">
+      <div class="card"><span class="tag teal">B2B</span><h4>~$12T</h4><p class="muted small" style="margin:0">Payment flows among small and mid-sized businesses in CEMEA, mostly bank transfers, cheques and manual invoices (estimate cited by Visa’s regional president). Globally Visa sizes B2B at $145T and actively pursues $60T.</p></div>
+      <div class="card"><span class="tag teal">Remittances</span><h4>~$150B+ through key corridors</h4><p class="muted small" style="margin:0">Saudi Arabia and the UAE each send roughly $40B a year; Pakistan, Egypt and Nigeria each receive roughly $20–40B <span class="inf">inferred</span>, rounded from central-bank and World Bank data. Revenue comes per transaction and from FX, not from volume share.</p></div>
+      <div class="card"><span class="tag teal">Government and payouts</span><h4>Large, lumpy, programme-led</h4><p class="muted small" style="margin:0">Benefits, subsidies, refunds and aid disbursements, won programme by programme with ministries (for example, Uzbekistan’s social payments). Globally Visa sizes government-to-consumer at $15T.</p></div>
+    </div>
+
+    <h4 class="om-h4">What the sizing says</h4>
+    <div class="grid g3" style="align-content:start">
+      <div class="card"><span class="tag navy">1</span><h4>The biggest pool is in the transitioning markets</h4><p class="muted small" style="margin:0">Egypt, Pakistan, Uzbekistan and Iraq hold more underserved spend than the digital leaders, and most of it is cash. Acceptance, credentials and payouts convert it.</p></div>
+      <div class="card"><span class="tag navy">2</span><h4>In the Gulf, the gap is not cash</h4><p class="muted small" style="margin:0">Underserved spend in digital leaders sits mostly on domestic schemes and instant payments. The play is co-badging, tokens, risk and VAS that also earn on domestic rails, not cash conversion.</p></div>
+      <div class="card"><span class="tag navy">3</span><h4>Visa’s own cardholders still pull cash</h4><p class="muted small" style="margin:0">$527B withdrawn on Visa credentials is the most addressable pool of all: the customers already hold Visa. Acceptance at small merchants and real-time settlement move it to payments, which earn far more per dollar.</p></div>
+    </div>
+    <p class="small muted" style="margin-top:10px"><b>Method</b> <span class="inf">inferred</span>: household final consumption for 27 markets, approximate, rounded from World Bank and IMF data (latest available year); addressable spend taken as ~85% of household consumption; payment-method mix by archetype is illustrative and calibrated so card spend is broadly consistent with Visa’s reported CEMEA payments volume (which also includes visitor spend, commercial cards and the other ~60 markets). The sample covers an estimated three-quarters of regional consumption. Treat it as a directional baseline to replace with Visa’s internal market data.</p>
 
     <div class="part"><span class="part-code">1D</span><h3>Recommendations for CEMEA</h3><p>Six pillars, a 90-day roadmap and a regional scorecard.</p></div>
 
@@ -2381,6 +2439,7 @@ body.ed-active{padding-bottom:96px}
       <li><a href="https://thefintechtimes.com/visa-bets-on-stablecoins-processing-and-fraud-detection/" target="_blank" rel="noopener">The Fintech Times: Visa bets on processing and fraud detection (Sep 2026)</a></li>
       <li><a href="https://www.sec.gov/Archives/edgar/data/1141391/000114139126000003/ma12312025-exx991xearnings.htm" target="_blank" rel="noopener">Mastercard Q4 and full-year 2025 earnings release (SEC)</a></li>
       <li><a href="https://www.fintechwrapup.com/p/deep-dive-mastercards-value-added" target="_blank" rel="noopener">Fintech Wrap Up: Mastercard value-added services deep dive</a></li>
+      <li><a href="https://s1.q4cdn.com/050606653/files/content_files/4Q26-Visa-Operational-Performance-Data_vFINAL.pdf" target="_blank" rel="noopener">Visa operational performance data, Q4 FY2026 (CEMEA payments and cash volume)</a></li>
       <li><a href="https://www.youtube.com/watch?v=yPKEPkebIp4" target="_blank" rel="noopener">Money Majlis podcast: interview with Visa’s Regional President, CEMEA (2026)</a></li>
       <li><a href="https://www.fxcintel.com/research/analysis/ct-visa-q4-2026-earnings" target="_blank" rel="noopener">FXC Intelligence: Visa Q4 2026 earnings (Visa Direct transactions)</a></li>
       <li><a href="https://techafricanews.com/2026/09/21/visa-expands-visa-direct-money-transfer-network-across-saudi-arabia/" target="_blank" rel="noopener">Visa expands Visa Direct across Saudi Arabia (Sept 2026)</a></li>
@@ -2723,6 +2782,42 @@ function renderDetail(){
   }
   var ai=st.arch==null?0:st.arch; var a2=A[ai];
   d.innerHTML='<span class="om-k">Archetype profile · '+segN+'</span><h5>'+a2.n+'</h5><p class="small">'+a2.c+'</p><p>'+a2.t+'</p><p style="margin-bottom:4px"><b>Top plays</b></p><ol>'+top(ai).map(function(x){return '<li><b>'+x.c.n+'</b> ('+LV[x.v]+'): '+x.c.p+'</li>'}).join('')+'</ol>'+conNote()+'<p class="small">Select an archetype heading or any cell for detail.</p>';
+}
+render();
+})();
+</script>
+<script>
+(function(){
+var chart=document.getElementById('tam-chart'); if(!chart) return;
+// household consumption (US$B, approx.), mix = [global card networks, other electronic, cash] share of addressable spend
+var A=[
+ {n:'Digital leaders',x:'UAE, Saudi Arabia, Qatar, Kuwait, Bahrain, Kazakhstan, Ukraine',pce:1080,mix:[.60,.22,.18],p:'Mostly domestic schemes and instant payments (e.g. mada, Aani), plus cash in tourism and services. Play: co-badging, tokens, risk and VAS that also earn on domestic rails; agentic commerce.'},
+ {n:'Established card markets',x:'South Africa, Morocco, Oman, Serbia, Georgia, Azerbaijan',pce:475,mix:[.50,.20,.30],p:'Cash among lower-income consumers and small merchants; EFT and domestic transfers. Play: small-merchant acceptance, debit usage, scam and fraud services.'},
+ {n:'Large transitioning markets',x:'Egypt, Pakistan, Uzbekistan, Iraq',pce:805,mix:[.15,.15,.70],p:'Largest cash pool. Play: digital credentials, Tap to Phone and Visa Accept, government payouts and inbound remittances to cards and wallets.'},
+ {n:'Mobile- and fintech-first',x:'Nigeria, Kenya, Ghana, Tanzania, Uganda, Rwanda',pce:415,mix:[.12,.30,.58],p:'Cash plus mobile money and instant transfers. Play: partner with wallets and fintechs (virtual cards, Visa Direct connectivity), micro-merchant acceptance, scam protection.'},
+ {n:'Frontier and inclusion',x:'DRC, Angola, Côte d’Ivoire, Ethiopia',pce:220,mix:[.05,.10,.85],p:'Almost all cash. Play: digital credentials without branches, aid and government disbursements, low-cost acceptance.'}
+];
+var ADDR=.85, unit='usd';
+function f(v){return v>=1000?'$'+(v/1000).toFixed(1)+'T':'$'+Math.round(v)+'B';}
+A.forEach(function(a){a.ad=a.pce*ADDR; a.v=a.mix.map(function(m){return a.ad*m}); a.u=a.v[1]+a.v[2];});
+var max=Math.max.apply(null,A.map(function(a){return a.ad}));
+function pills(){
+  var box=document.getElementById('tam-unit'); box.innerHTML='';
+  [{k:'usd',n:'US$ value'},{k:'pct',n:'Payment mix (%)'}].forEach(function(it){var b=document.createElement('button'); b.type='button'; b.className='im-btn'; b.textContent=it.n; b.setAttribute('aria-pressed',unit===it.k?'true':'false'); b.addEventListener('click',function(){unit=it.k; render();}); box.appendChild(b);});
+}
+function render(){
+  pills(); chart.innerHTML='';
+  A.forEach(function(a){
+    var row=document.createElement('div'); row.className='tam-row';
+    var w=unit==='usd'?a.ad/max*100:100;
+    var segs=['c','o','k'].map(function(c,i){var pct=a.mix[i]*100; var lab=unit==='usd'?f(a.v[i]):Math.round(pct)+'%'; var show=pct>0; return '<div class="tam-seg '+c+'" style="width:'+pct+'%" title="'+lab+'">'+(show?lab:'')+'</div>';}).join('');
+    row.innerHTML='<div class="tam-n">'+a.n+'<small>'+a.x+'</small></div><div><div class="tam-bar" style="width:'+w+'%">'+segs+'</div></div><div class="tam-tot">'+(unit==='usd'?f(a.ad):f(a.u)+'<br><span style="font-weight:400;font-size:11px;color:var(--muted)">underserved</span>')+'</div>';
+    chart.appendChild(row);
+    row.querySelectorAll('.tam-seg').forEach(function(g){if(g.scrollWidth>g.clientWidth+1) g.textContent='';});
+  });
+  var t=document.getElementById('tam-table'); var tot={p:0,a:0,c:0,u:0};
+  t.innerHTML=A.map(function(a){tot.p+=a.pce; tot.a+=a.ad; tot.c+=a.v[0]; tot.u+=a.u; return '<tr><td><b>'+a.n+'</b><br><span class="small muted">'+a.x+'</span></td><td class="num">'+f(a.pce)+'</td><td class="num">'+f(a.ad)+'</td><td class="num">'+f(a.v[0])+' ('+Math.round(a.mix[0]*100)+'%)</td><td class="num"><b>'+f(a.u)+'</b> ('+Math.round((1-a.mix[0])*100)+'%)</td><td class="small">'+a.p+'</td></tr>';}).join('')
+   +'<tr class="total"><td>Total, 27 markets</td><td class="num">'+f(tot.p)+'</td><td class="num">'+f(tot.a)+'</td><td class="num">'+f(tot.c)+' ('+Math.round(tot.c/tot.a*100)+'%)</td><td class="num">'+f(tot.u)+' ('+Math.round(tot.u/tot.a*100)+'%)</td><td class="small">About two-thirds of addressable consumer spend is still outside global card networks.</td></tr>';
 }
 render();
 })();
