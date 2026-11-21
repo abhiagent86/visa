@@ -334,6 +334,42 @@ body.ed-active{padding-bottom:96px}
 .im-tk-note{color:var(--muted);font-size:13px}
 .im-flash>.im-row{animation:imflash 1.6s ease}
 @keyframes imflash{0%,40%{background:var(--amber-soft)}100%{background:transparent}}
+:root{--om-0:#F1F2F6;--om-1:#E3EAF6;--om-2:#B9CDEE;--om-3:#6F9AE0;--om-4:#1E3F8A;--om-t3:#0B1A3D;--om-t4:#FFFFFF}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--om-0:#1A1F36;--om-1:#222B47;--om-2:#2C4475;--om-3:#4F7BC4;--om-4:#9DC0FF;--om-t3:#FFFFFF;--om-t4:#0B1A3D}}
+:root[data-theme="dark"]{--om-0:#1A1F36;--om-1:#222B47;--om-2:#2C4475;--om-3:#4F7BC4;--om-4:#9DC0FF;--om-t3:#FFFFFF;--om-t4:#0B1A3D}
+.om-ctl{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 10px}
+.om-ctl>span{font-size:14px;color:var(--muted);min-width:64px}
+.om-pills{display:flex;flex-wrap:wrap;gap:6px}
+.om-legend{display:flex;flex-wrap:wrap;gap:6px 18px;margin:6px 0 14px;font-size:13px;color:var(--muted)}
+.om-legend span{display:inline-flex;align-items:center;gap:6px}
+.om-sw{display:inline-block;width:16px;height:16px;border-radius:4px;border:1px solid var(--line)}
+.om-l0{background:var(--om-0)}.om-l1{background:var(--om-1)}.om-l2{background:var(--om-2)}.om-l3{background:var(--om-3)}.om-l4{background:var(--om-4)}
+.om-wrap{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;margin:0 0 22px}
+@media (min-width:1100px){.om-wrap{grid-template-columns:minmax(0,1fr) 300px;align-items:start}.om-detail{position:sticky;top:84px}}
+.om-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.om-grid{border-collapse:separate;border-spacing:3px;width:100%;min-width:640px;font-size:13px}
+.om-grid th{font-weight:600;color:var(--ink);text-align:left;padding:6px 8px;vertical-align:bottom;background:none;border:0;text-transform:none;letter-spacing:normal;font-size:13px;white-space:normal}
+.om-grid thead th button{font:inherit;color:inherit;background:none;border:0;padding:0;text-align:left;cursor:pointer;line-height:1.25}
+.om-grid thead th button small{display:block;font-weight:400;color:var(--muted);font-size:11.5px;margin-top:2px}
+.om-grid thead th button:hover,.om-grid thead th button[aria-pressed="true"]{color:var(--navy-ink);text-decoration:underline}
+.om-grid tbody th{font-weight:500;width:34%;min-width:190px;padding:4px 8px}
+.om-grid tbody th small{display:block;color:var(--muted);font-weight:400;font-size:11.5px}
+.om-grid tr.om-gr th{font-weight:700}
+.om-grid td{padding:0;border:0}
+.om-c{display:flex;align-items:center;justify-content:center;width:100%;min-height:40px;border:0;border-radius:6px;font:inherit;font-size:12px;font-weight:600;cursor:pointer;color:var(--ink);background:var(--om-0)}
+.om-c.l1{background:var(--om-1)}.om-c.l2{background:var(--om-2)}.om-c.l3{background:var(--om-3);color:var(--om-t3)}.om-c.l4{background:var(--om-4);color:var(--om-t4)}
+.om-c.l0{color:var(--muted);font-weight:400}
+.om-c:hover{outline:2px solid var(--navy-ink);outline-offset:1px}
+.om-c.sel{outline:3px solid var(--amber-strong);outline-offset:1px}
+.om-mini{min-width:560px}
+.om-mini tbody th button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-align:left}
+.om-mini tbody th button:hover,.om-mini tbody tr.on th button{color:var(--navy-ink);text-decoration:underline}
+.om-detail{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;box-shadow:var(--shadow);font-size:14px}
+.om-detail h5{font-size:16px;margin:4px 0 6px;color:var(--ink)}
+.om-detail p{margin:0 0 8px;color:var(--muted)}
+.om-detail ol,.om-detail ul{margin:0 0 6px;padding-left:18px;color:var(--muted)}
+.om-detail .om-k{font-size:11px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:var(--amber)}
+.om-h4{font-size:17px;margin:6px 0 4px}
 </style>
 </head>
 <body>
@@ -680,6 +716,44 @@ body.ed-active{padding-bottom:96px}
       <div class="card"><span class="tag navy">Agentic, A2A, stablecoins</span><h4>Engage every rail</h4><p class="muted small" style="margin:0">Over 80% of CEMEA consumers use AI when shopping, but under 30% trust an agent to check out. Agent-only credentials are coming with partners. The stance on ~120 real-time payment networks is “full engagement” (scam prevention; in Ukraine the domestic real-time network runs on Visa Direct). Some Central Asian banks already settle with each other in stablecoins.</p></div>
     </div>
     <p class="small muted" style="margin-top:10px"><b>Implication for sales operations</b> <span class="inf">inferred</span>: segment coverage, playbooks and targets by market archetype, not only by geography; keep one standard engine (plan, forecast, deal desk) with local plays on top; package the capability catalogue into priced, market-ready offers; and run sales operations as a lean service to the markets that adds no layer between clients and leaders.</p>
+
+    <h3 class="sub" id="opportunity-map">CEMEA opportunity map: capabilities × market archetypes × segments</h3>
+    <p class="im-method">An outside-in view of where each Visa capability matters most, by market archetype and customer segment. Choose a segment to re-score the map, roll capabilities up into groups or drill down, and select any cell or archetype for the detail. Archetypes extend the market personas Visa’s regional leadership has described publicly; all scores are <span class="inf">inferred</span> and would be validated against internal data.</p>
+
+    <div class="om-ctl" role="group" aria-label="Customer segment">
+      <span>Segment</span>
+      <div class="om-pills" id="om-seg"></div>
+    </div>
+    <div class="om-ctl" role="group" aria-label="Level of detail">
+      <span>Detail</span>
+      <div class="om-pills" id="om-lvl"></div>
+    </div>
+
+    <div class="om-legend" aria-hidden="true">
+      <span><i class="om-sw om-l4"></i>Priority</span>
+      <span><i class="om-sw om-l3"></i>High</span>
+      <span><i class="om-sw om-l2"></i>Emerging</span>
+      <span><i class="om-sw om-l1"></i>Low</span>
+      <span><i class="om-sw om-l0"></i>Not relevant to this segment</span>
+    </div>
+
+    <div class="om-wrap">
+      <div class="om-scroll"><table class="om-grid" id="om-grid"></table></div>
+      <aside class="om-detail" id="om-detail" aria-live="polite"></aside>
+    </div>
+
+    <h4 class="om-h4">Where demand concentrates: segment × archetype</h4>
+    <p class="im-method" style="margin-bottom:10px">Average opportunity across the capabilities relevant to each segment (1 = low, 4 = priority). Select a row to filter the map above.</p>
+    <div class="om-scroll"><table class="om-grid om-mini" id="om-seg-grid"></table></div>
+
+    <h4 class="om-h4">Patterns the map shows</h4>
+    <div class="grid g2" style="align-content:start">
+      <div class="card"><span class="tag navy">1 · Trust is universal</span><h4>Lead with risk everywhere</h4><p class="muted small" style="margin:0">Fraud and scam prevention is High or Priority in four of five archetypes and for banks, acquirers and fintechs alike. It is the one door-opener that travels across the whole region.</p></div>
+      <div class="card"><span class="tag navy">2 · Maturity flips the portfolio</span><h4>Two different shopping lists</h4><p class="muted small" style="margin:0">Digital leaders pull tokens, agentic commerce, premium and commercial cards. Transitioning, mobile-first and frontier markets pull credentials, Tap to Phone and Visa Accept, and disbursements. One catalogue, two playbooks.</p></div>
+      <div class="card"><span class="tag navy">3 · Corridors pair archetypes</span><h4>Sell both ends of the flow</h4><p class="muted small" style="margin:0">Gulf outbound remittances meet inbound demand in Egypt, Pakistan and Africa. Plan Visa Direct by corridor, with the sending and receiving markets on one account plan and one target.</p></div>
+      <div class="card"><span class="tag navy">4 · The buyer changes with maturity</span><h4>Banks at the core, fintechs at the edge</h4><p class="muted small" style="margin:0">Banks remain the main buyer in digital leaders and established markets. In mobile-first and frontier markets, fintechs, wallets, telcos and governments carry more of the opportunity, so partner coverage matters more there.</p></div>
+    </div>
+    <p class="small muted" style="margin-top:10px"><b>Implication for sales operations</b> <span class="inf">inferred</span>: use this matrix as the backbone for coverage and quota setting (opportunity by archetype and segment), for the offer catalogue (lead capabilities per cell) and for the scorecard (attach and adoption tracked against the cells marked Priority).</p>
 
     <div class="part"><span class="part-code">1D</span><h3>Recommendations for CEMEA</h3><p>Six pillars, a 90-day roadmap and a regional scorecard.</p></div>
 
@@ -2540,6 +2614,115 @@ body.ed-active{padding-bottom:96px}
       g.scrollIntoView({block:"center"});g.classList.remove("im-flash");void g.offsetWidth;g.classList.add("im-flash");}
   });
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",render);else render();
+})();
+</script>
+<script>
+(function(){
+var grid=document.getElementById('om-grid'); if(!grid) return;
+var A=[
+ {k:'D',n:'Digital leaders',c:'UAE, Saudi Arabia, Qatar, Kuwait, Bahrain, Kazakhstan, Ukraine',t:'High digital and e-commerce use, tourism and remittance-sending hubs, domestic schemes and instant payments, ambitious national digital agendas.'},
+ {k:'E',n:'Established card markets',c:'South Africa, Morocco, Oman, Serbia, Georgia, Azerbaijan',t:'Mature banks and acquiring, card-led spending, rising fraud and scams, cost pressure on banks.'},
+ {k:'T',n:'Large transitioning markets',c:'Egypt, Pakistan, Uzbekistan, Iraq',t:'Large populations, cash still dominant, FX constraints, government-led digitisation and large remittance inflows.'},
+ {k:'M',n:'Mobile- and fintech-first',c:'Nigeria, Kenya, Ghana, Tanzania, Uganda, Rwanda',t:'Mobile money and instant payments lead, vibrant fintechs, millions of micro-merchants, high scam exposure.'},
+ {k:'F',n:'Frontier and inclusion',c:'DRC, Angola, Côte d’Ivoire, Ethiopia, West and Central Africa',t:'Low banking penetration, cash-only merchants, infrastructure gaps, aid and government flows; digital credentials leapfrog branches.'}
+];
+var S=[{k:'all',n:'All segments'},{k:'iss',n:'Issuing banks'},{k:'acq',n:'Acquirers and PSPs'},{k:'mer',n:'Large and e-commerce merchants'},{k:'sme',n:'SMEs and micro-merchants'},{k:'fin',n:'Fintechs, wallets, telcos'},{k:'cg',n:'Corporates and government'}];
+var G=[
+ {n:'Credentials and tokens',m:[0,1]},
+ {n:'Issuing services',m:[2,3]},
+ {n:'Acceptance',m:[4,5]},
+ {n:'Risk and identity',m:[6,7]},
+ {n:'Money movement',m:[8,9]},
+ {n:'Commercial and B2B',m:[10,11]},
+ {n:'Advisory and data',m:[12]},
+ {n:'New rails',m:[13,14,15]}
+];
+// base score by archetype D,E,T,M,F ; relevance by segment iss,acq,mer,sme,fin,cg
+var C=[
+ {n:'Credentials and digital issuance',x:'Debit, credit, prepaid; digital-first issuance',s:[2,2,4,3,4],r:[1,0,0,.3,1,.3],p:'Digitise and widen the card base: digital issuance with banks, wallets and telcos.'},
+ {n:'Tokenisation and Click to Pay',x:'Network tokens, wallets, e-commerce checkout',s:[4,3,2,2,1],r:[1,.7,1,0,.7,0],p:'Raise token penetration to lift approvals and cut fraud in e-commerce and wallets.'},
+ {n:'Issuer processing and resilience',x:'Processing, Smarter Stand-In',s:[2,3,3,3,3],r:[1,0,0,0,.7,0],p:'Offer processing and stand-in to banks modernising core systems.'},
+ {n:'Premium, loyalty and engagement',x:'Infinite, benefits, Visa Destinations',s:[4,3,2,1,1],r:[1,0,.5,0,.5,0],p:'Premium propositions and benefits that drive affluent and travel spend.'},
+ {n:'Acceptance platform and gateway',x:'Cybersource, Authorize.net, e-commerce',s:[4,3,3,3,2],r:[0,1,1,.5,.5,0],p:'Gateway, optimisation and fraud tools for merchants and payment providers.'},
+ {n:'Tap to Phone and Visa Accept',x:'Phone as terminal; micro-sellers',s:[2,2,4,4,4],r:[.3,1,.3,1,.7,0],p:'Convert cash-only and micro-merchants with phone-based acceptance and fast settlement.'},
+ {n:'Fraud and scam prevention',x:'Visa Protect, Featurespace, A2A protection',s:[4,4,3,4,2],r:[1,1,.7,0,1,.3],p:'Lead with scams and fraud: the most urgent client problem, sold across rails.'},
+ {n:'Authentication and identity',x:'3-D Secure, biometrics, agent identity',s:[4,3,2,3,2],r:[1,.7,.7,0,.7,0],p:'Lower friction and fraud at checkout; identity for agents and digital onboarding.'},
+ {n:'Remittances and P2P',x:'Visa Direct, Visa+',s:[4,3,4,4,3],r:[1,0,0,0,1,0],p:'Corridor plays: outbound from the Gulf, inbound to Egypt, Pakistan and Africa.'},
+ {n:'Payouts and disbursements',x:'B2C payouts, government-to-citizen',s:[3,2,4,4,4],r:[.7,0,.5,.3,1,1],p:'Gig, insurance and government payouts pushed to cards, accounts and wallets.'},
+ {n:'Commercial cards and virtual payables',x:'Corporate, purchasing, fleet, virtual cards',s:[4,3,2,2,1],r:[1,0,0,.5,.3,1],p:'Commercial card programmes through banks, aimed at named corporates and government.'},
+ {n:'B2B payments and AP/AR digitisation',x:'B2B Connect, ERP-embedded payments',s:[3,3,3,3,2],r:[.7,0,.3,.7,.5,1],p:'Digitise supplier payments and receivables with banks, ERP and spend platforms.'},
+ {n:'Consulting, analytics and data',x:'Visa Consulting & Analytics',s:[3,3,3,3,2],r:[1,.7,.7,0,.7,1],p:'Advisory that opens the door and turns into repeatable services.'},
+ {n:'Agentic commerce',x:'Visa Intelligent Commerce, agent credentials',s:[4,2,1,2,1],r:[.7,.7,1,0,1,0],p:'Pilot agent payments with banks, merchants and AI platforms where consumers are ready.'},
+ {n:'Stablecoins and digital assets',x:'Settlement, stablecoin-linked cards',s:[3,3,2,3,2],r:[.7,.3,.3,0,1,.3],p:'Stablecoin-linked cards and settlement with licensed virtual-asset firms and banks.'},
+ {n:'A2A and real-time payment services',x:'Risk, disputes and connectivity for instant payments',s:[3,3,2,4,2],r:[1,.3,0,0,.7,1],p:'Engage real-time payment systems with risk, disputes and Visa Direct connectivity.'}
+];
+var LV=['Not relevant','Low','Emerging','High','Priority'];
+var st={seg:'all',lvl:'cap',sel:null,arch:null};
+function score(ci,ai,seg){
+  var b=C[ci].s[ai]; if(seg==='all') return b;
+  var r=C[ci].r[S.findIndex(function(x){return x.k===seg})-1];
+  if(r===0) return 0; if(r<.6) return Math.max(1,b-1); return b;
+}
+function gscore(gi,ai,seg){var v=G[gi].m.map(function(ci){return score(ci,ai,seg)}).filter(function(x){return x>0}); if(!v.length) return 0; return Math.round(v.reduce(function(a,b){return a+b},0)/v.length);}
+function el(t,cls,h){var e=document.createElement(t); if(cls) e.className=cls; if(h!=null) e.innerHTML=h; return e;}
+function pills(id,items,key){
+  var box=document.getElementById(id); box.innerHTML='';
+  items.forEach(function(it){var b=el('button','im-btn',it.n); b.type='button'; b.setAttribute('aria-pressed',st[key]===it.k?'true':'false'); b.addEventListener('click',function(){st[key]=it.k; st.sel=null; render();}); box.appendChild(b);});
+}
+function head(t){
+  var tr=el('tr'); tr.appendChild(el('th','', t));
+  A.forEach(function(a,ai){var th=el('th'); var b=el('button','', a.n+'<small>'+a.c+'</small>'); b.type='button'; b.setAttribute('aria-pressed',st.arch===ai&&!st.sel?'true':'false'); b.addEventListener('click',function(){st.arch=ai; st.sel=null; render();}); th.appendChild(b); tr.appendChild(th);});
+  var th=el('thead'); th.appendChild(tr); return th;
+}
+function cell(v,onclick,selected,label){
+  var td=el('td'); var b=el('button','om-c l'+v+(selected?' sel':''), v?LV[v]:'—'); b.type='button'; b.setAttribute('aria-label',label+': '+LV[v]); b.addEventListener('click',onclick); td.appendChild(b); return td;
+}
+function render(){
+  pills('om-seg',S,'seg'); pills('om-lvl',[{k:'grp',n:'Capability groups'},{k:'cap',n:'All capabilities'}],'lvl');
+  grid.innerHTML=''; grid.appendChild(head('Capability'));
+  var tb=el('tbody');
+  if(st.lvl==='grp'){
+    G.forEach(function(g,gi){var tr=el('tr','om-gr'); tr.appendChild(el('th','',g.n+'<small>'+g.m.map(function(ci){return C[ci].n}).join(' · ')+'</small>'));
+      A.forEach(function(a,ai){var v=gscore(gi,ai,st.seg); var sel=st.sel&&st.sel.g===gi&&st.sel.a===ai; tr.appendChild(cell(v,function(){st.sel={g:gi,a:ai}; render();},sel,g.n+', '+a.n));});
+      tb.appendChild(tr);});
+  } else {
+    G.forEach(function(g,gi){
+      g.m.forEach(function(ci){var c=C[ci]; var tr=el('tr'); tr.appendChild(el('th','',c.n+'<small>'+c.x+'</small>'));
+        A.forEach(function(a,ai){var v=score(ci,ai,st.seg); var sel=st.sel&&st.sel.c===ci&&st.sel.a===ai; tr.appendChild(cell(v,function(){st.sel={c:ci,a:ai}; render();},sel,c.n+', '+a.n));});
+        tb.appendChild(tr);});
+    });
+  }
+  grid.appendChild(tb);
+  renderSeg(); renderDetail();
+}
+function renderSeg(){
+  var t=document.getElementById('om-seg-grid'); t.innerHTML=''; t.appendChild(head('Segment'));
+  var tb=el('tbody');
+  S.slice(1).forEach(function(s){
+    var tr=el('tr', st.seg===s.k?'on':''); var th=el('th'); var b=el('button','',s.n); b.type='button'; b.addEventListener('click',function(){st.seg=s.k; st.sel=null; render(); document.getElementById('opportunity-map').scrollIntoView({behavior:'smooth'});}); th.appendChild(b); tr.appendChild(th);
+    A.forEach(function(a,ai){var v=C.map(function(c,ci){return score(ci,ai,s.k)}).filter(function(x){return x>0}); var m=v.reduce(function(p,q){return p+q},0)/v.length; var lv=Math.round(m);
+      var td=el('td'); var d=el('div','om-c l'+lv, m.toFixed(1)); d.style.cursor='default'; td.appendChild(d); tr.appendChild(td);});
+    tb.appendChild(tr);
+  });
+  t.appendChild(tb);
+}
+function top(ai){
+  return C.map(function(c,ci){return {c:c,v:score(ci,ai,st.seg)}}).filter(function(x){return x.v>0}).sort(function(p,q){return q.v-p.v}).slice(0,3);
+}
+function renderDetail(){
+  var d=document.getElementById('om-detail'); var segN=S.find(function(x){return x.k===st.seg}).n;
+  if(st.sel){
+    var a=A[st.sel.a];
+    if(st.sel.c!=null){var c=C[st.sel.c]; var v=score(st.sel.c,st.sel.a,st.seg);
+      d.innerHTML='<span class="om-k">'+LV[v]+' · '+segN+'</span><h5>'+c.n+' in '+a.n.toLowerCase()+'</h5><p><b>The play:</b> '+c.p+'</p><p><b>Market context:</b> '+a.t+'</p><p class="small">Examples: '+a.c+'</p>';
+    } else {var g=G[st.sel.g]; var v2=gscore(st.sel.g,st.sel.a,st.seg);
+      d.innerHTML='<span class="om-k">'+LV[v2]+' · '+segN+'</span><h5>'+g.n+' in '+a.n.toLowerCase()+'</h5><ul>'+g.m.map(function(ci){return '<li><b>'+C[ci].n+'</b> ('+LV[score(ci,st.sel.a,st.seg)]+'): '+C[ci].p+'</li>'}).join('')+'</ul><p><b>Market context:</b> '+a.t+'</p>';}
+    return;
+  }
+  var ai=st.arch==null?0:st.arch; var a2=A[ai];
+  d.innerHTML='<span class="om-k">Archetype profile · '+segN+'</span><h5>'+a2.n+'</h5><p class="small">'+a2.c+'</p><p>'+a2.t+'</p><p style="margin-bottom:4px"><b>Top plays</b></p><ol>'+top(ai).map(function(x){return '<li><b>'+x.c.n+'</b> ('+LV[x.v]+'): '+x.c.p+'</li>'}).join('')+'</ol><p class="small">Select an archetype heading or any cell for detail.</p>';
+}
+render();
 })();
 </script>
 </body>
