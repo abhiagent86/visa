@@ -4,10 +4,11 @@ Single-page site (`index.html`, no build step) covering:
 
 1. Understanding of Visa and recommendations for CEMEA, with questions to explore
 2. The market opportunity: an outside-in addressable market sizing by market archetype, and an opportunity map of Visa capabilities by archetype and customer segment
-3. Best-in-class B2B sales operations vision: the operations engine, the customer value journey, core metrics, quota and incentives, operating mechanics
-4. AI and automation potential: two lenses, priority use cases, how to build one, AI impact maps (account planning, pipeline management, forecasting), measurement, roadmap, agentic commerce
-5. The value-added services business: market opportunity, solutions, selling motion, Visa vs competition, recommendations and a VAS scorecard
-6. The commercial and money movement business: opportunity, customers and use cases, competition, and sales operations implications
+3. How sales operations can grow Visa in CEMEA: eight growth levers, where to play, account growth, new business and partners, solution selling, incentives, commercial excellence, performance management, AI, the first 90 days and three priorities
+4. Best-in-class B2B sales operations vision: the operations engine, the customer value journey, core metrics, quota and incentives, operating mechanics
+5. AI and automation potential: two lenses, priority use cases, how to build one, AI impact maps (account planning, pipeline management, forecasting), measurement, roadmap, agentic commerce
+6. The value-added services business: market opportunity, solutions, selling motion, Visa vs competition, recommendations and a VAS scorecard
+7. The commercial and money movement business: opportunity, customers and use cases, competition, and sales operations implications
 
 ## Edit the page in your browser
 
