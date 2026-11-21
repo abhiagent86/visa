@@ -2190,6 +2190,21 @@ body.ed-active{padding-bottom:96px}
     </div>
     <p class="small muted" style="margin-top:10px">Visa’s pattern for Visa Direct clients is “initial partnership → grow → diversify”: start with one route or use case, then add corridors, endpoints and services, often over two to four years. The account plan should map this path for each client.</p>
 
+    <h3 class="sub">How Visa Direct works</h3>
+    <div class="table-box">
+      <table>
+        <thead><tr><th>Step</th><th>What happens</th></tr></thead>
+        <tbody>
+          <tr><td><b>1 · Originator</b></td><td>A bank, remittance firm, wallet, platform or government connects to Visa Direct through its acquirer or processor, or directly through Visa APIs</td></tr>
+          <tr><td><b>2 · Fund</b></td><td>The originator collects the money: from its own balance or account (payroll, payouts, claims), from the sender’s bank account, or by pulling from the sender’s card through an Account Funding Transaction (AFT)</td></tr>
+          <tr><td><b>3 · Check</b></td><td>Pre-checks before sending: is the recipient card or account eligible and fast-funds enabled, domestic or cross-border; alias lookup (phone or email to credential); sanctions and risk screening</td></tr>
+          <tr><td><b>4 · Push</b></td><td>An Original Credit Transaction (OCT) travels over VisaNet to the recipient’s issuer, which credits the card account, usually within 30 minutes and often in seconds. Visa Direct also reaches bank accounts and wallets through local rails and partners, with FX for cross-border payments</td></tr>
+          <tr><td><b>5 · Settle</b></td><td>The recipient sees funds in real time; banks settle with each other through Visa’s settlement process afterwards, so the recipient’s issuer fronts the money in the meantime</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small muted" style="margin-top:10px"><b>Why it works:</b> it reuses the card network’s existing reach (billions of credentials), identity, risk and settlement, so a sender needs only a card number, alias or account, not a correspondent banking chain. <b>Economics</b> <span class="inf">inferred</span>: originators pay Visa (and their processor) per transaction, plus cross-border and FX fees; in many markets the recipient’s issuer earns interchange on the credit, which motivates fast posting. <b>Sales ops metrics:</b> corridors and endpoints live, approval and fast-funds rates, time to credit, failed or delayed credits by bank, and volume ramp per originator.</p>
+
     <!-- 5C -->
     <div class="part"><span class="part-code">5C</span><h3>Competition</h3><p>Fewer head-to-head network battles. More substitutes, and more partners who are also competitors.</p></div>
 
