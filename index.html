@@ -385,31 +385,27 @@ body.ed-active{padding-bottom:96px}
 .tam-seg.c{background:var(--om-4);color:var(--om-t4)}.tam-seg.o{background:var(--teal);color:#fff}.tam-seg.k{background:var(--amber-strong);color:#141A33}
 .tam-tot{font-size:14px;font-weight:700;font-variant-numeric:tabular-nums;text-align:right}
 @media (max-width:640px){.tam-row{grid-template-columns:minmax(0,1fr) 56px}.tam-row .tam-n{grid-column:1 / -1}}
-.vs-wrap{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;margin-top:4px}
-@media (min-width:1000px){.vs-wrap{grid-template-columns:230px minmax(0,1fr) 300px;align-items:start}.vs-detail{position:sticky;top:84px}}
-.vs-h{font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--muted);margin:0 0 8px}
-.vs-parts{display:grid;gap:6px;grid-template-columns:repeat(2,minmax(0,1fr))}
-@media (min-width:1000px){.vs-parts{grid-template-columns:1fr}}
-.vs-p{font:inherit;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:8px 10px;cursor:pointer;color:var(--ink);font-size:13px;line-height:1.3}
-.vs-p b{display:block;font-size:13.5px}
-.vs-p small{color:var(--muted);font-size:11.5px}
-.vs-p:hover,.vs-p[aria-pressed="true"]{border-color:var(--navy-ink);box-shadow:0 0 0 2px var(--navy-ink) inset}
-.vs-layers{display:grid;gap:6px}
-.vs-band{font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--amber);margin:6px 0 0}
-.vs-l{display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:10px;align-items:center;width:100%;font:inherit;text-align:left;border:1px solid var(--line);border-left:6px solid var(--line);border-radius:10px;padding:8px 10px;background:var(--surface);cursor:pointer;color:var(--ink);transition:opacity .15s}
-.vs-l .n{font-weight:700;font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
-.vs-l .t{font-weight:600;font-size:14px;line-height:1.25}
-.vs-l .t small{display:block;font-weight:400;color:var(--muted);font-size:12px;margin-top:2px}
-.vs-l .e{font-size:11px;font-weight:600;padding:3px 8px;border-radius:999px;white-space:nowrap;background:var(--surface-2);color:var(--muted)}
-.vs-l.core{border-left-color:var(--om-4)}.vs-l.vas{border-left-color:var(--amber-strong)}.vs-l.cms{border-left-color:var(--teal)}.vs-l.mix{border-left-color:var(--om-3)}.vs-l.new{border-left-color:var(--muted);border-left-style:dashed}
-.vs-l.net{background:var(--om-4);color:var(--om-t4);border-color:var(--om-4)}
-.vs-l.net .n,.vs-l.net .t small{color:inherit;opacity:.85}
-.vs-l:hover,.vs-l.sel{box-shadow:0 0 0 2px var(--navy-ink)}
-.vs-l.dim,.vs-p.dim{opacity:.35}
-.vs-legend{display:flex;flex-wrap:wrap;gap:6px 16px;margin:4px 0 12px;font-size:13px;color:var(--muted)}
-.vs-legend span{display:inline-flex;align-items:center;gap:6px}
-.vs-legend i{display:inline-block;width:16px;height:6px;border-radius:3px}
-.vs-eng.on{box-shadow:0 0 0 2px var(--navy-ink)}
+.sk-arch{display:grid;gap:6px;margin:6px 0 4px}
+.sk-a{display:grid;grid-template-columns:minmax(150px,240px) minmax(0,1fr) auto;gap:12px;align-items:center;border-radius:10px;padding:10px 14px;border:1px solid var(--line);background:var(--surface);font-size:13.5px}
+.sk-a b{font-size:14.5px}
+.sk-a span{color:var(--muted)}
+.sk-a em{font-style:normal;font-size:12px;font-weight:700;color:var(--amber)}
+.sk-a.l3{border:2px solid var(--amber-strong);background:var(--surface)}
+.sk-a.l1{background:var(--om-4);border-color:var(--om-4)}.sk-a.l1 b,.sk-a.l1 span{color:var(--om-t4)}
+.sk-a.l2{background:var(--om-2);border-color:var(--om-2)}
+@media (max-width:700px){.sk-a{grid-template-columns:1fr}}
+.sk-grid tbody th .sk-dom{font-weight:700;font-size:14px}
+.sk-grid tbody tr.sk-d th{border-top:2px solid var(--line)}
+.sk-grid tbody tr.sk-g th{padding-left:22px}
+.sk-grid .sk-k{display:inline-block;min-width:24px;font-weight:700;color:var(--amber)}
+.sk-grid .sk-pr{display:flex;flex-wrap:wrap;gap:4px;margin-top:5px}
+.sk-grid .sk-pr i{font-style:normal;font-size:11px;font-weight:500;background:var(--surface-2);border:1px solid var(--line);border-radius:999px;padding:2px 7px;color:var(--ink)}
+.sk-grid td.sk-rev{font-size:12px;color:var(--muted);padding:4px 8px;min-width:150px;vertical-align:middle}
+.sk-grid td.sk-rev b{color:var(--ink);font-weight:600}
+.sk-grid tr.dim{opacity:.3}
+.sk-grid tr.sel th{box-shadow:inset 4px 0 0 var(--amber-strong)}
+.sk-grid tbody th button{font:inherit;color:inherit;background:none;border:0;padding:0;text-align:left;cursor:pointer;width:100%}
+.sk-grid tbody th button:hover .sk-dom,.sk-grid tbody th button:hover .sk-gn{text-decoration:underline}
 </style>
 </head>
 <body>
@@ -512,30 +508,35 @@ body.ed-active{padding-bottom:96px}
       </div>
     </div>
 
-    <h3 class="sub" id="stack">The Visa stack: an outside-in view</h3>
-    <p class="im-method">Who participates, the layers Visa’s technology provides, and which revenue engine each layer feeds. Select a layer to see products, buyers and the sales operations lever, or a participant to highlight the layers it uses. The mapping and the commercial and money movement revenue figure are <span class="inf">inferred</span>; other figures are as reported for FY2026.</p>
-    <div class="om-ctl" role="group" aria-label="Colour layers by">
-      <span>Colour by</span>
-      <div class="om-pills" id="vs-mode"></div>
+    <h3 class="sub" id="stack">The Visa stack and its capability library</h3>
+    <p class="im-method">Rebuilt on two rules so the view is mutually exclusive and collectively exhaustive. <b>How Visa builds and delivers</b> follows Visa’s own four-layer Payments Stack. <b>What the capabilities do</b> is organised by job into five domains, four of which are the value-added services portfolios Visa reports. Each capability is then read against three payment flows. Product placement and flow relevance are <span class="inf">inferred</span>; figures are as reported by Visa.</p>
+
+    <div class="sk-arch" aria-label="Visa Payments Stack">
+      <div class="sk-a l4"><b>Partner ecosystem</b><span>Banks, fintechs, big tech, digital wallets, crypto firms, resellers and AI platforms build products and front-ends on Visa</span></div>
+      <div class="sk-a l3"><b>Visa-as-a-Service</b><span>The unbundled capability library: 250+ capabilities, organised below into five domains</span><em>↓ explored below</em></div>
+      <div class="sk-a l2"><b>Visa Developer Platform</b><span>2,900+ API endpoints, 40B+ API calls a month</span></div>
+      <div class="sk-a l1"><b>VisaNet and the network of networks</b><span>4.7B credentials, 630M+ transactions a day, 99.9999%+ availability, 11B+ cards, accounts and wallets reachable</span></div>
     </div>
-    <div class="vs-legend" id="vs-legend" aria-hidden="true"></div>
-    <div class="vs-wrap">
-      <div class="vs-col">
-        <div class="vs-h">Ecosystem participants</div>
-        <div id="vs-parts" class="vs-parts"></div>
-      </div>
-      <div class="vs-col">
-        <div class="vs-h">Technology stack</div>
-        <div id="vs-layers" class="vs-layers"></div>
-      </div>
-      <aside class="om-detail vs-detail" id="vs-detail" aria-live="polite"></aside>
+
+    <div class="om-ctl" role="group" aria-label="Level of detail" style="margin-top:16px">
+      <span>Detail</span>
+      <div class="om-pills" id="sk-lvl"></div>
     </div>
-    <div class="grid g3" style="margin-top:14px;align-content:start">
-      <div class="card vs-eng" data-e="core"><span class="tag navy">Core consumer payments</span><h4>~$21–23B <span class="small muted" style="font-weight:400">implied</span></h4><p class="muted small" style="margin:0">About half of net revenue, growing at mid-single digits after incentives. Layers 01–05: credentials, acceptance and VisaNet fees on volume, transactions and cross-border.</p></div>
-      <div class="card vs-eng" data-e="vas"><span class="tag amber">Value-added services</span><h4>~$14B, +30%</h4><p class="muted small" style="margin:0">Reported. Layers 06–08 plus tokens and Cybersource in layers 02–03: processing, risk, identity, data and advisory.</p></div>
-      <div class="card vs-eng" data-e="cms"><span class="tag teal">Commercial and money movement</span><h4>~$9–11B, +19%</h4><p class="muted small" style="margin:0">Growth reported, value <span class="inf">inferred</span>. Layers 09–10: Visa Direct, cross-border transfers, commercial cards and B2B. New rails (layer 11) feed both growth engines.</p></div>
+    <div class="om-ctl" role="group" aria-label="Filter by buyer">
+      <span>Buyer</span>
+      <div class="om-pills" id="sk-buy"></div>
     </div>
-    <p class="small muted" style="margin-top:10px"><b>Where sales operations has most leverage</b> <span class="inf">inferred</span>: layers 06–11, where growth is fastest and revenue depends on activation and usage after signature. Layers 01–05 are won and protected through renewals and client incentives.</p>
+    <div class="om-legend" aria-hidden="true"><span><i class="om-sw om-l4"></i>Core to the flow</span><span><i class="om-sw om-l3"></i>Important</span><span><i class="om-sw om-l2"></i>Supporting</span><span><i class="om-sw om-l0"></i>Not used</span></div>
+    <div class="om-wrap">
+      <div class="om-scroll"><table class="om-grid sk-grid" id="sk-grid"></table></div>
+      <aside class="om-detail" id="sk-detail" aria-live="polite"></aside>
+    </div>
+
+    <div class="grid g2" style="margin-top:6px;align-content:start">
+      <div class="card"><span class="tag navy">The MECE rules</span><h4>One question per dimension</h4><ul class="small" style="margin:0"><li><b>Architecture:</b> how a capability is built and delivered (Visa’s four layers)</li><li><b>Domain:</b> the one job a capability does: move money, create accounts, get merchants paid, protect, or turn data into growth</li><li><b>Flow:</b> who pays whom: consumer to business, business to business, or money movement (P2P, B2C, G2C, cross-border)</li><li><b>Buyer:</b> who pays Visa for it</li><li>Front-ends (wallets, banking apps, ERPs, AI agents) belong to partners, so they sit in the ecosystem layer, not in the capability library</li></ul></div>
+      <div class="card"><span class="tag amber">The revenue rule</span><h4>Every dollar is one of two things</h4><ul class="small" style="margin:0"><li><b>A network fee</b> on volume, transactions or cross-border (domain A, and card products in B1). Attributed by flow: consumer → <b>consumer payments</b>; commercial and money movement → <b>CMS</b></li><li><b>A service fee</b> (domains B–E): platform fees and subscriptions, per-transaction service fees, premium cards in force → <b>value-added services</b>, in the portfolio of its domain</li><li>Visa’s reported categories can overlap at the edges (for example commercial platforms), so treat the totals as directional</li></ul></div>
+    </div>
+    <p class="small muted" style="margin-top:10px">Visa doesn’t publish its full catalogue. This library maps about 75 publicly named products into 20 capability groups; the remaining capabilities from Visa’s internal catalogue would slot into the same groups. Sources: Visa Investor Day 2025 (Payments Stack and value-added services portfolios, FY2024), public product announcements.</p>
 
     <h3 class="sub">Latest results: Q4 and full-year FY2026</h3>
     <div class="callout" style="margin-bottom:16px"><p class="big" style="font-size:clamp(17px,2vw,20px)">Record net revenue of $45.9B (+15%), the fastest growth in over 15 years excluding the post-pandemic rebound and acquisitions, led by value-added services (+30%) and commercial and money movement (+19%). FY2027 guidance steps down to low double-digit growth, and a larger share of volume comes up for renewal.</p></div>
@@ -3159,68 +3160,78 @@ render();
 </script>
 <script>
 (function(){
-var box=document.getElementById('vs-layers'); if(!box) return;
-var P=[
- {k:'iss',n:'Issuers',d:'Banks that issue cards and manage cardholders'},
- {k:'acq',n:'Acquirers',d:'Banks that sign up and pay merchants'},
- {k:'mer',n:'Merchants',d:'Accept payments in store and online'},
- {k:'psp',n:'Processors and PSPs',d:'Payment technology and gateways'},
- {k:'fin',n:'Fintechs and wallets',d:'Digital banks, wallets, telcos'},
- {k:'cor',n:'Corporates',d:'Make and receive business payments'},
- {k:'gov',n:'Governments',d:'Disbursements and public payments'},
- {k:'ai',n:'AI and tech platforms',d:'Agents, cloud and software ecosystems'}
+var grid=document.getElementById('sk-grid'); if(!grid) return;
+var F=['Consumer payments<small>consumer to business</small>','Commercial<small>business to business</small>','Money movement<small>P2P, B2C, G2C, cross-border</small>'];
+var BUY=[{k:'all',n:'All'},{k:'iss',n:'Issuers'},{k:'acq',n:'Acquirers'},{k:'mer',n:'Merchants'},{k:'psp',n:'Processors and PSPs'},{k:'fin',n:'Fintechs and wallets'},{k:'cor',n:'Corporates'},{k:'gov',n:'Governments'},{k:'ai',n:'AI and tech platforms'}];
+var D=[
+ {k:'A',n:'Network and rails',job:'Move and settle money',rev:'<b>Network fees</b> → consumer payments or CMS, by flow',det:'Service, data processing and international fees on volume, transactions and cross-border. The consumer flow is the consumer payments engine; commercial and money movement flows are CMS.',lev:'Renewals and client incentives (about a quarter of payments volume renews in FY2027); routing share; corridor plans for money movement.'},
+ {k:'B',n:'Issuing solutions',job:'Create and run payment accounts and credentials',rev:'<b>VAS:</b> $3.5B, mid-teens growth',det:'FY2024 revenue $3.5B against a $125B opportunity (2.8% captured). Drivers: platform fees and subscriptions, processed transactions, premium cards in force. Card products themselves (B1) earn network fees on volume.',lev:'Bundle tokens, processing and premium into renewals; solution selling to banks modernising core systems; agentic pilots with lighthouse issuers.'},
+ {k:'C',n:'Acceptance solutions',job:'Get merchants paid',rev:'<b>VAS:</b> $2.5B, low-20s growth',det:'FY2024 revenue $2.5B against a $95B opportunity (2.6% captured). Drivers: platform fees and subscriptions, all payment transactions.',lev:'Partner and reseller channels to payment providers; small-merchant acceptance programmes; fraud and token attach.'},
+ {k:'D',n:'Risk and security solutions',job:'Protect every payment, on any rail',rev:'<b>VAS:</b> $1.5B, high-teens growth',det:'FY2024 revenue $1.5B against a $150B opportunity (1.0% captured), the largest gap. Driver: all payment transactions, increasingly including account-to-account.',lev:'Lead offer in every account plan; quantified fraud and scam assessments; lighthouse deployments; usage-based credit.'},
+ {k:'E',n:'Advisory and other',job:'Turn data into growth',rev:'<b>VAS:</b> $1.3B, mid-30s growth',det:'FY2024 revenue $1.3B against a $150B opportunity (0.9% captured). Consulting, data products, marketing, loyalty and benefits.',lev:'Advisory as the door-opener; convert projects into recurring data and engagement services; credit advisory lightly, measure what follows.'}
 ];
-var B={exp:'Customer experience',inf:'Payment infrastructure',vas:'Value-added services',flow:'New payment flows'};
-var L=[
- {n:'01',b:'exp',t:'Customer experiences',s:'How people and businesses pay',p:'Cards, wallets (Apple Pay, Google Pay), banking apps, e-commerce checkout, AI agents',e:'core',el:'Core',u:['iss','fin','mer','ai'],lev:'Activation and usage programmes with issuers; wallet and checkout partnerships.'},
- {n:'02',b:'exp',t:'Credentials and tokens',s:'Secure payment identities',p:'Visa credentials, Visa Token Service, virtual cards, Click to Pay, Visa Flex Credential',e:'mix',el:'Core + VAS',u:['iss','fin','mer','ai'],lev:'Token penetration targets by issuer and merchant; digital issuance in cash-heavy markets.'},
- {n:'03',b:'exp',t:'Merchant acceptance',s:'Accept payments everywhere',p:'POS, Tap to Phone, Visa Accept, Cybersource, Authorize.net, Visa Acceptance Platform',e:'mix',el:'Core + VAS',u:['acq','mer','psp'],lev:'Small-merchant acceptance programmes; gateway and fraud attach for payment providers.'},
- {n:'04',b:'inf',t:'Acquiring and processing',s:'Connect merchants to the network',p:'Acquirers, payment facilitators and processors connecting to VisaNet; routing',e:'core',el:'Core',u:['acq','psp','mer'],lev:'Acquirer agreements, incentives and routing share.'},
- {n:'05',b:'inf',t:'VisaNet, the core network',s:'Authorisation, clearing, settlement',p:'Global processing at scale; Smarter Stand-In when a bank is down; settlement across currencies',e:'core',el:'Core',net:1,u:['iss','acq','mer','psp','fin','cor','gov','ai'],lev:'Renewals and client incentives: about a quarter of payments volume renews in FY2027.'},
- {n:'06',b:'vas',t:'Issuer processing',s:'Modern card and account platforms',p:'Visa DPS processing, Pismo cloud core banking and issuing, card management',e:'vas',el:'VAS',u:['iss','fin'],lev:'Solution selling to banks modernising core systems; implementation and go-live tracking.'},
- {n:'07',b:'vas',t:'Risk, fraud and identity',s:'Keep payments safe and trusted',p:'Visa Advanced Authorization, Visa Protect (incl. A2A), Featurespace, 3-D Secure and Cardinal, identity',e:'vas',el:'VAS',u:['iss','acq','mer','psp','fin'],lev:'Lead offer in every account plan; lighthouse clients and quantified fraud assessments.'},
- {n:'08',b:'vas',t:'Data, analytics and advisory',s:'Turn payment data into action',p:'Visa Consulting & Analytics, insights, loyalty and engagement platforms',e:'vas',el:'VAS',u:['iss','acq','mer','fin','cor','gov'],lev:'Advisory as the door-opener; convert projects into recurring services.'},
- {n:'09',b:'flow',t:'Money movement',s:'Send money locally and across borders',p:'Visa Direct, Visa+, remittances, payouts, claims, disbursements',e:'cms',el:'CMS',u:['iss','fin','cor','gov'],lev:'Corridor plans; activation and ramp tracking; success rates by bank.'},
- {n:'10',b:'flow',t:'Commercial and B2B',s:'Business payments beyond consumer spend',p:'Commercial and virtual cards, Commercial Pay Mobile, B2B Connect, ERP-embedded payments',e:'cms',el:'CMS',u:['iss','cor','gov','ai'],lev:'Two-layer account plans: the bank and its corporate clients; spend ramp tracking.'},
- {n:'11',b:'flow',t:'New rails',s:'Agentic, account-to-account, stablecoins',p:'Visa Intelligent Commerce and agent credentials; Tink open banking and Visa A2A; stablecoin settlement and linked cards',e:'new',el:'VAS + CMS',u:['iss','mer','fin','ai','psp'],lev:'Pilots with lighthouse partners; partner and marketplace channels; earn on every rail.'}
+var G=[
+ {d:'A',k:'A1',n:'Card network processing',f:[3,3,2],b:['iss','acq','mer','psp','fin','cor','gov'],p:['VisaNet authorisation, clearing and settlement','Multi-currency settlement','Plus ATM network','Interlink debit']},
+ {d:'A',k:'A2',n:'Push payments and money movement',f:[1,2,3],b:['iss','fin','cor','gov','psp'],p:['Visa Direct','Visa Direct Payouts','Visa+','Visa B2B Connect']},
+ {d:'A',k:'A3',n:'Account-to-account and open banking',f:[2,1,2],b:['iss','mer','fin','psp'],p:['Visa A2A','Tink pay by bank','Tink open banking APIs']},
+ {d:'A',k:'A4',n:'Digital assets',f:[1,2,2],b:['iss','fin','psp'],p:['Stablecoin settlement','Visa Tokenized Asset Platform','Stablecoin-linked card programmes']},
+ {d:'B',k:'B1',n:'Credentials and card products',f:[3,3,2],b:['iss','fin','cor','gov'],p:['Consumer debit, credit and prepaid','Premium (Signature, Infinite)','Commercial (corporate, purchasing, fleet, virtual)','Visa Flex Credential']},
+ {d:'B',k:'B2',n:'Tokens and digital credentials',f:[3,2,2],b:['iss','mer','fin','psp','ai'],p:['Visa Token Service','Cloud Token Framework','Credential Updater','Tap to Add Card','Click to Pay']},
+ {d:'B',k:'B3',n:'Issuer processing and platforms',f:[3,2,1],b:['iss','fin'],p:['Visa DPS','Pismo','Wallet-as-a-Service','Transaction Controls','Visa Installment Solutions','Enriched data feeds']},
+ {d:'B',k:'B4',n:'Agentic commerce credentials',f:[3,1,0],b:['iss','mer','ai','psp','fin'],p:['Visa Intelligent Commerce','Agent-specific tokens','Visa MCP server','Trusted Agent Protocol']},
+ {d:'B',k:'B5',n:'Commercial issuing platforms',f:[0,3,1],b:['iss','cor','gov'],p:['Visa Commercial Pay','Payables Automation','Spend Clarity for Enterprise','Fleet 2.0','Commercial Solutions Hub']},
+ {d:'C',k:'C1',n:'Online acceptance and gateway',f:[3,2,1],b:['acq','mer','psp'],p:['Cybersource (Visa Acceptance Platform)','Authorize.net','Unified Checkout','Acceptance-as-a-Service','Acceptance Agent Toolkit']},
+ {d:'C',k:'C2',n:'In-person and small-merchant acceptance',f:[3,1,0],b:['acq','mer','psp','fin'],p:['Tap to Pay','Tap to Phone','Visa Accept']},
+ {d:'C',k:'C3',n:'Receivables',f:[0,3,0],b:['cor','acq','iss'],p:['Accounts Receivable Manager']},
+ {d:'D',k:'D1',n:'Fraud and scam prevention',f:[3,2,3],b:['iss','acq','mer','psp','fin'],p:['Visa Advanced Authorization','Visa Risk Manager','Visa Protect (incl. Deep Authorization and A2A)','Featurespace ARIC','Account Attack Intelligence','Scam Disruption','Decision Manager']},
+ {d:'D',k:'D2',n:'Authentication and identity',f:[3,1,2],b:['iss','mer','psp','fin'],p:['Visa Secure (3-D Secure)','Cardinal Commerce','Visa Payment Passkey','Provisioning Intelligence']},
+ {d:'D',k:'D3',n:'Disputes',f:[3,1,1],b:['iss','acq','mer'],p:['Verifi Order Insight','Rapid Dispute Resolution','Visa Resolve Online']},
+ {d:'D',k:'D4',n:'Resilience and cybersecurity',f:[3,2,2],b:['iss','acq','fin'],p:['Smarter Stand-In Processing','Cybersecurity-as-a-Service','Risk-as-a-Service']},
+ {d:'D',k:'D5',n:'Financial crime and compliance',f:[1,2,3],b:['iss','fin','gov'],p:['Featurespace AML','Sanctions and compliance screening']},
+ {d:'E',k:'E1',n:'Consulting',f:[3,2,2],b:['iss','acq','mer','fin','gov'],p:['Visa Consulting & Analytics']},
+ {d:'E',k:'E2',n:'Data products',f:[3,2,1],b:['iss','acq','mer','fin','cor'],p:['Visa Analytics Platform','Data products and insights','Tink data and insights']},
+ {d:'E',k:'E3',n:'Marketing, loyalty and benefits',f:[3,1,0],b:['iss','mer'],p:['Visa Offers','Card benefits','Loyalty platform services','Marketing services']}
 ];
-var CAP={pay:{n:'Pay',l:['01','02','03','04','05']},move:{n:'Move',l:['09','10','11']},manage:{n:'Manage',l:['06','07','08']}};
-var ENG={core:'Core consumer payments',vas:'Value-added services',cms:'Commercial and money movement',mix:'Core and value-added services',new:'Emerging: value-added services and money movement'};
-var st={mode:'eng',sel:null,part:null};
-function pills(){var b=document.getElementById('vs-mode'); b.innerHTML='';
- [{k:'eng',n:'Revenue engine'},{k:'pay',n:'Pay'},{k:'move',n:'Move'},{k:'manage',n:'Manage'}].forEach(function(it){var x=document.createElement('button'); x.type='button'; x.className='im-btn'; x.textContent=it.n; x.setAttribute('aria-pressed',st.mode===it.k?'true':'false'); x.addEventListener('click',function(){st.mode=it.k; st.part=null; render();}); b.appendChild(x);});
- var lg=document.getElementById('vs-legend');
- lg.innerHTML=st.mode==='eng'?'<span><i style="background:var(--om-4)"></i>Core</span><span><i style="background:var(--om-3)"></i>Core + VAS</span><span><i style="background:var(--amber-strong)"></i>Value-added services</span><span><i style="background:var(--teal)"></i>Commercial and money movement</span><span><i style="background:var(--muted)"></i>New rails</span>':'<span>Highlighting the layers behind <b style="color:var(--ink)">'+CAP[st.mode].n+'</b></span>';
-}
+var LV=['Not used','','Supporting','Important','Core'];
+var st={lvl:'grp',buy:'all',sel:null};
+function el(t,c,h){var e=document.createElement(t); if(c) e.className=c; if(h!=null) e.innerHTML=h; return e;}
+function pills(id,items,key){var b=document.getElementById(id); b.innerHTML=''; items.forEach(function(it){var x=el('button','im-btn',it.n); x.type='button'; x.setAttribute('aria-pressed',st[key]===it.k?'true':'false'); x.addEventListener('click',function(){st[key]=it.k; render();}); b.appendChild(x);});}
+function dom(k){return D.find(function(d){return d.k===k});}
+function grp(d){return G.filter(function(g){return g.d===d});}
+function used(g){return st.buy==='all'||g.b.indexOf(st.buy)>=0;}
+function lvl(v){return v===1?2:v===0?0:v+1;}
+function cells(tr,f){f.forEach(function(v,i){var td=el('td'); var c=el('div','om-c l'+lvl(v),v?LV[lvl(v)]:'—'); c.style.cursor='default'; td.appendChild(c); tr.appendChild(td);});}
 function render(){
- pills();
- var pb=document.getElementById('vs-parts'); pb.innerHTML='';
- var hl=null;
- if(st.part) hl=L.filter(function(l){return l.u.indexOf(st.part)>=0}).map(function(l){return l.n});
- else if(st.mode!=='eng') hl=CAP[st.mode].l;
- var selL=st.sel?L.find(function(l){return l.n===st.sel}):null;
- P.forEach(function(p){var x=document.createElement('button'); x.type='button'; x.className='vs-p'+(selL&&selL.u.indexOf(p.k)<0?' dim':''); x.setAttribute('aria-pressed',st.part===p.k?'true':'false'); x.innerHTML='<b>'+p.n+'</b><small>'+p.d+'</small>'; x.addEventListener('click',function(){st.part=st.part===p.k?null:p.k; st.sel=null; render();}); pb.appendChild(x);});
- box.innerHTML=''; var lastB='';
- L.forEach(function(l){
-  if(l.b!==lastB){var h=document.createElement('div'); h.className='vs-band'; h.textContent=B[l.b]; box.appendChild(h); lastB=l.b;}
-  var x=document.createElement('button'); x.type='button';
-  x.className='vs-l '+l.e+(l.net?' net':'')+(st.sel===l.n?' sel':'')+(hl&&hl.indexOf(l.n)<0?' dim':'');
-  x.innerHTML='<span class="n">'+l.n+'</span><span class="t">'+l.t+'<small>'+l.s+'</small></span><span class="e">'+l.el+'</span>';
-  x.addEventListener('click',function(){st.sel=l.n; st.part=null; render();});
-  box.appendChild(x);
+ pills('sk-lvl',[{k:'dom',n:'Domains'},{k:'grp',n:'Capability groups'},{k:'prd',n:'Products'}],'lvl');
+ pills('sk-buy',BUY,'buy');
+ grid.innerHTML='';
+ var th=el('thead'); var tr=el('tr'); tr.appendChild(el('th','','Capability')); F.forEach(function(f){tr.appendChild(el('th','',f.replace('<small>','<small style="display:block;font-weight:400;color:var(--muted);font-size:11.5px">')));}); tr.appendChild(el('th','','Revenue')); th.appendChild(tr); grid.appendChild(th);
+ var tb=el('tbody');
+ D.forEach(function(d){
+  var gs=grp(d.k); var any=gs.some(used);
+  var agg=[0,1,2].map(function(i){return Math.max.apply(null,gs.filter(used).map(function(g){return g.f[i]}).concat([0]));});
+  var r=el('tr','sk-d'+(any?'':' dim')+(st.sel===d.k?' sel':''));
+  var h=el('th'); var b=el('button','','<span class="sk-k">'+d.k+'</span><span class="sk-dom">'+d.n+'</span><small>'+d.job+' · '+gs.length+' groups, '+gs.reduce(function(a,g){return a+g.p.length},0)+' products</small>'); b.type='button'; b.addEventListener('click',function(){st.sel=d.k; render();}); h.appendChild(b); r.appendChild(h);
+  cells(r,agg); r.appendChild(el('td','sk-rev',d.rev)); tb.appendChild(r);
+  if(st.lvl==='dom') return;
+  gs.forEach(function(g){
+   var rr=el('tr','sk-g'+(used(g)?'':' dim')+(st.sel===g.k?' sel':''));
+   var hh=el('th'); var bb=el('button','','<span class="sk-k">'+g.k+'</span><span class="sk-gn">'+g.n+'</span>'+(st.lvl==='prd'?'<span class="sk-pr">'+g.p.map(function(x){return '<i>'+x+'</i>'}).join('')+'</span>':'<small>'+g.p.length+(g.p.length===1?' product':' products')+'</small>')); bb.type='button'; bb.addEventListener('click',function(){st.sel=g.k; render();}); hh.appendChild(bb); rr.appendChild(hh);
+   cells(rr,g.f);
+   var rv=(g.d==='A'||g.k==='B1')?'Network fees':'VAS · '+dom(g.d).n.replace(' solutions','');
+   if(g.k==='B1') rv='Network fees; premium cards in force → VAS';
+   rr.appendChild(el('td','sk-rev',rv)); tb.appendChild(rr);
+  });
  });
- document.querySelectorAll('.vs-eng').forEach(function(c){c.classList.toggle('on',!!selL&&(selL.e===c.dataset.e||(selL.e==='mix'&&c.dataset.e!=='cms')||(selL.e==='new'&&c.dataset.e!=='core')));});
- var d=document.getElementById('vs-detail');
- if(selL){
-  d.innerHTML='<span class="om-k">Layer '+selL.n+' · '+B[selL.b]+'</span><h5>'+selL.t+'</h5><p>'+selL.s+'.</p><p><b>Visa products:</b> '+selL.p+'</p><p><b>Who uses it:</b> '+P.filter(function(p){return selL.u.indexOf(p.k)>=0}).map(function(p){return p.n}).join(', ')+'</p><p><b>Revenue engine:</b> '+ENG[selL.e]+'</p><p><b>Sales operations lever:</b> '+selL.lev+'</p>';
- } else if(st.part){
-  var p=P.find(function(x){return x.k===st.part});
-  d.innerHTML='<span class="om-k">Participant</span><h5>'+p.n+'</h5><p>'+p.d+'.</p><p><b>Layers used:</b></p><ul>'+L.filter(function(l){return l.u.indexOf(p.k)>=0}).map(function(l){return '<li>'+l.n+' '+l.t+'</li>'}).join('')+'</ul>';
- } else if(st.mode!=='eng'){
-  var c=CAP[st.mode]; var txt={pay:'Secure, frictionless payments for consumers and businesses: credentials, wallets, acceptance and the network.',move:'Send and receive money in real time, locally and across borders: Visa Direct, B2B and new rails.',manage:'Protect, optimise and grow payments with data and technology: processing, risk and advisory.'}[st.mode];
-  d.innerHTML='<span class="om-k">Capability</span><h5>'+c.n+'</h5><p>'+txt+'</p><p class="small">Select a layer for products, buyers and the sales operations lever.</p>';
+ grid.appendChild(tb);
+ var dt=document.getElementById('sk-detail'); var bn=BUY.find(function(x){return x.k===st.buy}).n;
+ var nm=function(ks){return BUY.filter(function(x){return ks.indexOf(x.k)>=0}).map(function(x){return x.n}).join(', ');};
+ if(st.sel&&st.sel.length===1){var d=dom(st.sel);
+  dt.innerHTML='<span class="om-k">Domain '+d.k+'</span><h5>'+d.n+'</h5><p><b>The job:</b> '+d.job+'.</p><p>'+d.det+'</p><p><b>Capability groups:</b> '+grp(d.k).map(function(g){return g.k+' '+g.n}).join('; ')+'</p><p><b>Sales operations lever:</b> '+d.lev+'</p>';
+ } else if(st.sel){var g=G.find(function(x){return x.k===st.sel}); var d2=dom(g.d);
+  dt.innerHTML='<span class="om-k">'+g.k+' · '+d2.n+'</span><h5>'+g.n+'</h5><p><b>Products:</b> '+g.p.join(', ')+'</p><p><b>Bought by:</b> '+nm(g.b)+'</p><p><b>Flows:</b> consumer '+LV[lvl(g.f[0])].toLowerCase()+(g.f[0]?'':'not used')+', commercial '+(g.f[1]?LV[lvl(g.f[1])].toLowerCase():'not used')+', money movement '+(g.f[2]?LV[lvl(g.f[2])].toLowerCase():'not used')+'</p><p><b>Domain lever:</b> '+d2.lev+'</p>';
  } else {
-  d.innerHTML='<span class="om-k">How to read it</span><h5>Eleven layers, three revenue engines</h5><p>Layers 01–05 carry the core network business; 06–08 are value-added services; 09–10 are commercial and money movement; 11 holds the new rails that feed both growth engines.</p><p class="small">Select a layer or a participant to explore.</p>';
+  dt.innerHTML='<span class="om-k">How to read it · '+bn+'</span><h5>Five domains, 20 groups, ~75 products</h5><p>Domain A moves and settles money and earns network fees. Domains B–E are the four value-added services portfolios Visa reports, together $8.8B in FY2024 and ~$14B in FY2026.</p><p>Columns show how much each capability matters to each flow. Select a domain or group for products, buyers and the sales operations lever; filter by buyer to see what each client type uses.</p>';
  }
 }
 render();
